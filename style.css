@@ -1,149 +1,130 @@
-/* Estilos generales */
+/* Estilos generales para ambas páginas */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9; /* Fondo gris claro */
-    color: #333; /* Texto oscuro */
-    line-height: 1.6;
+    color: #333;
 }
 
-h1 {
+/* Estilos específicos para la página de login */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lightblue;
+}
+
+.login-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    color: #007bff; /* Azul brillante */
+    width: 90%;
+    max-width: 400px;
+}
+
+.login-container h2 {
+    color: rgb(79, 149, 172);
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.login-container input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.login-container button {
+    background-color: rgb(79, 149, 172);
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1.1em;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+    background-color: rgb(60, 130, 150);
+}
+
+.error {
+    color: red;
+    display: none;
+    margin: 10px 0;
+}
+
+/* Estilos para la página del menú principal */
+.menu-page {
+    background-color: lightblue;
+    padding: 20px;
+}
+
+.menu-page h1 {
+    text-align: center;
     margin-top: 20px;
     font-size: 2.5em;
+    color: white;
 }
 
-/* Contenedor del test */
-form {
+.menu {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff; /* Fondo blanco */
+    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para cada pregunta */
-.pregunta {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #f9f9f9; /* Fondo gris muy claro */
-    border-radius: 8px;
-    border: 1px solid #ddd; /* Borde gris */
-}
-
-.pregunta p {
-    font-weight: bold;
-    margin: 0 0 10px 0;
-    color: #007bff; /* Azul brillante */
-}
-
-/* Estilos para las respuestas */
-.respuesta {
-    margin-left: 20px;
-}
-
-.respuesta label {
-    display: block;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #fff; /* Fondo blanco */
-    border: 1px solid #ddd; /* Borde gris */
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.respuesta label:hover {
-    background-color: #e9f5ff; /* Azul muy claro al pasar el ratón */
-    border-color: #007bff; /* Borde azul al pasar el ratón */
-}
-
-.respuesta input[type="radio"] {
-    margin-right: 10px;
-}
-
-/* Estilos para la retroalimentación */
-.feedback {
-    margin-top: 10px;
-    font-style: italic;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.correcta {
-    color: #28a745; /* Verde para respuestas correctas */
-}
-
-.incorrecta {
-    color: #dc3545; /* Rojo para respuestas incorrectas */
-}
-
-/* Estilos para el botón */
-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #007bff; /* Azul brillante */
-    color: #fff; /* Texto blanco */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
-}
-
-/* Estilos para el resultado */
-.resultado {
-    margin-top: 20px;
-    font-weight: bold;
+.menu h2 {
     text-align: center;
-    padding: 10px;
-    background-color: #fff; /* Fondo blanco */
+    font-size: 1.8em;
+    color: rgb(79, 149, 172);
+    border-bottom: 2px solid lightblue;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin: 15px 0;
+}
+
+.menu ul li a {
+    display: block;
+    padding: 15px;
+    background-color: lightblue;
+    color: #fff;
+    text-decoration: none;
     border-radius: 5px;
-    border: 1px solid #ddd; /* Borde gris */
+    text-align: center;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Diseño responsivo */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2em;
-    }
-
-    form {
-        padding: 15px;
-    }
-
-    .pregunta {
-        padding: 10px;
-    }
-
-    .respuesta label {
-        padding: 8px;
-    }
-
-    button {
-        width: 100%;
-        padding: 15px;
-    }
+.menu ul li a:hover {
+    background-color: rgb(79, 149, 172);
+    transform: translateY(-2px);
 }
 
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.8em;
-    }
+.menu ul li a:active {
+    transform: translateY(0);
+}
 
-    .respuesta {
-        margin-left: 10px;
-    }
-
-    .respuesta label {
-        font-size: 0.9em;
-    }
+.menu .section {
+    margin-bottom: 40px;
 }

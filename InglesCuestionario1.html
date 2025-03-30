@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Business English</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            background-color: lightblue;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 2.5em;
+            color: white;
+        }
+        form {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .pregunta {
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .pregunta p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .respuesta {
+            margin-left: 20px;
+        }
+        .respuesta label {
+            display: block;
+            margin: 8px 0;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+        .respuesta label:hover {
+            background-color: #f0f8ff;
+        }
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .correcta {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrecta {
+            color: red;
+            font-weight: bold;
+        }
+        button {
+            display: block;
+            margin: 30px auto;
+            padding: 12px 25px;
+            background-color: rgb(79, 149, 172);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: rgb(60, 130, 150);
+        }
+        .resultado {
+            text-align: center;
+            font-size: 1.3em;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test - Business English</h1>
+
+    <form id="testForm">
+        <!-- Question 1 -->
+        <div class="pregunta">
+            <p><strong>Question 1:</strong> Our mentor is very ... , giving us the confidence to take on new challenges.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p1" value="a"> a. Empowering.</label>
+                <label><input type="radio" name="p1" value="b"> b. Personal.</label>
+                <label><input type="radio" name="p1" value="c"> c. Leadership-driven.</label>
+                <label><input type="radio" name="p1" value="d"> d. Balanced.</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="pregunta">
+            <p><strong>Question 2:</strong> The company aims to expand its operations on a ... level next year.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p2" value="a"> a. Data.</label>
+                <label><input type="radio" name="p2" value="b"> b. Shrinking.</label>
+                <label><input type="radio" name="p2" value="c"> c. Local.</label>
+                <label><input type="radio" name="p2" value="d"> d. Global.</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="pregunta">
+            <p><strong>Question 3:</strong> Our supervisor is exceptionally ... , always fostering teamwork.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p3" value="a"> a. Meritocratic.</label>
+                <label><input type="radio" name="p3" value="b"> b. Supportive.</label>
+                <label><input type="radio" name="p3" value="c"> c. Collaborative.</label>
+                <label><input type="radio" name="p3" value="d"> d. Harmonious.</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="pregunta">
+            <p><strong>Question 4:</strong> HR is conducting innovative team-building exercises this week.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p4" value="a"> a. Present Simple.</label>
+                <label><input type="radio" name="p4" value="b"> b. Past Simple.</label>
+                <label><input type="radio" name="p4" value="c"> c. Present Continuous.</label>
+                <label><input type="radio" name="p4" value="d"> d. Future Simple.</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="pregunta">
+            <p><strong>Question 5:</strong> Each person in our group is expected to be ... for their own work.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p5" value="a"> a. Efficient.</label>
+                <label><input type="radio" name="p5" value="b"> b. Accountable.</label>
+                <label><input type="radio" name="p5" value="c"> c. Supportive.</label>
+                <label><input type="radio" name="p5" value="d"> d. Ethical.</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="pregunta">
+            <p><strong>Question 6:</strong> The HR department launched a successful wellness program last year.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p6" value="a"> a. Past Simple.</label>
+                <label><input type="radio" name="p6" value="b"> b. Present Simple.</label>
+                <label><input type="radio" name="p6" value="c"> c. Past Continuous.</label>
+                <label><input type="radio" name="p6" value="d"> d. Future Simple.</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="pregunta">
+            <p><strong>Question 7:</strong> Our department is recognized for its ... and approach to recruitment.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p7" value="a"> a. Unrespectful.</label>
+                <label><input type="radio" name="p7" value="b"> b. Unsustainable.</label>
+                <label><input type="radio" name="p7" value="c"> c. Sustainable.</label>
+                <label><input type="radio" name="p7" value="d"> d. Unethical.</label>
+            </div>
+            <div class="feedback" id="feedback7"></div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="pregunta">
+            <p><strong>Question 8:</strong> The company offers a competitive benefits package.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p8" value="a"> a. Past Simple.</label>
+                <label><input type="radio" name="p8" value="b"> b. Future Simple.</label>
+                <label><input type="radio" name="p8" value="c"> c. Present Simple.</label>
+                <label><input type="radio" name="p8" value="d"> d. Present Continuous.</label>
+            </div>
+            <div class="feedback" id="feedback8"></div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="pregunta">
+            <p><strong>Question 9:</strong> Our manager was reviewing ethical employment policies yesterday.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p9" value="a"> a. Past Simple.</label>
+                <label><input type="radio" name="p9" value="b"> b. Past Continuous.</label>
+                <label><input type="radio" name="p9" value="c"> c. Future Simple.</label>
+                <label><input type="radio" name="p9" value="d"> d. Present Continuous.</label>
+            </div>
+            <div class="feedback" id="feedback9"></div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="pregunta">
+            <p><strong>Question 10:</strong> The company have developed new strategies already.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p10" value="a"> a. Future Simple.</label>
+                <label><input type="radio" name="p10" value="b"> b. Present Continuous.</label>
+                <label><input type="radio" name="p10" value="c"> c. Past Simple.</label>
+                <label><input type="radio" name="p10" value="d"> d. Present Perfect.</label>
+            </div>
+            <div class="feedback" id="feedback10"></div>
+        </div>
+
+        <!-- Question 11 -->
+        <div class="pregunta">
+            <p><strong>Question 11:</strong> Our new team member is very ... , constantly introducing fresh ideas.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p11" value="a"> a. Conventional.</label>
+                <label><input type="radio" name="p11" value="b"> b. Performance-driven.</label>
+                <label><input type="radio" name="p11" value="c"> c. Innovative.</label>
+                <label><input type="radio" name="p11" value="d"> d. Creative.</label>
+            </div>
+            <div class="feedback" id="feedback11"></div>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="pregunta">
+            <p><strong>Question 12:</strong> After the restructuring, the company become more ... in the market.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p12" value="a"> a. Uninvolved.</label>
+                <label><input type="radio" name="p12" value="b"> b. Unreliable.</label>
+                <label><input type="radio" name="p12" value="c"> c. Competitive.</label>
+                <label><input type="radio" name="p12" value="d"> d. Unprofitable.</label>
+            </div>
+            <div class="feedback" id="feedback12"></div>
+        </div>
+
+        <!-- Question 13 -->
+        <div class="pregunta">
+            <p><strong>Question 13:</strong> The HR team's approach to solving conflicts is very ...</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p13" value="a"> a. Sustainable.</label>
+                <label><input type="radio" name="p13" value="b"> b. Inflexible.</label>
+                <label><input type="radio" name="p13" value="c"> c. Dynamic.</label>
+                <label><input type="radio" name="p13" value="d"> d. Unchanging.</label>
+            </div>
+            <div class="feedback" id="feedback13"></div>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="pregunta">
+            <p><strong>Question 14:</strong> The ideal applicant should be ... , able to adjust to changing situations quickly.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p14" value="a"> a. Adaptable.</label>
+                <label><input type="radio" name="p14" value="b"> b. Loyal.</label>
+                <label><input type="radio" name="p14" value="c"> c. Dynamic.</label>
+                <label><input type="radio" name="p14" value="d"> d. Excellent.</label>
+            </div>
+            <div class="feedback" id="feedback14"></div>
+        </div>
+
+        <!-- Question 15 -->
+        <div class="pregunta">
+            <p><strong>Question 15:</strong> The new training program is designed to be ... to changes in technology.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p15" value="a"> a. Diverse.</label>
+                <label><input type="radio" name="p15" value="b"> b. Innovative.</label>
+                <label><input type="radio" name="p15" value="c"> c. Outdated.</label>
+                <label><input type="radio" name="p15" value="d"> d. Ignorant.</label>
+            </div>
+            <div class="feedback" id="feedback15"></div>
+        </div>
+
+        <!-- Botón para calcular la nota -->
+        <button type="button" onclick="calcularNota()">Calculate score</button>
+    </form>
+
+    <!-- Resultado -->
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+        // Respuestas correctas
+        const respuestasCorrectas = {
+            p1: "a", // Empowering
+            p2: "d", // Global
+            p3: "c", // Collaborative
+            p4: "c", // Present Continuous
+            p5: "b", // Accountable
+            p6: "a", // Past Simple
+            p7: "c", // Sustainable
+            p8: "c", // Present Simple
+            p9: "b", // Past Continuous
+            p10: "d", // Present Perfect
+            p11: "c", // Innovative
+            p12: "c", // Competitive
+            p13: "c", // Dynamic
+            p14: "a", // Adaptable
+            p15: "b"  // Innovative
+        };
+
+        // Función para calcular la nota
+        function calcularNota() {
+            let puntuacion = 0;
+            const totalPreguntas = Object.keys(respuestasCorrectas).length;
+
+            // Recorrer las preguntas y comparar respuestas
+            for (const pregunta in respuestasCorrectas) {
+                const respuestaSeleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
+                const feedbackDiv = document.getElementById(`feedback${pregunta.substring(1)}`);
+
+                if (respuestaSeleccionada) {
+                    if (respuestaSeleccionada.value === respuestasCorrectas[pregunta]) {
+                        puntuacion++;
+                        feedbackDiv.innerHTML = `<span class="correcta">Correct: ${respuestaSeleccionada.value}</span>`;
+                    } else {
+                        feedbackDiv.innerHTML = `<span class="incorrecta">Incorrect. The right answer is: ${respuestasCorrectas[pregunta]}</span>`;
+                    }
+                } else {
+                    feedbackDiv.innerHTML = `<span class="incorrecta">You didn't select an answer. The right answer is: ${respuestasCorrectas[pregunta]}</span>`;
+                }
+            }
+
+            // Calcular la nota sobre 10
+            const nota = (puntuacion / totalPreguntas) * 10;
+
+            // Mostrar el resultado
+            const resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = `Your score is: <span class="${nota >= 5 ? 'correcta' : 'incorrecta'}">${nota.toFixed(2)}/10</span>`;
+        }
+    </script>
+</body>
+</html>
