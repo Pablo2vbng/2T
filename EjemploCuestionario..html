@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>Test - Cuestionario SQL Avanzado</h1>
+
+    <form id="testForm">
+        <!-- Pregunta 1 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 1:</strong> Son bloques de código que se ejecutan en el momento exacto en que cambia el contenido de la base de datos:</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p1" value="a"> a. NINGUNA DE LAS ANTERIORES</label>
+                <label><input type="radio" name="p1" value="b"> b. FUNCIÓN</label>
+                <label><input type="radio" name="p1" value="c"> c. TRIGGER</label>
+                <label><input type="radio" name="p1" value="d"> d. PROCEDIMIENTO LAMBDA</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 2:</strong> Los eventos que pueden disparar un TRIGGER son:</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p2" value="a"> a. SELECT, INSERT, UPDATE</label>
+                <label><input type="radio" name="p2" value="b"> b. UPDATE, INSERT, ALTER y DELETE</label>
+                <label><input type="radio" name="p2" value="c"> c. SELECT, ALTER y DROP</label>
+                <label><input type="radio" name="p2" value="d"> d. INSERT, UPDATE y DELETE</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 3:</strong> Esta sentencia GRANT SELECT, INSERT, UPDATE ON clientes TO prueba;:</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p3" value="a"> a. Ninguna de las anteriores.</label>
+                <label><input type="radio" name="p3" value="b"> b. Permite tener los mismos permisos que SYS.</label>
+                <label><input type="radio" name="p3" value="c"> c. Permite insertar registros en las tablas de la base de datos.</label>
+                <label><input type="radio" name="p3" value="d"> d. Entre otras acciones permite modificar la estructura de la tabla prueba.</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 4:</strong> Dada la sentencia ALTER USER prueba IDENTIFIED BY prueba, señala la opción más correcta:</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p4" value="a"> a. Ninguna es correcta.</label>
+                <label><input type="radio" name="p4" value="b"> b. Esta sentencia crea un nuevo usuario que se llama "prueba" con la clave de acceso "prueba".</label>
+                <label><input type="radio" name="p4" value="c"> c. Es correcto pero no debemos hacer coincidir el nombre de usuario y la tabla a la que accede.</label>
+                <label><input type="radio" name="p4" value="d"> d. No es posible establecer contraseñas que no tengan caracteres especiales.</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 5:</strong> Los cursores son estructuras de almacenamiento persistente que almacenan el resultado de una consulta y permiten recorrer todos los registros.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p5" value="a"> a. NO</label>
+                <label><input type="radio" name="p5" value="b"> b. SI</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+        </div>
+
+        <!-- Pregunta 6 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 6:</strong> Algunos de los usos de un disparador son los siguientes:</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p6" value="a"> a. Todos los anteriores.</label>
+                <label><input type="radio" name="p6" value="b"> b. Registro y auditoria de eventos.</label>
+                <label><input type="radio" name="p6" value="c"> c. Generación automática de valores.</label>
+                <label><input type="radio" name="p6" value="d"> d. Mantenimiento de la integridad referencial.</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+        </div>
+
+        <!-- Pregunta 7 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 7:</strong> Podemos acceder al contenido de una posición de un ARRAY, su declaración es NOMBRES VARCHAR (40) ARRAY [3], señala la correcta:</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p7" value="a"> a. NOMBRES[0]</label>
+                <label><input type="radio" name="p7" value="b"> b. Ninguna es correcta</label>
+                <label><input type="radio" name="p7" value="c"> c. NOMBRES[-1]</label>
+                <label><input type="radio" name="p7" value="d"> d. NOMBRES.lastIndex</label>
+            </div>
+            <div class="feedback" id="feedback7"></div>
+        </div>
+
+        <!-- Pregunta 8 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 8:</strong> Es un tipo de procedimiento almacenado que no se puede ejecutar directamente, sino que se “dispara” cuando ocurren determinados eventos en la base de datos.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p8" value="a"> a. PROCEDIMIENTO LAMBDA</label>
+                <label><input type="radio" name="p8" value="b"> b. TRIGGER</label>
+                <label><input type="radio" name="p8" value="c"> c. FUNCIÓN</label>
+                <label><input type="radio" name="p8" value="d"> d. NINGUNA DE LAS ANTERIORES</label>
+            </div>
+            <div class="feedback" id="feedback8"></div>
+        </div>
+
+        <!-- Pregunta 9 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 9:</strong> ACID hace referencia a:</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p9" value="a"> a. Atomicidad, Consistencia, Aislamiento y Duración</label>
+                <label><input type="radio" name="p9" value="b"> b. Alterar, Consistencia, Aislamiento y Persistencia</label>
+                <label><input type="radio" name="p9" value="c"> c. Atomicidad, Consistencia, Absentismo y Permanencia</label>
+                <label><input type="radio" name="p9" value="d"> d. Atomicidad, Consistencia, Aislamiento y Persistencia</label>
+            </div>
+            <div class="feedback" id="feedback9"></div>
+        </div>
+
+        <!-- Pregunta 10 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 10:</strong> Es una estructura de datos que almacena una colección de elementos del mismo tipo en una sola variable:</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p10" value="a"> a. RECORD</label>
+                <label><input type="radio" name="p10" value="b"> b. SCOPE</label>
+                <label><input type="radio" name="p10" value="c"> c. TYPE</label>
+                <label><input type="radio" name="p10" value="d"> d. ARRAY</label>
+            </div>
+            <div class="feedback" id="feedback10"></div>
+        </div>
+
+        <!-- Botón para calcular la nota -->
+        <button type="button" onclick="calcularNota()">Calcular nota</button>
+    </form>
+
+    <!-- Resultado -->
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+        // Respuestas correctas
+        const respuestasCorrectas = {
+            p1: "c", // TRIGGER.
+            p2: "d", // INSERT, UPDATE y DELETE.
+            p3: "a", // Ninguna de las anteriores.
+            p4: "a", // Ninguna es correcta.
+            p5: "a", // NO.
+            p6: "a", // Todos los anteriores.
+            p7: "a", // NOMBRES[0].
+            p8: "b", // TRIGGER.
+            p9: "d", // Atomicidad, Consistencia, Aislamiento y Persistencia.
+            p10: "d", // ARRAY.
+        };
+
+        // Función para calcular la nota
+        function calcularNota() {
+            let puntuacion = 0;
+            const totalPreguntas = Object.keys(respuestasCorrectas).length;
+
+            // Recorrer las preguntas y comparar respuestas
+            for (const pregunta in respuestasCorrectas) {
+                const respuestaSeleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
+                const feedbackDiv = document.getElementById(`feedback${pregunta.substring(1)}`);
+
+                if (respuestaSeleccionada) {
+                    if (respuestaSeleccionada.value === respuestasCorrectas[pregunta]) {
+                        puntuacion++;
+                        feedbackDiv.innerHTML = `<span class="correcta">Correcto: ${respuestaSeleccionada.value}</span>`;
+                    } else {
+                        feedbackDiv.innerHTML = `<span class="incorrecta">Incorrecto. La respuesta correcta es: ${respuestasCorrectas[pregunta]}</span>`;
+                    }
+                } else {
+                    feedbackDiv.innerHTML = `<span class="incorrecta">No has seleccionado una respuesta. La respuesta correcta es: ${respuestasCorrectas[pregunta]}</span>`;
+                }
+            }
+
+            // Calcular la nota sobre 10
+            const nota = (puntuacion / totalPreguntas) * 10;
+
+            // Mostrar el resultado
+            const resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = `Tu nota es: <span class="${nota >= 5 ? 'correcta' : 'incorrecta'}">${nota.toFixed(2)}/10</span>`;
+        }
+    </script>
+</body>
+</html>

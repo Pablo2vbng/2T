@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Relación Laboral</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            background-color: lightblue;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 2.5em;
+            color: white;
+        }
+        form {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .pregunta {
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .pregunta p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .respuesta {
+            margin-left: 20px;
+        }
+        .respuesta label {
+            display: block;
+            margin: 8px 0;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+        .respuesta label:hover {
+            background-color: #f0f8ff;
+        }
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .correcta {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrecta {
+            color: red;
+            font-weight: bold;
+        }
+        button {
+            display: block;
+            margin: 30px auto;
+            padding: 12px 25px;
+            background-color: rgb(79, 149, 172);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: rgb(60, 130, 150);
+        }
+        .resultado {
+            text-align: center;
+            font-size: 1.3em;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test - Relación Laboral</h1>
+
+    <form id="testForm">
+        <!-- Jerarquía Normativa -->
+        <div class="pregunta">
+            <p><strong>Pregunta 1:</strong> ¿Qué principio establece que en caso de duda se interpreta la norma a favor del trabajador?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p1" value="a"> a) Principio de norma mínima</label>
+                <label><input type="radio" name="p1" value="b"> b) Principio de norma más favorable</label>
+                <label><input type="radio" name="p1" value="c"> c) Principio in dubio pro operario</label>
+                <label><input type="radio" name="p1" value="d"> d) Principio de irrenunciabilidad</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 2:</strong> ¿Cómo se aprueban las leyes orgánicas?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p2" value="a"> a) Por mayoría simple</label>
+                <label><input type="radio" name="p2" value="b"> b) Por mayoría absoluta</label>
+                <label><input type="radio" name="p2" value="c"> c) Por unanimidad</label>
+                <label><input type="radio" name="p2" value="d"> d) Por decreto ley</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 3:</strong> ¿Qué norma prevalece en caso de conflicto entre un convenio colectivo y un reglamento?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p3" value="a"> a) El convenio colectivo si es más favorable</label>
+                <label><input type="radio" name="p3" value="b"> b) El reglamento por ser de rango superior</label>
+                <label><input type="radio" name="p3" value="c"> c) La Constitución</label>
+                <label><input type="radio" name="p3" value="d"> d) La costumbre local</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+        </div>
+
+        <!-- Relación Laboral -->
+        <div class="pregunta">
+            <p><strong>Pregunta 4:</strong> ¿Cuál NO es una característica de la relación laboral?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p4" value="a"> a) Personal</label>
+                <label><input type="radio" name="p4" value="b"> b) Voluntario</label>
+                <label><input type="radio" name="p4" value="c"> c) Gratuito</label>
+                <label><input type="radio" name="p4" value="d"> d) Por cuenta ajena</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 5:</strong> ¿Qué significa "por cuenta ajena"?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p5" value="a"> a) El trabajador asume las pérdidas</label>
+                <label><input type="radio" name="p5" value="b"> b) Los frutos del trabajo pertenecen al empleador</label>
+                <label><input type="radio" name="p5" value="c"> c) El trabajador es autónomo</label>
+                <label><input type="radio" name="p5" value="d"> d) No hay retribución</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+        </div>
+
+        <!-- Derechos Colectivos -->
+        <div class="pregunta">
+            <p><strong>Pregunta 6:</strong> ¿Cuántos delegados de personal hay en una empresa con 30 trabajadores?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p6" value="a"> a) 1</label>
+                <label><input type="radio" name="p6" value="b"> b) 3</label>
+                <label><input type="radio" name="p6" value="c"> c) 5</label>
+                <label><input type="radio" name="p6" value="d"> d) 0</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 7:</strong> ¿Qué se requiere para tener delegados sindicales?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p7" value="a"> a) Más de 50 trabajadores</label>
+                <label><input type="radio" name="p7" value="b"> b) Más de 250 trabajadores</label>
+                <label><input type="radio" name="p7" value="c"> c) Más de 100 trabajadores</label>
+                <label><input type="radio" name="p7" value="d"> d) Cualquier número de trabajadores</label>
+            </div>
+            <div class="feedback" id="feedback7"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 8:</strong> ¿Cuántos días de antelación se necesita para convocar una huelga en servicios esenciales?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p8" value="a"> a) 5 días</label>
+                <label><input type="radio" name="p8" value="b"> b) 10 días</label>
+                <label><input type="radio" name="p8" value="c"> c) 3 días</label>
+                <label><input type="radio" name="p8" value="d"> d) 1 día</label>
+            </div>
+            <div class="feedback" id="feedback8"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 9:</strong> ¿Qué tipo de cierre patronal está permitido en España?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p9" value="a"> a) Ofensivo</label>
+                <label><input type="radio" name="p9" value="b"> b) Defensivo</label>
+                <label><input type="radio" name="p9" value="c"> c) Preventivo</label>
+                <label><input type="radio" name="p9" value="d"> d) Cualquier tipo</label>
+            </div>
+            <div class="feedback" id="feedback9"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 10:</strong> ¿Quién puede convocar una asamblea de trabajadores?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p10" value="a"> a) Solo el comité de empresa</label>
+                <label><input type="radio" name="p10" value="b"> b) El 33% de la plantilla o delegados</label>
+                <label><input type="radio" name="p10" value="c"> c) Solo el empleador</label>
+                <label><input type="radio" name="p10" value="d"> d) Los sindicatos externos</label>
+            </div>
+            <div class="feedback" id="feedback10"></div>
+        </div>
+
+        <!-- Representación -->
+        <div class="pregunta">
+            <p><strong>Pregunta 11:</strong> ¿Qué órgano representa a los trabajadores en empresas con más de 50 empleados?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p11" value="a"> a) Delegados de personal</label>
+                <label><input type="radio" name="p11" value="b"> b) Comité de empresa</label>
+                <label><input type="radio" name="p11" value="c"> c) Secciones sindicales</label>
+                <label><input type="radio" name="p11" value="d"> d) Tribunal laboral</label>
+            </div>
+            <div class="feedback" id="feedback11"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 12:</strong> ¿Qué derecho permite a los trabajadores negociar condiciones laborales?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p12" value="a"> a) Derecho de huelga</label>
+                <label><input type="radio" name="p12" value="b"> b) Negociación colectiva</label>
+                <label><input type="radio" name="p12" value="c"> c) Libertad sindical</label>
+                <label><input type="radio" name="p12" value="d"> d) Derecho de reunión</label>
+            </div>
+            <div class="feedback" id="feedback12"></div>
+        </div>
+
+        <!-- Huelga y Conflictos -->
+        <div class="pregunta">
+            <p><strong>Pregunta 13:</strong> ¿Qué hace un comité de huelga?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p13" value="a"> a) Vigila el cumplimiento de la huelga</label>
+                <label><input type="radio" name="p13" value="b"> b) Negocia para poner fin a la huelga</label>
+                <label><input type="radio" name="p13" value="c"> c) Organiza el cierre patronal</label>
+                <label><input type="radio" name="p13" value="d"> d) Sustituye a los huelguistas</label>
+            </div>
+            <div class="feedback" id="feedback13"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 14:</strong> ¿Qué efecto tiene la huelga legal sobre el salario?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p14" value="a"> a) Se paga el 50%</label>
+                <label><input type="radio" name="p14" value="b"> b) No se percibe salario</label>
+                <label><input type="radio" name="p14" value="c"> c) Se paga completo</label>
+                <label><input type="radio" name="p14" value="d"> d) Se paga con bonificación</label>
+            </div>
+            <div class="feedback" id="feedback14"></div>
+        </div>
+
+        <!-- Vigilancia y Control -->
+        <div class="pregunta">
+            <p><strong>Pregunta 15:</strong> ¿Dónde NO se pueden instalar cámaras de vigilancia?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p15" value="a"> a) Pasillos</label>
+                <label><input type="radio" name="p15" value="b"> b) Zonas de trabajo</label>
+                <label><input type="radio" name="p15" value="c"> c) Vestuarios</label>
+                <label><input type="radio" name="p15" value="d"> d) Entradas</label>
+            </div>
+            <div class="feedback" id="feedback15"></div>
+        </div>
+
+        <!-- Organismos de Protección -->
+        <div class="pregunta">
+            <p><strong>Pregunta 16:</strong> ¿Qué organismo vigila el cumplimiento de la legislación laboral?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p16" value="a"> a) Tribunal Supremo</label>
+                <label><input type="radio" name="p16" value="b"> b) Inspección de Trabajo</label>
+                <label><input type="radio" name="p16" value="c"> c) Convenios colectivos</label>
+                <label><input type="radio" name="p16" value="d"> d) Sindicatos</label>
+            </div>
+            <div class="feedback" id="feedback16"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 17:</strong> ¿Qué tribunal resuelve conflictos laborales individuales en primera instancia?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p17" value="a"> a) Juzgados de lo Social</label>
+                <label><input type="radio" name="p17" value="b"> b) Audiencia Nacional</label>
+                <label><input type="radio" name="p17" value="c"> c) Tribunal Constitucional</label>
+                <label><input type="radio" name="p17" value="d"> d) Tribunal Supremo</label>
+            </div>
+            <div class="feedback" id="feedback17"></div>
+        </div>
+
+        <!-- Otros -->
+        <div class="pregunta">
+            <p><strong>Pregunta 18:</strong> ¿Qué principio protege las condiciones beneficiosas adquiridas por el trabajador?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p18" value="a"> a) Principio de norma mínima</label>
+                <label><input type="radio" name="p18" value="b"> b) Principio de condición más beneficiosa</label>
+                <label><input type="radio" name="p18" value="c"> c) Principio de jerarquía</label>
+                <label><input type="radio" name="p18" value="d"> d) Principio de igualdad</label>
+            </div>
+            <div class="feedback" id="feedback18"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 19:</strong> ¿Qué norma regula principalmente el trabajo en España?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p19" value="a"> a) Constitución</label>
+                <label><input type="radio" name="p19" value="b"> b) Estatuto de los Trabajadores</label>
+                <label><input type="radio" name="p19" value="c"> c) Convenios colectivos</label>
+                <label><input type="radio" name="p19" value="d"> d) Ley Orgánica de Libertad Sindical</label>
+            </div>
+            <div class="feedback" id="feedback19"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 20:</strong> ¿Qué derecho tienen los trabajadores para defender sus intereses colectivos?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p20" value="a"> a) Derecho de resistencia</label>
+                <label><input type="radio" name="p20" value="b"> b) Derecho de huelga</label>
+                <label><input type="radio" name="p20" value="c"> c) Derecho a la intimidad</label>
+                <label><input type="radio" name="p20" value="d"> d) Derecho a la desconexión digital</label>
+            </div>
+            <div class="feedback" id="feedback20"></div>
+        </div>
+
+        <!-- Botón para calcular la nota -->
+        <button type="button" onclick="calcularNota()">Calcular nota</button>
+    </form>
+
+    <!-- Resultado -->
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+        // Respuestas correctas
+        const respuestasCorrectas = {
+            p1: "c", // Principio in dubio pro operario
+            p2: "b", // Por mayoría absoluta
+            p3: "a", // El convenio colectivo si es más favorable
+            p4: "c", // Gratuito
+            p5: "b", // Los frutos del trabajo pertenecen al empleador
+            p6: "a", // 1
+            p7: "b", // Más de 250 trabajadores
+            p8: "b", // 10 días
+            p9: "b", // Defensivo
+            p10: "b", // El 33% de la plantilla o delegados
+            p11: "b", // Comité de empresa
+            p12: "b", // Negociación colectiva
+            p13: "b", // Negocia para poner fin a la huelga
+            p14: "b", // No se percibe salario
+            p15: "c", // Vestuarios
+            p16: "b", // Inspección de Trabajo
+            p17: "a", // Juzgados de lo Social
+            p18: "b", // Principio de condición más beneficiosa
+            p19: "b", // Estatuto de los Trabajadores
+            p20: "b"  // Derecho de huelga
+        };
+
+        // Función para calcular la nota
+        function calcularNota() {
+            let puntuacion = 0;
+            const totalPreguntas = Object.keys(respuestasCorrectas).length;
+
+            // Recorrer las preguntas y comparar respuestas
+            for (const pregunta in respuestasCorrectas) {
+                const respuestaSeleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
+                const feedbackDiv = document.getElementById(`feedback${pregunta.substring(1)}`);
+
+                if (respuestaSeleccionada) {
+                    if (respuestaSeleccionada.value === respuestasCorrectas[pregunta]) {
+                        puntuacion++;
+                        feedbackDiv.innerHTML = `<span class="correcta">Correcto: ${respuestaSeleccionada.value}</span>`;
+                    } else {
+                        feedbackDiv.innerHTML = `<span class="incorrecta">Incorrecto. La respuesta correcta es: ${respuestasCorrectas[pregunta]}</span>`;
+                    }
+                } else {
+                    feedbackDiv.innerHTML = `<span class="incorrecta">No has seleccionado una respuesta. La respuesta correcta es: ${respuestasCorrectas[pregunta]}</span>`;
+                }
+            }
+
+            // Calcular la nota sobre 10
+            const nota = (puntuacion / totalPreguntas) * 10;
+
+            // Mostrar el resultado
+            const resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = `Tu nota es: <span class="${nota >= 5 ? 'correcta' : 'incorrecta'}">${nota.toFixed(2)}/10</span>`;
+        }
+    </script>
+</body>
+</html>

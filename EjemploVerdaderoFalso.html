@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: lightblue;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .pregunta {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgb(79, 149, 172);
+        }
+        .pregunta p {
+            margin: 0 0 10px;
+            font-weight: bold;
+        }
+        .respuesta {
+            margin-left: 20px;
+        }
+        .respuesta label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .correcta {
+            color: green;
+        }
+        .incorrecta {
+            color: red;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: lightblue;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: rgb(79, 149, 172);
+        }
+        .resultado {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test - Cuestionario de Conceptos Básicos</h1>
+
+    <form id="testForm">
+        <!-- Pregunta 1 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 1:</strong> Los navegadores son un tipo de software que requiere una conexión a Internet para funcionar.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p1" value="verdadero"> Verdadero</label>
+                <label><input type="radio" name="p1" value="falso"> Falso</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 2:</strong> Para cualquier usuario, tener su equipo infectado por un virus no es un problema importante ni requiere tiempo o dinero para solucionarlo.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p2" value="verdadero"> Verdadero</label>
+                <label><input type="radio" name="p2" value="falso"> Falso</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 3:</strong> Existen multitud de aplicaciones que se distribuyen bajo varios tipos de licencias, y las podemos agrupar en dos grandes grupos: software libre y de propiedad.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p3" value="verdadero"> Verdadero</label>
+                <label><input type="radio" name="p3" value="falso"> Falso</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 4:</strong> Si descargamos alguna aplicación y no hemos pagado por ella, podemos redistribuirla y modificar su código cuando queramos.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p4" value="verdadero"> Verdadero</label>
+                <label><input type="radio" name="p4" value="falso"> Falso</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 5:</strong> Los programas ejecutados en un sistema operativo deben ser almacenados en la memoria del equipo, ya que la velocidad de lectura del disco duro es demasiado lenta y no permitiría la correcta ejecución del software.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p5" value="verdadero"> Verdadero</label>
+                <label><input type="radio" name="p5" value="falso"> Falso</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+        </div>
+
+        <!-- Pregunta 6 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 6:</strong> Las aplicaciones funcionan en cualquier sistema operativo, siempre y cuando el hardware cumpla los requerimientos de la aplicación.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p6" value="verdadero"> Verdadero</label>
+                <label><input type="radio" name="p6" value="falso"> Falso</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+        </div>
+
+        <!-- Botón para calcular la nota -->
+        <button type="button" onclick="calcularNota()">Calcular nota</button>
+    </form>
+
+    <!-- Resultado -->
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+        // Respuestas correctas
+        const respuestasCorrectas = {
+            p1: "falso", // Falso.
+            p2: "falso", // Falso.
+            p3: "verdadero", // Verdadero.
+            p4: "falso", // Falso.
+            p5: "verdadero", // Verdadero.
+            p6: "falso", // Falso.
+        };
+
+        // Función para calcular la nota
+        function calcularNota() {
+            let puntuacion = 0;
+            const totalPreguntas = Object.keys(respuestasCorrectas).length;
+
+            // Recorrer las preguntas y comparar respuestas
+            for (const pregunta in respuestasCorrectas) {
+                const respuestaSeleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
+                const feedbackDiv = document.getElementById(`feedback${pregunta.substring(1)}`);
+
+                if (respuestaSeleccionada) {
+                    if (respuestaSeleccionada.value === respuestasCorrectas[pregunta]) {
+                        puntuacion++;
+                        feedbackDiv.innerHTML = `<span class="correcta">Correcto: ${respuestaSeleccionada.value}</span>`;
+                    } else {
+                        feedbackDiv.innerHTML = `<span class="incorrecta">Incorrecto. La respuesta correcta es: ${respuestasCorrectas[pregunta]}</span>`;
+                    }
+                } else {
+                    feedbackDiv.innerHTML = `<span class="incorrecta">No has seleccionado una respuesta. La respuesta correcta es: ${respuestasCorrectas[pregunta]}</span>`;
+                }
+            }
+
+            // Calcular la nota sobre 10
+            const nota = (puntuacion / totalPreguntas) * 10;
+
+            // Mostrar el resultado
+            const resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = `Tu nota es: <span class="${nota >= 5 ? 'correcta' : 'incorrecta'}">${nota.toFixed(2)}/10</span>`;
+        }
+    </script>
+</body>
+</html>
