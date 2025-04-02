@@ -1,130 +1,293 @@
-/* Estilos generales para ambas páginas */
-body {
-    font-family: Arial, sans-serif;
+/* Variables de color y tipografía */
+:root {
+    --primary-color: #3498db; /* Azul principal */
+    --primary-dark: #2980b9; /* Azul oscuro */
+    --secondary-color: #2ecc71; /* Verde */
+    --error-color: #e74c3c; /* Rojo */
+    --light-gray: #ecf0f1; /* Gris claro */
+    --medium-gray: #bdc3c7; /* Gris medio */
+    --dark-gray: #34495e; /* Gris oscuro */
+    --text-color: #2c3e50; /* Color de texto principal */
+    --white: #ffffff;
+    --black: #000000;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+  }
+  
+  /* Reset y estilos base */
+  * {
     margin: 0;
     padding: 0;
-    color: #333;
-}
-
-/* Estilos específicos para la página de login */
-.login-page {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3 {
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+    text-align: center;
+    color: var(--white);
+    background-color: var(--primary-color);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin: 1rem auto;
+    max-width: 1000px;
+    box-shadow: var(--shadow);
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--medium-gray);
+    padding-bottom: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+    color: var(--dark-gray);
+    margin-top: 1.5rem;
+  }
+  
+  /* Estilos comunes para contenedores */
+  .menu, #testForm, .login-container, .resultado {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin: 20px auto;
+    padding: 25px;
+    max-width: 1000px;
+  }
+  
+  /* Estilos específicos para el menú de asignaturas */
+  .menu .section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--light-gray);
+  }
+  
+  .menu ul {
+    list-style: none;
+  }
+  
+  .menu li {
+    margin: 1rem 0;
+  }
+  
+  .menu a {
+    display: block;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .menu a:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Estilos para el formulario de test */
+  #testForm {
+    padding: 2rem;
+  }
+  
+  .pregunta {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--light-gray);
+  }
+  
+  .pregunta p {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .respuesta {
+    margin-left: 1rem;
+  }
+  
+  .respuesta label {
+    display: block;
+    margin: 0.8rem 0;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    background-color: var(--light-gray);
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .respuesta label:hover {
+    background-color: #dfe6e9;
+  }
+  
+  .respuesta input[type="radio"] {
+    margin-right: 0.8rem;
+  }
+  
+  .feedback {
+    margin-top: 0.8rem;
+    padding: 0.8rem;
+    border-radius: var(--border-radius);
+    font-size: 0.95rem;
+  }
+  
+  .correcta {
+    color: var(--secondary-color);
+    font-weight: bold;
+  }
+  
+  .incorrecta {
+    color: var(--error-color);
+    font-weight: bold;
+  }
+  
+  button {
+    display: block;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+  
+  .resultado {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 1.5rem;
+  }
+  
+  /* Estilos para la página de login */
+  .login-page {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: lightblue;
-}
-
-.login-container {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 90%;
+    min-height: 100vh;
+    background-color: var(--primary-color);
+  }
+  
+  .login-container {
+    width: 100%;
     max-width: 400px;
-}
-
-.login-container h2 {
-    color: rgb(79, 149, 172);
-    margin-bottom: 25px;
-    font-size: 1.8em;
-}
-
-.login-container input {
-    display: block;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .login-container h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+  }
+  
+  .login-container input {
     width: 100%;
-    padding: 12px;
-    margin: 15px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-.login-container button {
-    background-color: rgb(79, 149, 172);
-    color: white;
-    border: none;
-    padding: 12px;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 5px;
-    font-size: 1.1em;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-}
-
-.login-container button:hover {
-    background-color: rgb(60, 130, 150);
-}
-
-.error {
-    color: red;
+    padding: 1rem;
+    margin: 0.8rem 0;
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+  }
+  
+  .login-container .error {
+    color: var(--error-color);
+    margin: 0.5rem 0;
     display: none;
-    margin: 10px 0;
-}
-
-/* Estilos para la página del menú principal */
-.menu-page {
-    background-color: lightblue;
-    padding: 20px;
-}
-
-.menu-page h1 {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 2.5em;
-    color: white;
-}
-
-.menu {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.menu h2 {
-    text-align: center;
-    font-size: 1.8em;
-    color: rgb(79, 149, 172);
-    border-bottom: 2px solid lightblue;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-.menu ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.menu ul li {
-    margin: 15px 0;
-}
-
-.menu ul li a {
-    display: block;
-    padding: 15px;
-    background-color: lightblue;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.menu ul li a:hover {
-    background-color: rgb(79, 149, 172);
-    transform: translateY(-2px);
-}
-
-.menu ul li a:active {
-    transform: translateY(0);
-}
-
-.menu .section {
-    margin-bottom: 40px;
-}
+  }
+  
+  /* Estilos para el resumen del tema */
+  .resumen {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--light-gray);
+    border-radius: var(--border-radius);
+  }
+  
+  .resumen ul {
+    margin-left: 1.5rem;
+    margin-top: 0.8rem;
+  }
+  
+  .resumen li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+    }
+    
+    h1 {
+      font-size: 1.8rem;
+      padding: 0.8rem;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+    }
+    
+    .menu, #testForm, .login-container, .resultado {
+      padding: 1.5rem;
+      margin: 15px 10px;
+    }
+    
+    .pregunta p {
+      font-size: 1rem;
+    }
+    
+    .respuesta label {
+      padding: 0.8rem;
+      font-size: 0.95rem;
+    }
+    
+    button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+    
+    .respuesta {
+      margin-left: 0;
+    }
+    
+    .respuesta label {
+      padding: 0.7rem;
+      font-size: 0.9rem;
+    }
+    
+    .login-container {
+      padding: 1.5rem;
+    }
+  }
