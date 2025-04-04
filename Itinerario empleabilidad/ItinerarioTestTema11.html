@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Contratos Laborales</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Test - Contratos Laborales</h1>
+
+    <form id="testForm">
+        <!-- Sujetos del contrato -->
+        <div class="pregunta">
+            <p><strong>Pregunta 1:</strong> ¿Qué edad mínima se requiere para trabajar sin permiso de padres/tutores?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p1" value="a"> a) 14 años</label>
+                <label><input type="radio" name="p1" value="b"> b) 16 años</label>
+                <label><input type="radio" name="p1" value="c"> c) 18 años</label>
+                <label><input type="radio" name="p1" value="d"> d) 21 años</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 2:</strong> ¿Qué tipo de trabajos están prohibidos para menores de 16 años?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p2" value="a"> a) Trabajo nocturno</label>
+                <label><input type="radio" name="p2" value="b"> b) Trabajos peligrosos</label>
+                <label><input type="radio" name="p2" value="c"> c) Horas extraordinarias</label>
+                <label><input type="radio" name="p2" value="d"> d) Todas las anteriores</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+        </div>
+
+        <!-- Elementos del contrato -->
+        <div class="pregunta">
+            <p><strong>Pregunta 3:</strong> ¿Cuál NO es un elemento esencial del contrato laboral?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p3" value="a"> a) Consentimiento</label>
+                <label><input type="radio" name="p3" value="b"> b) Objeto</label>
+                <label><input type="radio" name="p3" value="c"> c) Causa</label>
+                <label><input type="radio" name="p3" value="d"> d) Jornada laboral</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+        </div>
+
+        <!-- Formas del contrato -->
+        <div class="pregunta">
+            <p><strong>Pregunta 4:</strong> ¿Qué tipo de contrato puede celebrarse verbalmente?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p4" value="a"> a) Contrato temporal</label>
+                <label><input type="radio" name="p4" value="b"> b) Contrato formativo</label>
+                <label><input type="radio" name="p4" value="c"> c) Contrato indefinido ordinario</label>
+                <label><input type="radio" name="p4" value="d"> d) Contrato a tiempo parcial</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+        </div>
+
+        <!-- Periodo de prueba -->
+        <div class="pregunta">
+            <p><strong>Pregunta 5:</strong> ¿Qué caracteriza al periodo de prueba?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p5" value="a"> a) Puede rescindirse sin preaviso</label>
+                <label><input type="radio" name="p5" value="b"> b) Debe establecerse por escrito</label>
+                <label><input type="radio" name="p5" value="c"> c) Su duración depende del convenio</label>
+                <label><input type="radio" name="p5" value="d"> d) Todas las anteriores</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+        </div>
+
+        <!-- Modalidades de contrato -->
+        <div class="pregunta">
+            <p><strong>Pregunta 6:</strong> ¿Qué caracteriza a un contrato formativo en alternancia?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p6" value="a"> a) Para menores de 30 años sin calificación</label>
+                <label><input type="radio" name="p6" value="b"> b) Combina trabajo y formación</label>
+                <label><input type="radio" name="p6" value="c"> c) Primer año: 60% trabajo, 40% formación</label>
+                <label><input type="radio" name="p6" value="d"> d) Todas las anteriores</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 7:</strong> ¿Qué porcentaje máximo de horas complementarias puede tener un contrato a tiempo parcial?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p7" value="a"> a) 15% voluntarias, 30% pactadas</label>
+                <label><input type="radio" name="p7" value="b"> b) 30% voluntarias, 60% pactadas</label>
+                <label><input type="radio" name="p7" value="c"> c) 25% voluntarias, 50% pactadas</label>
+                <label><input type="radio" name="p7" value="d"> d) 10% voluntarias, 20% pactadas</label>
+            </div>
+            <div class="feedback" id="feedback7"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 8:</strong> ¿Qué contrato se usa para sustituir a un trabajador con derecho a reserva de puesto?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p8" value="a"> a) Por obra o servicio</label>
+                <label><input type="radio" name="p8" value="b"> b) Por circunstancias de producción</label>
+                <label><input type="radio" name="p8" value="c"> c) De sustitución</label>
+                <label><input type="radio" name="p8" value="d"> d) De relevo</label>
+            </div>
+            <div class="feedback" id="feedback8"></div>
+        </div>
+
+        <!-- Jornada laboral -->
+        <div class="pregunta">
+            <p><strong>Pregunta 9:</strong> ¿Cuál es la jornada máxima semanal según el Estatuto de los Trabajadores?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p9" value="a"> a) 35 horas</label>
+                <label><input type="radio" name="p9" value="b"> b) 40 horas</label>
+                <label><input type="radio" name="p9" value="c"> c) 45 horas</label>
+                <label><input type="radio" name="p9" value="d"> d) 48 horas</label>
+            </div>
+            <div class="feedback" id="feedback9"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 10:</strong> ¿Qué se considera trabajo nocturno?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p10" value="a"> a) De 20:00 a 6:00</label>
+                <label><input type="radio" name="p10" value="b"> b) De 22:00 a 6:00</label>
+                <label><input type="radio" name="p10" value="c"> c) De 23:00 a 5:00</label>
+                <label><input type="radio" name="p10" value="d"> d) De 0:00 a 8:00</label>
+            </div>
+            <div class="feedback" id="feedback10"></div>
+        </div>
+
+        <!-- Descansos -->
+        <div class="pregunta">
+            <p><strong>Pregunta 11:</strong> ¿Cuánto descanso mínimo debe haber entre jornadas?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p11" value="a"> a) 8 horas</label>
+                <label><input type="radio" name="p11" value="b"> b) 10 horas</label>
+                <label><input type="radio" name="p11" value="c"> c) 12 horas</label>
+                <label><input type="radio" name="p11" value="d"> d) 14 horas</label>
+            </div>
+            <div class="feedback" id="feedback11"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 12:</strong> ¿Qué descanso semanal tienen los menores de 18 años?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p12" value="a"> a) 1 día</label>
+                <label><input type="radio" name="p12" value="b"> b) 1,5 días</label>
+                <label><input type="radio" name="p12" value="c"> c) 2 días consecutivos</label>
+                <label><input type="radio" name="p12" value="d"> d) 3 días alternos</label>
+            </div>
+            <div class="feedback" id="feedback12"></div>
+        </div>
+
+        <!-- Cláusulas -->
+        <div class="pregunta">
+            <p><strong>Pregunta 13:</strong> ¿Cuál es la duración máxima de un pacto de permanencia?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p13" value="a"> a) 6 meses</label>
+                <label><input type="radio" name="p13" value="b"> b) 1 año</label>
+                <label><input type="radio" name="p13" value="c"> c) 2 años</label>
+                <label><input type="radio" name="p13" value="d"> d) 3 años</label>
+            </div>
+            <div class="feedback" id="feedback13"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 14:</strong> ¿Qué cláusula protege información confidencial de la empresa?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p14" value="a"> a) Pacto de no competencia</label>
+                <label><input type="radio" name="p14" value="b"> b) Cláusula de confidencialidad</label>
+                <label><input type="radio" name="p14" value="c"> c) Pacto de permanencia</label>
+                <label><input type="radio" name="p14" value="d"> d) Dedicación exclusiva</label>
+            </div>
+            <div class="feedback" id="feedback14"></div>
+        </div>
+
+        <!-- Empresas de trabajo temporal -->
+        <div class="pregunta">
+            <p><strong>Pregunta 15:</strong> ¿Qué es una ETT?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p15" value="a"> a) Empresa que contrata temporalmente trabajadores</label>
+                <label><input type="radio" name="p15" value="b"> b) Empresa que externaliza servicios</label>
+                <label><input type="radio" name="p15" value="c"> c) Empresa de formación profesional</label>
+                <label><input type="radio" name="p15" value="d"> d) Empresa de teletrabajo</label>
+            </div>
+            <div class="feedback" id="feedback15"></div>
+        </div>
+
+        <!-- Contratos especiales -->
+        <div class="pregunta">
+            <p><strong>Pregunta 16:</strong> ¿Qué contrato permite la jubilación parcial de un trabajador?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p16" value="a"> a) Contrato de relevo</label>
+                <label><input type="radio" name="p16" value="b"> b) Contrato de grupo</label>
+                <label><input type="radio" name="p16" value="c"> c) Contrato de sustitución</label>
+                <label><input type="radio" name="p16" value="d"> d) Contrato formativo</label>
+            </div>
+            <div class="feedback" id="feedback16"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 17:</strong> ¿Qué contrato es adecuado para un grupo musical?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p17" value="a"> a) Contrato de obra</label>
+                <label><input type="radio" name="p17" value="b"> b) Contrato de grupo</label>
+                <label><input type="radio" name="p17" value="c"> c) Contrato eventual</label>
+                <label><input type="radio" name="p17" value="d"> d) Contrato indefinido</label>
+            </div>
+            <div class="feedback" id="feedback17"></div>
+        </div>
+
+        <!-- Jornadas especiales -->
+        <div class="pregunta">
+            <p><strong>Pregunta 18:</strong> ¿Qué caracteriza el teletrabajo?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p18" value="a"> a) Debe ser voluntario</label>
+                <label><input type="radio" name="p18" value="b"> b) Requiere acuerdo por escrito</label>
+                <label><input type="radio" name="p18" value="c"> c) El trabajador puede revertirlo</label>
+                <label><input type="radio" name="p18" value="d"> d) Todas las anteriores</label>
+            </div>
+            <div class="feedback" id="feedback18"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 19:</strong> ¿Cuánto tiempo deben conservarse los registros de jornada?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p19" value="a"> a) 1 año</label>
+                <label><input type="radio" name="p19" value="b"> b) 2 años</label>
+                <label><input type="radio" name="p19" value="c"> c) 3 años</label>
+                <label><input type="radio" name="p19" value="d"> d) 4 años</label>
+            </div>
+            <div class="feedback" id="feedback19"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 20:</strong> ¿Qué plus recibe un trabajador con jornada a turnos?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p20" value="a"> a) Plus de nocturnidad</label>
+                <label><input type="radio" name="p20" value="b"> b) Plus de turnicidad</label>
+                <label><input type="radio" name="p20" value="c"> c) Plus de productividad</label>
+                <label><input type="radio" name="p20" value="d"> d) Plus de antigüedad</label>
+            </div>
+            <div class="feedback" id="feedback20"></div>
+        </div>
+
+        <!-- Botón para calcular la nota -->
+        <button type="button" onclick="calcularNota()">Calcular nota</button>
+    </form>
+
+    <!-- Resultado -->
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+        // Respuestas correctas
+        const respuestasCorrectas = {
+            p1: "c", // 18 años
+            p2: "d", // Todas las anteriores
+            p3: "d", // Jornada laboral
+            p4: "c", // Contrato indefinido ordinario
+            p5: "d", // Todas las anteriores
+            p6: "d", // Todas las anteriores
+            p7: "a", // 15% voluntarias, 30% pactadas
+            p8: "c", // De sustitución
+            p9: "b", // 40 horas
+            p10: "b", // De 22:00 a 6:00
+            p11: "c", // 12 horas
+            p12: "c", // 2 días consecutivos
+            p13: "c", // 2 años
+            p14: "b", // Cláusula de confidencialidad
+            p15: "a", // Empresa que contrata temporalmente trabajadores
+            p16: "a", // Contrato de relevo
+            p17: "b", // Contrato de grupo
+            p18: "d", // Todas las anteriores
+            p19: "d", // 4 años
+            p20: "b"  // Plus de turnicidad
+        };
+
+        // Función para calcular la nota
+        function calcularNota() {
+            let puntuacion = 0;
+            const totalPreguntas = Object.keys(respuestasCorrectas).length;
+
+            // Recorrer las preguntas y comparar respuestas
+            for (const pregunta in respuestasCorrectas) {
+                const respuestaSeleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
+                const feedbackDiv = document.getElementById(`feedback${pregunta.substring(1)}`);
+
+                if (respuestaSeleccionada) {
+                    if (respuestaSeleccionada.value === respuestasCorrectas[pregunta]) {
+                        puntuacion++;
+                        feedbackDiv.innerHTML = `<span class="correcta">Correcto: ${respuestaSeleccionada.value}</span>`;
+                    } else {
+                        feedbackDiv.innerHTML = `<span class="incorrecta">Incorrecto. La respuesta correcta es: ${respuestasCorrectas[pregunta]}</span>`;
+                    }
+                } else {
+                    feedbackDiv.innerHTML = `<span class="incorrecta">No has seleccionado una respuesta. La respuesta correcta es: ${respuestasCorrectas[pregunta]}</span>`;
+                }
+            }
+
+            // Calcular la nota sobre 10
+            const nota = (puntuacion / totalPreguntas) * 10;
+
+            // Mostrar el resultado
+            const resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = `Tu nota es: <span class="${nota >= 5 ? 'correcta' : 'incorrecta'}">${nota.toFixed(2)}/10</span>`;
+        }
+    </script>
+</body>
+</html>
