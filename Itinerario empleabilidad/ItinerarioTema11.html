@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tema 11: Contratos Laborales</title>
     <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Estilo para destacar preguntas probables de examen */
+        .examen {
+            color: red;
+            font-weight: bold;
+            animation: parpadeo 1s infinite;
+        }
+
+        @keyframes parpadeo {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
 </head>
 <body>
     <h1>Tema 11: Contratos Laborales</h1>
@@ -76,7 +89,7 @@
                             <li>Por sustitución</li>
                         </ul>
                     </li>
-                    <li><strong>Formativos:</strong>
+                    <li><strong class="examen">Formativos:</strong>
                         <ul>
                             <li>En alternancia (menos de 30 años)</li>
                             <li>Retribución progresiva (60%/40% primer año, 75%/25% segundo año)</li>
@@ -103,7 +116,7 @@
                 <h3>7. Empresas de Trabajo Temporal</h3>
                 <ul>
                     <li>Reclutamiento y selección de personal</li>
-                    <li>Outsourcing (externalización de servicios)</li>
+                    <li><span class="examen">Outsourcing (externalización de servicios)</span></li>
                 </ul>
                 
                 <h3>8. Tiempo de Trabajo</h3>
