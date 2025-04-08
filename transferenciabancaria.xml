@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transferencias-bancarias>
+    <transferencia>
+        <fecha>2025-04-08</fecha>
+        <emisor>
+            <nombre>Eugenio</nombre>
+            <cuenta>123456</cuenta>
+
+        </emisor>
+        <receptor>
+            <nombre>Pablo</nombre>
+            <cuenta>223456</cuenta>
+            <cantidad>50000</cantidad>
+            <moneda>LEUROS</moneda>
+        </receptor>
+    </transferencia>
+    <transferencia>
+        <fecha>2025-04-08</fecha>
+        <emisor>
+            <nombre>MIquel</nombre>
+            <cuenta>123489</cuenta>
+
+        </emisor>
+        <receptor>
+            <nombre>NUria</nombre>
+            <cuenta>2234556</cuenta>
+            <cantidad>60000</cantidad>
+            <moneda>LEUROS</moneda>
+        </receptor>
+    </transferencia>
+</transferencias-bancarias>
