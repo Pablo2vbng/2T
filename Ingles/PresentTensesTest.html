@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Present Tenses</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .correcta {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrecta {
+            color: red;
+            font-weight: bold;
+        }
+        .pregunta {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .respuesta {
+            margin-left: 20px;
+        }
+        .feedback {
+            margin-top: 10px;
+            padding: 5px;
+        }
+        .resultado {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test - Present Tenses</h1>
+
+    <form id="testForm">
+        <!-- Question 1 -->
+        <div class="pregunta">
+            <p><strong>Question 1:</strong> Nancy ____________ the same route every morning</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p1" value="a"> a. run</label>
+                <label><input type="radio" name="p1" value="b"> b. running</label>
+                <label><input type="radio" name="p1" value="c"> c. runs</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="pregunta">
+            <p><strong>Question 2:</strong> I _________ with my sister this weekend</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p2" value="a"> a. am staying</label>
+                <label><input type="radio" name="p2" value="b"> b. staying</label>
+                <label><input type="radio" name="p2" value="c"> c. stay</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="pregunta">
+            <p><strong>Question 3:</strong> All cameras _____________ in a similar way I think</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p3" value="a"> a. are working</label>
+                <label><input type="radio" name="p3" value="b"> b. work</label>
+                <label><input type="radio" name="p3" value="c"> c. works</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="pregunta">
+            <p><strong>Question 4:</strong> I ________________ to my friends on Facebook at the moment</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p4" value="a"> a. talk</label>
+                <label><input type="radio" name="p4" value="b"> b. talking</label>
+                <label><input type="radio" name="p4" value="c"> c. am talking</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="pregunta">
+            <p><strong>Question 5:</strong> Dad _______________ golf with his friends every Saturday morning</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p5" value="a"> a. plays</label>
+                <label><input type="radio" name="p5" value="b"> b. is playing</label>
+                <label><input type="radio" name="p5" value="c"> c. playing</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="pregunta">
+            <p><strong>Question 6:</strong> Does anyone know how this app _______?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p6" value="a"> a. Works</label>
+                <label><input type="radio" name="p6" value="b"> b. Is working</label>
+                <label><input type="radio" name="p6" value="c"> c. work</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="pregunta">
+            <p><strong>Question 7:</strong> Mum never ________ the train to work - she says it's too slow</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p7" value="a"> a. get</label>
+                <label><input type="radio" name="p7" value="b"> b. getting</label>
+                <label><input type="radio" name="p7" value="c"> c. gets</label>
+            </div>
+            <div class="feedback" id="feedback7"></div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="pregunta">
+            <p><strong>Question 8:</strong> The Earth _________ round the Sun</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p8" value="a"> a. goes</label>
+                <label><input type="radio" name="p8" value="b"> b. go</label>
+                <label><input type="radio" name="p8" value="c"> c. is going</label>
+            </div>
+            <div class="feedback" id="feedback8"></div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="pregunta">
+            <p><strong>Question 9:</strong> The sun _________ in the west.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p9" value="a"> a. set</label>
+                <label><input type="radio" name="p9" value="b"> b. sets</label>
+                <label><input type="radio" name="p9" value="c"> c. is setting</label>
+                <label><input type="radio" name="p9" value="d"> d. are setting</label>
+                <label><input type="radio" name="p9" value="e"> e. am setting</label>
+            </div>
+            <div class="feedback" id="feedback9"></div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="pregunta">
+            <p><strong>Question 10:</strong> The water ___________ now.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p10" value="a"> a. is boiling</label>
+                <label><input type="radio" name="p10" value="b"> b. boil</label>
+                <label><input type="radio" name="p10" value="c"> c. boils</label>
+                <label><input type="radio" name="p10" value="d"> d. are boiling</label>
+                <label><input type="radio" name="p10" value="e"> e. am boiling</label>
+            </div>
+            <div class="feedback" id="feedback10"></div>
+        </div>
+
+        <!-- Question 11 -->
+        <div class="pregunta">
+            <p><strong>Question 11:</strong> He ______________ tomorrow because he is ill.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p11" value="a"> a. isn't working</label>
+                <label><input type="radio" name="p11" value="b"> b. aren't working</label>
+                <label><input type="radio" name="p11" value="c"> c. am not working</label>
+                <label><input type="radio" name="p11" value="d"> d. don't work</label>
+                <label><input type="radio" name="p11" value="e"> e. doesn't work</label>
+            </div>
+            <div class="feedback" id="feedback11"></div>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="pregunta">
+            <p><strong>Question 12:</strong> I ___________ the radio every morning.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p12" value="a"> a. listen</label>
+                <label><input type="radio" name="p12" value="b"> b. am listening</label>
+                <label><input type="radio" name="p12" value="c"> c. listens</label>
+                <label><input type="radio" name="p12" value="d"> d. are listening</label>
+                <label><input type="radio" name="p12" value="e"> e. is listening</label>
+            </div>
+            <div class="feedback" id="feedback12"></div>
+        </div>
+
+        <!-- Question 13 -->
+        <div class="pregunta">
+            <p><strong>Question 13:</strong> Ssshhh! Mum _________ at this moment.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p13" value="a"> a. is sleeping</label>
+                <label><input type="radio" name="p13" value="b"> b. are sleeping</label>
+                <label><input type="radio" name="p13" value="c"> c. sleeps</label>
+                <label><input type="radio" name="p13" value="d"> d. sleep</label>
+                <label><input type="radio" name="p13" value="e"> e. am sleeping</label>
+            </div>
+            <div class="feedback" id="feedback13"></div>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="pregunta">
+            <p><strong>Question 14:</strong> The Earth __________ around the Sun.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p14" value="a"> a. turn</label>
+                <label><input type="radio" name="p14" value="b"> b. turns</label>
+                <label><input type="radio" name="p14" value="c"> c. is turning</label>
+                <label><input type="radio" name="p14" value="d"> d. are turning</label>
+                <label><input type="radio" name="p14" value="e"> e. am turning</label>
+            </div>
+            <div class="feedback" id="feedback14"></div>
+        </div>
+
+        <!-- Question 15 -->
+        <div class="pregunta">
+            <p><strong>Question 15:</strong> She usually __________ tennis on Sundays.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p15" value="a"> a. plays</label>
+                <label><input type="radio" name="p15" value="b"> b. play</label>
+                <label><input type="radio" name="p15" value="c"> c. is playing</label>
+                <label><input type="radio" name="p15" value="d"> d. are playing</label>
+                <label><input type="radio" name="p15" value="e"> e. am playing</label>
+            </div>
+            <div class="feedback" id="feedback15"></div>
+        </div>
+
+        <!-- Question 16 -->
+        <div class="pregunta">
+            <p><strong>Question 16:</strong> You always _____________ my pen.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p16" value="a"> a. take</label>
+                <label><input type="radio" name="p16" value="b"> b. takes</label>
+                <label><input type="radio" name="p16" value="c"> c. is taking</label>
+                <label><input type="radio" name="p16" value="d"> d. are taking</label>
+                <label><input type="radio" name="p16" value="e"> e. am taking</label>
+            </div>
+            <div class="feedback" id="feedback16"></div>
+        </div>
+
+        <!-- Question 17 -->
+        <div class="pregunta">
+            <p><strong>Question 17:</strong> We ___________ in the swimming pool right now.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p17" value="a"> a. are swimming</label>
+                <label><input type="radio" name="p17" value="b"> b. is swimming</label>
+                <label><input type="radio" name="p17" value="c"> c. am swimming</label>
+                <label><input type="radio" name="p17" value="d"> d. swims</label>
+                <label><input type="radio" name="p17" value="e"> e. swim</label>
+            </div>
+            <div class="feedback" id="feedback17"></div>
+        </div>
+
+        <!-- Question 18 -->
+        <div class="pregunta">
+            <p><strong>Question 18:</strong> My dad ___________ a lot during the year.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p18" value="a"> a. travels</label>
+                <label><input type="radio" name="p18" value="b"> b. travel</label>
+                <label><input type="radio" name="p18" value="c"> c. is travelling</label>
+                <label><input type="radio" name="p18" value="d"> d. are travelling</label>
+                <label><input type="radio" name="p18" value="e"> e. am travelling</label>
+            </div>
+            <div class="feedback" id="feedback18"></div>
+        </div>
+
+        <!-- Question 19 -->
+        <div class="pregunta">
+            <p><strong>Question 19:</strong> Where _____ you ______?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p19" value="a"> a. do/live</label>
+                <label><input type="radio" name="p19" value="b"> b. does/live</label>
+                <label><input type="radio" name="p19" value="c"> c. is/living</label>
+                <label><input type="radio" name="p19" value="d"> d. are/living</label>
+                <label><input type="radio" name="p19" value="e"> e. am/living</label>
+            </div>
+            <div class="feedback" id="feedback19"></div>
+        </div>
+
+        <!-- Question 20 -->
+        <div class="pregunta">
+            <p><strong>Question 20:</strong> I _________ at 10 o'clock every night.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p20" value="a"> a. go to bed</label>
+                <label><input type="radio" name="p20" value="b"> b. goes to bed</label>
+                <label><input type="radio" name="p20" value="c"> c. am going to bed</label>
+                <label><input type="radio" name="p20" value="d"> d. is going to bed</label>
+                <label><input type="radio" name="p20" value="e"> e. are going to bed</label>
+            </div>
+            <div class="feedback" id="feedback20"></div>
+        </div>
+
+        <!-- Question 21 -->
+        <div class="pregunta">
+            <p><strong>Question 21:</strong> ________________ cereal for breakfast every day?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p21" value="a"> a. are you eating</label>
+                <label><input type="radio" name="p21" value="b"> b. do you eat</label>
+                <label><input type="radio" name="p21" value="c"> c. does you eat</label>
+                <label><input type="radio" name="p21" value="d"> d. do you eating</label>
+            </div>
+            <div class="feedback" id="feedback21"></div>
+        </div>
+
+        <!-- Question 22 -->
+        <div class="pregunta">
+            <p><strong>Question 22:</strong> I _________________ a very funny book at the moment.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p22" value="a"> a. is reading</label>
+                <label><input type="radio" name="p22" value="b"> b. do read</label>
+                <label><input type="radio" name="p22" value="c"> c. am reading</label>
+                <label><input type="radio" name="p22" value="d"> d. read</label>
+            </div>
+            <div class="feedback" id="feedback22"></div>
+        </div>
+
+        <!-- Question 23 -->
+        <div class="pregunta">
+            <p><strong>Question 23:</strong> David __________________ late.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p23" value="a"> a. is always arriving</label>
+                <label><input type="radio" name="p23" value="b"> b. always is arriving</label>
+                <label><input type="radio" name="p23" value="c"> c. always arrive</label>
+                <label><input type="radio" name="p23" value="d"> d. arrive always</label>
+            </div>
+            <div class="feedback" id="feedback23"></div>
+        </div>
+
+        <!-- Question 24 -->
+        <div class="pregunta">
+            <p><strong>Question 24:</strong> I'm vegetarian. I ______________ meat.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p24" value="a"> a. do eat not</label>
+                <label><input type="radio" name="p24" value="b"> b. not eat</label>
+                <label><input type="radio" name="p24" value="c"> c. don't eat</label>
+                <label><input type="radio" name="p24" value="d"> d. am not eating</label>
+            </div>
+            <div class="feedback" id="feedback24"></div>
+        </div>
+
+        <!-- Question 25 -->
+        <div class="pregunta">
+            <p><strong>Question 25:</strong> Shhh! Don't shout, the baby ______________</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p25" value="a"> a. sleeps</label>
+                <label><input type="radio" name="p25" value="b"> b. sleep</label>
+                <label><input type="radio" name="p25" value="c"> c. is sleeping</label>
+                <label><input type="radio" name="p25" value="d"> d. sleeping</label>
+            </div>
+            <div class="feedback" id="feedback25"></div>
+        </div>
+
+        <!-- Botón para calcular la nota -->
+        <button type="button" onclick="calcularNota()">Calculate score</button>
+    </form>
+
+    <!-- Resultado -->
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+        // Respuestas correctas
+        const respuestasCorrectas = {
+            p1: "c", // runs
+            p2: "a", // am staying
+            p3: "b", // work
+            p4: "c", // am talking
+            p5: "a", // plays
+            p6: "a", // Works
+            p7: "c", // gets
+            p8: "a", // goes
+            p9: "b", // sets
+            p10: "a", // is boiling
+            p11: "a", // isn't working
+            p12: "a", // listen
+            p13: "a", // is sleeping
+            p14: "b", // turns
+            p15: "a", // plays
+            p16: "a", // take
+            p17: "a", // are swimming
+            p18: "a", // travels
+            p19: "a", // do/live
+            p20: "a", // go to bed
+            p21: "b", // do you eat
+            p22: "c", // am reading
+            p23: "a", // is always arriving
+            p24: "c", // don't eat
+            p25: "c"  // is sleeping
+        };
+
+        // Función para calcular la nota
+        function calcularNota() {
+            let puntuacion = 0;
+            const totalPreguntas = Object.keys(respuestasCorrectas).length;
+
+            // Recorrer las preguntas y comparar respuestas
+            for (const pregunta in respuestasCorrectas) {
+                const respuestaSeleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
+                const feedbackDiv = document.getElementById(`feedback${pregunta.substring(1)}`);
+
+                if (respuestaSeleccionada) {
+                    if (respuestaSeleccionada.value === respuestasCorrectas[pregunta]) {
+                        puntuacion++;
+                        feedbackDiv.innerHTML = `<span class="correcta">Correct: ${respuestaSeleccionada.nextSibling.nodeValue.trim()}</span>`;
+                    } else {
+                        feedbackDiv.innerHTML = `<span class="incorrecta">Incorrect. The right answer is: ${respuestasCorrectas[pregunta]}</span>`;
+                    }
+                } else {
+                    feedbackDiv.innerHTML = `<span class="incorrecta">You didn't select an answer. The right answer is: ${respuestasCorrectas[pregunta]}</span>`;
+                }
+            }
+
+            // Calcular la nota sobre 10
+            const nota = (puntuacion / totalPreguntas) * 10;
+
+            // Mostrar el resultado
+            const resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = `Your score is: <span class="${nota >= 5 ? 'correcta' : 'incorrecta'}">${nota.toFixed(2)}/10</span>`;
+        }
+    </script>
+</body>
+</html>
