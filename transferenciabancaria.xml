@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transferencias-bancarias xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="transferencia.xsd">
+    <transferencia>
+        <fecha>2025-04-08</fecha>
+        <emisor>
+            <nombre>Eugenio</nombre>
+            <cuenta>123456</cuenta>
+
+        </emisor>
+        <receptor>
+            <nombre>Pablo</nombre>
+            <cuenta>223456</cuenta>
+            <cantidad>50000</cantidad>
+            <moneda>LEUROS</moneda>
+        </receptor>
+    </transferencia>
+    <transferencia>
+        <fecha>2025-04-08</fecha>
+        <emisor>
+            <nombre>MIquel</nombre>
+            <cuenta>123489</cuenta>
+
+        </emisor>
+        <receptor>
+            <nombre>NUria</nombre>
+            <cuenta>2234556</cuenta>
+            <cantidad>60000</cantidad>
+            <moneda>LEUROS</moneda>
+        </receptor>
+    </transferencia>
+    <transferencia>
+        <fecha>2023-09-09</fecha>
+        <emisor>
+            <nombre>Pablo</nombre>
+            <cuenta>654321</cuenta>
+        </emisor>
+        <receptor>
+            <nombre>Eugenio</nombre>
+            <cuenta>123498</cuenta>
+            <cantidad>654300</cantidad>
+            <moneda>bitcoin</moneda>
+        </receptor>
+    </transferencia>
+</transferencias-bancarias>
