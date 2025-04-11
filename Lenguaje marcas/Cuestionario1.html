@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Lenguajes de Marcas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .pregunta {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .respuesta {
+            margin-left: 20px;
+        }
+        label {
+            display: block;
+            margin: 8px 0;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .correcta {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrecta {
+            color: red;
+            font-weight: bold;
+        }
+        .resultado {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .feedback {
+            margin-top: 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test - Lenguajes de Marcas</h1>
+
+    <form id="testForm">
+        <!-- Question 1 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 1:</strong> ¿Qué ocurre cuando un documento XML se valida contra un esquema XSD o DTD?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p1" value="a"> a. Se comprueba si el documento XML está bien formado, pero no si sigue la estructura definida por el esquema o DTD.</label>
+                <label><input type="radio" name="p1" value="b"> b. El documento XML se transforma en un nuevo formato definido por el esquema XSD o DTD.</label>
+                <label><input type="radio" name="p1" value="c"> c. Se comprueba si el documento XML sigue la estructura y reglas definidas por el esquema XSD o DTD.</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 2:</strong> ¿Cuál es la forma correcta de usar la etiqueta de título (heading) de nivel 2 en HTML?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p2" value="a"> a. &lt;heading level="2"&gt;Título&lt;/heading&gt;</label>
+                <label><input type="radio" name="p2" value="b"> b. &lt;title-2&gt;Título&lt;/title-2&gt;</label>
+                <label><input type="radio" name="p2" value="c"> c. &lt;h2&gt;Título&lt;/h2&gt;</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 3:</strong> ¿Cómo se define correctamente un estilo para todos los elementos &lt;p&gt; en un fichero CSS?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p3" value="a"> a. p.class { font-size: 14px; color: blue; }</label>
+                <label><input type="radio" name="p3" value="b"> b. &lt;p&gt; { font-size: 14px; color: blue; }</label>
+                <label><input type="radio" name="p3" value="c"> c. p { font-size: 14px; color: blue; }</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 4:</strong> ¿Qué es un lenguaje de marcas?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p4" value="a"> a. Un tipo de lenguaje de programación que se utiliza para describir la estructura de los datos.</label>
+                <label><input type="radio" name="p4" value="b"> b. Un lenguaje que se utiliza para desarrollar sistemas operativos.</label>
+                <label><input type="radio" name="p4" value="c"> c. Un lenguaje que se utiliza para realizar cálculos matemáticos.</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 5:</strong> Si tienes una regla CSS definida en un fichero externo (styles.css) y la misma regla está definida en un elemento HTML con un estilo en línea, ¿cuál se aplicará?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p5" value="a"> a. El estilo en el fichero CSS externo (styles.css).</label>
+                <label><input type="radio" name="p5" value="b"> b. El estilo en línea en el elemento HTML.</label>
+                <label><input type="radio" name="p5" value="c"> c. Ninguno de los estilos se aplicará.</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 6:</strong> ¿Qué es la normalización en el contexto de los lenguajes de marcas?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p6" value="a"> a. Es el proceso de optimización de una base de datos relacional para reducir la redundancia de datos.</label>
+                <label><input type="radio" name="p6" value="b"> b. Es el proceso de asegurar que un documento de lenguaje de marcas esté bien formado y sea válido de acuerdo con una definición de tipo de documento o esquema.</label>
+                <label><input type="radio" name="p6" value="c"> c. Es el proceso de convertir un documento de lenguaje de marcas a un formato binario para mejorar su rendimiento.</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 7:</strong> ¿Qué lenguaje de marcado es comúnmente utilizado para la representación de páginas web?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p7" value="a"> a. HTML</label>
+                <label><input type="radio" name="p7" value="b"> b. XQuery</label>
+                <label><input type="radio" name="p7" value="c"> c. XPath</label>
+            </div>
+            <div class="feedback" id="feedback7"></div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 8:</strong> ¿Qué diferencia a un documento XML válido de uno simplemente bien formado?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p8" value="a"> a. No hay ninguna diferencia entre un documento XML válido y uno bien formado.</label>
+                <label><input type="radio" name="p8" value="b"> b. Un documento XML válido es aquel que sigue correctamente las reglas de anidamiento de etiquetas, mientras que un documento bien formado sigue un esquema o DTD.</label>
+                <label><input type="radio" name="p8" value="c"> c. Un documento XML válido sigue un esquema o DTD, mientras que un documento bien formado solo sigue las reglas de anidamiento y cierre de etiquetas.</label>
+            </div>
+            <div class="feedback" id="feedback8"></div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 9:</strong> ¿Cómo se puede agregar un enlace a otra página web en HTML?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p9" value="a"> a. Utilizando la etiqueta &lt;enlace&gt; y el atributo "url" para especificar la dirección web.</label>
+                <label><input type="radio" name="p9" value="b"> b. Utilizando la etiqueta &lt;link&gt; y el atributo "source" para especificar la dirección web.</label>
+                <label><input type="radio" name="p9" value="c"> c. Utilizando la etiqueta &lt;a&gt; y el atributo "href" para especificar la dirección web.</label>
+            </div>
+            <div class="feedback" id="feedback9"></div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 10:</strong> ¿Cuál de las siguientes afirmaciones es correcta con respecto a un documento XML bien formado?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p10" value="a"> a. Un documento XML bien formado debe tener todas las etiquetas correctamente anidadas y cerradas.</label>
+                <label><input type="radio" name="p10" value="b"> b. Un documento XML bien formado puede contener etiquetas sin cerrar.</label>
+                <label><input type="radio" name="p10" value="c"> c. Un documento XML bien formado puede tener múltiples elementos raíz.</label>
+            </div>
+            <div class="feedback" id="feedback10"></div>
+        </div>
+
+        <!-- Question 11 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 11:</strong> ¿Qué es un DTD (Definición de Tipo de Documento) en el contexto de los lenguajes de marcas?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p11" value="a"> a. Es un conjuntos de reglas que definen la estructura de un documento de lenguaje de marcas.</label>
+                <label><input type="radio" name="p11" value="b"> b. Es una versión más reciente de HTML que incluye soporte para multimedia.</label>
+                <label><input type="radio" name="p11" value="c"> c. Es una especificación de software utilizada para interpretar un lenguaje de marcas.</label>
+            </div>
+            <div class="feedback" id="feedback11"></div>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 12:</strong> ¿Qué es una etiqueta de cierre en HTML?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p12" value="a"> a. Es una etiqueta que indica el final de la página HTML.</label>
+                <label><input type="radio" name="p12" value="b"> b. Es una etiqueta que inicia un elemento y siempre tiene la forma "&lt;nombreEtiqueta&gt;".</label>
+                <label><input type="radio" name="p12" value="c"> c. Es una etiqueta que siempre tiene la forma "&lt;/nombreEtiqueta&gt;" y se utiliza para indicar el final de un elemento.</label>
+            </div>
+            <div class="feedback" id="feedback12"></div>
+        </div>
+
+        <!-- Question 13 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 13:</strong> ¿Cuál de las siguientes afirmaciones es correcta con respecto a los esquemas XSD en comparación con los DTD?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p13" value="a"> a. Los esquemas XSD y DTD son idénticos y pueden usarse de manera intercambiable en cualquier situación.</label>
+                <label><input type="radio" name="p13" value="b"> b. Los esquemas XSD son más potentes y flexibles que los DTD, permitiendo la definición de tipos de datos y utilizando XML para su definición.</label>
+                <label><input type="radio" name="p13" value="c"> c. Los esquemas XSD no pueden definir la estructura de un documento XML, solo los DTD pueden hacerlo.</label>
+            </div>
+            <div class="feedback" id="feedback13"></div>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 14:</strong> ¿Cómo se inserta correctamente una imagen en una página HTML?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p14" value="a"> a. &lt;img src="imagen.jpg" alt="Descripción de la imagen"&gt;</label>
+                <label><input type="radio" name="p14" value="b"> b. &lt;img source="imagen.jpg" description="Descripción de la imagen"&gt;</label>
+                <label><input type="radio" name="p14" value="c"> c. &lt;img href="imagen.jpg" alt="Descripción de la imagen"&gt;</label>
+            </div>
+            <div class="feedback" id="feedback14"></div>
+        </div>
+
+        <!-- Question 15 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 15:</strong> ¿Cuál es la forma correcta de vincular una hoja de estilo CSS externa en un documento HTML?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p15" value="a"> a. &lt;link rel="stylesheet" type="text/css" href="styles.css"&gt;</label>
+                <label><input type="radio" name="p15" value="b"> b. &lt;link rel="stylesheet" href="styles.css"&gt;</label>
+                <label><input type="radio" name="p15" value="c"> c. &lt;link href="styles.css" type="text/css"&gt;</label>
+            </div>
+            <div class="feedback" id="feedback15"></div>
+        </div>
+
+        <!-- Botón para calcular la nota -->
+        <button type="button" onclick="calcularNota()">Calcular puntuación</button>
+    </form>
+
+    <!-- Resultado -->
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+        // Respuestas correctas
+        const respuestasCorrectas = {
+            p1: "c", // Se comprueba si el documento XML sigue la estructura y reglas definidas por el esquema XSD o DTD.
+            p2: "c", // <h2>Título</h2>
+            p3: "c", // p { font-size: 14px; color: blue; }
+            p4: "a", // Un tipo de lenguaje de programación que se utiliza para describir la estructura de los datos.
+            p5: "b", // El estilo en línea en el elemento HTML.
+            p6: "b", // Es el proceso de asegurar que un documento de lenguaje de marcas esté bien formado y sea válido de acuerdo con una definición de tipo de documento o esquema.
+            p7: "a", // HTML
+            p8: "c", // Un documento XML válido sigue un esquema o DTD, mientras que un documento bien formado solo sigue las reglas de anidamiento y cierre de etiquetas.
+            p9: "c", // Utilizando la etiqueta <a> y el atributo "href" para especificar la dirección web.
+            p10: "a", // Un documento XML bien formado debe tener todas las etiquetas correctamente anidadas y cerradas.
+            p11: "a", // Es un conjuntos de reglas que definen la estructura de un documento de lenguaje de marcas.
+            p12: "c", // Es una etiqueta que siempre tiene la forma "</nombreEtiqueta>" y se utiliza para indicar el final de un elemento.
+            p13: "b", // Los esquemas XSD son más potentes y flexibles que los DTD, permitiendo la definición de tipos de datos y utilizando XML para su definición.
+            p14: "a", // <img src="imagen.jpg" alt="Descripción de la imagen">
+            p15: "a"  // <link rel="stylesheet" type="text/css" href="styles.css">
+        };
+
+        // Función para calcular la nota
+        function calcularNota() {
+            let puntuacion = 0;
+            const totalPreguntas = Object.keys(respuestasCorrectas).length;
+
+            // Recorrer las preguntas y comparar respuestas
+            for (const pregunta in respuestasCorrectas) {
+                const respuestaSeleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
+                const feedbackDiv = document.getElementById(`feedback${pregunta.substring(1)}`);
+
+                if (respuestaSeleccionada) {
+                    if (respuestaSeleccionada.value === respuestasCorrectas[pregunta]) {
+                        puntuacion++;
+                        feedbackDiv.innerHTML = `<span class="correcta">Correcto: ${respuestaSeleccionada.nextSibling.nodeValue.trim()}</span>`;
+                    } else {
+                        feedbackDiv.innerHTML = `<span class="incorrecta">Incorrecto. La respuesta correcta es: ${document.querySelector(`input[name="${pregunta}"][value="${respuestasCorrectas[pregunta]}"]`).nextSibling.nodeValue.trim()}</span>`;
+                    }
+                } else {
+                    feedbackDiv.innerHTML = `<span class="incorrecta">No seleccionaste una respuesta. La respuesta correcta es: ${document.querySelector(`input[name="${pregunta}"][value="${respuestasCorrectas[pregunta]}"]`).nextSibling.nodeValue.trim()}</span>`;
+                }
+            }
+
+            // Calcular la nota sobre 10
+            const nota = (puntuacion / totalPreguntas) * 10;
+
+            // Mostrar el resultado
+            const resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = `Tu puntuación es: <span class="${nota >= 5 ? 'correcta' : 'incorrecta'}">${nota.toFixed(2)}/10</span>`;
+        }
+    </script>
+</body>
+</html>
