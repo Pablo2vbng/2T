@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test - Relación Laboral</title>
     <link rel="stylesheet" href="../style.css">
+    <style>
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <h1>Test - Relación Laboral</h1>
@@ -36,7 +48,7 @@
         <div class="pregunta">
             <p><strong>Pregunta 3:</strong> Un contrato temporal es aquel que...</p>
             <div class="respuesta">
-                <label><input type="radio" name="p3" value="a"> a) Tiene una duración determinada</label>
+                <label><input type="radio" name="p3" value="a"> a) Tiene una duración determinada.</label>
                 <label><input type="radio" name="p3" value="b"> b) Se puede extinguir cuando lo decida la empresa.</label>
                 <label><input type="radio" name="p3" value="c"> c) No incorpora la fecha de finalización del contrato.</label>
             </div>
@@ -169,6 +181,46 @@
         </div>
     </form>
 
-    <script src="script.js"></script>
+    <script>
+        function validar() {
+            const respuestasCorrectas = {
+                p1: 'b',
+                p2: 'c',
+                p3: 'a',
+                p4: 'c',
+                p5: 'c',
+                p6: 'c',
+                p7: 'b',
+                p8: 'a',
+                p9: 'a',
+                p10: 'c',
+                p11: 'b',
+                p12: 'c',
+                p13: 'a',
+                p14: 'b'
+            };
+
+            // Itera sobre las preguntas y valida las respuestas
+            for (let i = 1; i <= 14; i++) {
+                const pregunta = document.querySelector(`input[name="p${i}"]:checked`);
+                const feedback = document.getElementById(`feedback${i}`);
+                
+                if (pregunta) {
+                    if (pregunta.value === respuestasCorrectas[`p${i}`]) {
+                        feedback.textContent = "¡Correcto!";
+                        feedback.classList.add("correct");
+                        feedback.classList.remove("incorrect");
+                    } else {
+                        feedback.textContent = "Incorrecto.";
+                        feedback.classList.add("incorrect");
+                        feedback.classList.remove("correct");
+                    }
+                } else {
+                    feedback.textContent = "Por favor, selecciona una respuesta.";
+                    feedback.classList.remove("correct", "incorrect");
+                }
+            }
+        }
+    </script>
 </body>
 </html>
