@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Posibles Preguntas de Examen - Tema Laboral</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .examen {
+            color: red;
+            font-weight: bold;
+            animation: parpadeo 1s infinite;
+        }
+
+        @keyframes parpadeo {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .explicacion {
+            margin-top: 10px;
+            font-style: italic;
+            color: #555;
+        }
+
+        .resultados {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test de Posibles Preguntas de Examen - Tema Laboral</h1>
+
+    <form id="testForm">
+        <!-- Pregunta 1 -->
+        <div>
+            <h3 class="examen">1. ¿Qué duración tiene un desplazamiento temporal?</h3>
+            <label><input type="radio" name="q1" value="a"> a) Menos de 6 meses en un periodo de 3 años</label><br>
+            <label><input type="radio" name="q1" value="b"> b) Menos de 12 meses en un periodo de 3 años</label><br>
+            <label><input type="radio" name="q1" value="c"> c) Menos de 3 meses en un periodo de 2 años</label><br>
+            <p class="explicacion" id="exp_q1"></p>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div>
+            <h3 class="examen">2. ¿Qué caracteriza a un traslado definitivo?</h3>
+            <label><input type="radio" name="q2" value="a"> a) El trabajador se desplaza temporalmente durante menos de un año</label><br>
+            <label><input type="radio" name="q2" value="b"> b) El trabajador es trasladado permanentemente a otro lugar de trabajo</label><br>
+            <label><input type="radio" name="q2" value="c"> c) El trabajador realiza un cambio de jornada laboral</label><br>
+            <p class="explicacion" id="exp_q2"></p>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div>
+            <h3 class="examen">3. ¿Qué implica un cambio de jornada laboral?</h3>
+            <label><input type="radio" name="q3" value="a"> a) Cambio de las condiciones de trabajo del trabajador</label><br>
+            <label><input type="radio" name="q3" value="b"> b) Modificación de la empresa para adaptarse a nuevas tecnologías</label><br>
+            <label><input type="radio" name="q3" value="c"> c) Modificación de la jornada diaria o semanal de trabajo</label><br>
+            <p class="explicacion" id="exp_q3"></p>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div>
+            <h3 class="examen">4. ¿Cuál es el plazo máximo para reclamar un incumplimiento grave del empresario?</h3>
+            <label><input type="radio" name="q4" value="a"> a) 6 meses</label><br>
+            <label><input type="radio" name="q4" value="b"> b) 12 meses</label><br>
+            <label><input type="radio" name="q4" value="c"> c) 24 meses</label><br>
+            <p class="explicacion" id="exp_q4"></p>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div>
+            <h3 class="examen">5. ¿Cuánto es la indemnización por despido objetivo?</h3>
+            <label><input type="radio" name="q5" value="a"> a) 20 días por año trabajado</label><br>
+            <label><input type="radio" name="q5" value="b"> b) 35 días por año trabajado, con un máximo de 24 mensualidades</label><br>
+            <label><input type="radio" name="q5" value="c"> c) 45 días por año trabajado, con un máximo de 18 mensualidades</label><br>
+            <p class="explicacion" id="exp_q5"></p>
+        </div>
+
+        <!-- Pregunta 6 -->
+        <div>
+            <h3 class="examen">6. ¿Qué debe incluir el finiquito de un trabajador?</h3>
+            <label><input type="radio" name="q6" value="a"> a) El salario mensual del trabajador</label><br>
+            <label><input type="radio" name="q6" value="b"> b) Los días trabajados, las vacaciones no disfrutadas y las pagas prorrateadas</label><br>
+            <label><input type="radio" name="q6" value="c"> c) Solo el salario pendiente de cobro</label><br>
+            <p class="explicacion" id="exp_q6"></p>
+        </div>
+
+        <div>
+            <button type="button" onclick="mostrarResultados()">Ver Resultados</button>
+        </div>
+
+        <div class="resultados" id="resultados"></div>
+    </form>
+
+    <script>
+        function mostrarResultados() {
+            var respuestas = {
+                q1: "b",
+                q2: "b",
+                q3: "c",
+                q4: "b",
+                q5: "b",
+                q6: "b"
+            };
+            
+            var explicaciones = {
+                q1: "El desplazamiento temporal se considera como tal si dura menos de 12 meses en un periodo de 3 años.",
+                q2: "El traslado definitivo implica que el trabajador es permanentemente trasladado a otro lugar de trabajo.",
+                q3: "Un cambio de jornada laboral implica una modificación en las horas trabajadas o su distribución.",
+                q4: "El trabajador tiene un plazo máximo de 1 año para reclamar por incumplimientos graves del empresario.",
+                q5: "La indemnización por despido objetivo es de 35 días por año trabajado, con un máximo de 24 mensualidades.",
+                q6: "El finiquito incluye todos los conceptos pendientes, como días trabajados, vacaciones no disfrutadas y pagas prorrateadas."
+            };
+
+            var respuestasUsuario = document.forms['testForm'];
+            var correctas = 0;
+
+            // Comprobar respuestas
+            for (var i = 1; i <= 6; i++) {
+                var pregunta = 'q' + i;
+                var seleccionada = respuestasUsuario[pregunta].value;
+                
+                // Mostrar explicaciones
+                document.getElementById('exp_' + pregunta).textContent = explicaciones[pregunta];
+
+                if (seleccionada === respuestas[pregunta]) {
+                    correctas++;
+                }
+            }
+
+            // Mostrar resultados
+            var resultados = document.getElementById('resultados');
+            resultados.textContent = "Has acertado " + correctas + " de 6 preguntas.";
+        }
+    </script>
+
+</body>
+</html>
