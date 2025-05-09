@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Relación Laboral</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test - Relación Laboral</h1>
+
+    <form id="testForm">
+        <!-- Pregunta 1 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 1:</strong> ¿Quién ejerce el poder de dirección de las personas trabajadoras contratadas a través de una ETT?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p1" value="a"> a) La ETT.</label>
+                <label><input type="radio" name="p1" value="b"> b) La empresa usuaria.</label>
+                <label><input type="radio" name="p1" value="c"> c) La que acuerden ambas empresas.</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 2:</strong> No es un elemento del contrato:</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p2" value="a"> a) El consentimiento.</label>
+                <label><input type="radio" name="p2" value="b"> b) La forma.</label>
+                <label><input type="radio" name="p2" value="c"> c) La causa.</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 3:</strong> Un contrato temporal es aquel que...</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p3" value="a"> a) Tiene una duración determinada.</label>
+                <label><input type="radio" name="p3" value="b"> b) Se puede extinguir cuando lo decida la empresa.</label>
+                <label><input type="radio" name="p3" value="c"> c) No incorpora la fecha de finalización del contrato.</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 4:</strong> A las personas trabajadoras contratadas a través de una ETT y cedidas a una empresa usuaria, la retribución es abonada por...</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p4" value="a"> a) La que acuerden ambas empresas.</label>
+                <label><input type="radio" name="p4" value="b"> b) La empresa usuaria.</label>
+                <label><input type="radio" name="p4" value="c"> c) La ETT.</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 5:</strong> El contrato para la obtención de la práctica profesional tiene por objeto facilitar experiencia profesional a personas...</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p5" value="a"> a) Que no tengan titulación.</label>
+                <label><input type="radio" name="p5" value="b"> b) Que sean mayores de dieciocho años.</label>
+                <label><input type="radio" name="p5" value="c"> c) Que posean un título oficial que habilite para el desarrollo de una actividad profesional.</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+        </div>
+
+        <!-- Pregunta 6 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 6:</strong> No es un contenido mínimo de un contrato de trabajo:</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p6" value="a"> a) El tipo de contrato.</label>
+                <label><input type="radio" name="p6" value="b"> b) La duración del periodo de prueba.</label>
+                <label><input type="radio" name="p6" value="c"> c) Las causas de extinción del contrato.</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+        </div>
+
+        <!-- Pregunta 7 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 7:</strong> El contrato a distancia, a través del teletrabajo, es...</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p7" value="a"> a) Voluntario para la empresa si lo exige el trabajador.</label>
+                <label><input type="radio" name="p7" value="b"> b) Obligatorio para el trabajador si la empresa lo exige.</label>
+                <label><input type="radio" name="p7" value="c"> c) Irreversible para ambas partes.</label>
+            </div>
+            <div class="feedback" id="feedback7"></div>
+        </div>
+
+        <!-- Pregunta 8 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 8:</strong> Indica, de los siguientes contratos, cuál no tiene una duración determinada...</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p8" value="a"> a) Contrato por circunstancias de la producción.</label>
+                <label><input type="radio" name="p8" value="b"> b) Contrato fijo-discontinuo.</label>
+                <label><input type="radio" name="p8" value="c"> c) Contrato para la práctica profesional.</label>
+            </div>
+            <div class="feedback" id="feedback8"></div>
+        </div>
+
+        <!-- Pregunta 9 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 9:</strong> Durante el periodo de prueba...</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p9" value="a"> a) Cualquiera de las partes puede dar por finalizado el contrato en cualquier momento.</label>
+                <label><input type="radio" name="p9" value="b"> b) La persona trabajadora puede dar por finalizado el contrato en cualquier momento.</label>
+                <label><input type="radio" name="p9" value="c"> c) La empresa puede dar por finalizado el contrato en cualquier momento.</label>
+            </div>
+            <div class="feedback" id="feedback9"></div>
+        </div>
+
+        <!-- Pregunta 10 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 10:</strong> Los contratos indefinidos ordinarios a tiempo parcial se realizan...</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p10" value="a"> a) Lo que acuerden las partes.</label>
+                <label><input type="radio" name="p10" value="b"> b) Por escrito o verbalmente.</label>
+                <label><input type="radio" name="p10" value="c"> c) Siempre por escrito.</label>
+            </div>
+            <div class="feedback" id="feedback10"></div>
+        </div>
+
+        <!-- Pregunta 11 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 11:</strong> El periodo de prueba de un contrato para la obtención de la práctica profesional debe ser como máximo de...</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p11" value="a"> a) Un mes.</label>
+                <label><input type="radio" name="p11" value="b"> b) Dos meses.</label>
+                <label><input type="radio" name="p11" value="c"> c) Quince días.</label>
+            </div>
+            <div class="feedback" id="feedback11"></div>
+        </div>
+
+        <!-- Pregunta 12 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 12:</strong> ¿Cuál de las siguientes causas no pertenecen a un contrato por circunstancias de la producción?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p12" value="a"> a) El incremento ocasional, imprevisible de la actividad de la empresa.</label>
+                <label><input type="radio" name="p12" value="b"> b) Las oscilaciones en las necesidades de personal que generan un desajuste temporal de la plantilla.</label>
+                <label><input type="radio" name="p12" value="c"> c) Completar la jornada reducida por otro trabajador.</label>
+            </div>
+            <div class="feedback" id="feedback12"></div>
+        </div>
+
+        <!-- Pregunta 13 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 13:</strong> Las personas trabajadoras a tiempo parcial...</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p13" value="a"> a) Pueden realizar un máximo de horas extraordinarias.</label>
+                <label><input type="radio" name="p13" value="b"> b) No pueden realizar horas extraordinarias.</label>
+                <label><input type="radio" name="p13" value="c"> c) Pueden realizar sólo un número de horas extraordinarias limitado.</label>
+            </div>
+            <div class="feedback" id="feedback13"></div>
+        </div>
+
+        <!-- Pregunta 14 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 14:</strong> ¿Cuál de las siguientes afirmaciones es cierta sobre los contratos de interinidad?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p14" value="a"> a) Están sujetos a un contrato específico que puede ser indefinido.</label>
+                <label><input type="radio" name="p14" value="b"> b) Su duración es siempre por un tiempo determinado.</label>
+                <label><input type="radio" name="p14" value="c"> c) Deben celebrarse únicamente cuando haya una vacante.</label>
+            </div>
+            <div class="feedback" id="feedback14"></div>
+        </div>
+
+        <div>
+            <button type="button" onclick="validar()">Validar Respuestas</button>
+        </div>
+    </form>
+
+    <script>
+        function validar() {
+            const respuestasCorrectas = {
+                p1: 'b',
+                p2: 'c',
+                p3: 'a',
+                p4: 'c',
+                p5: 'c',
+                p6: 'c',
+                p7: 'b',
+                p8: 'a',
+                p9: 'a',
+                p10: 'c',
+                p11: 'b',
+                p12: 'c',
+                p13: 'a',
+                p14: 'b'
+            };
+
+            // Itera sobre las preguntas y valida las respuestas
+            for (let i = 1; i <= 14; i++) {
+                const pregunta = document.querySelector(`input[name="p${i}"]:checked`);
+                const feedback = document.getElementById(`feedback${i}`);
+                
+                if (pregunta) {
+                    if (pregunta.value === respuestasCorrectas[`p${i}`]) {
+                        feedback.textContent = "¡Correcto!";
+                        feedback.classList.add("correct");
+                        feedback.classList.remove("incorrect");
+                    } else {
+                        feedback.textContent = "Incorrecto.";
+                        feedback.classList.add("incorrect");
+                        feedback.classList.remove("correct");
+                    }
+                } else {
+                    feedback.textContent = "Por favor, selecciona una respuesta.";
+                    feedback.classList.remove("correct", "incorrect");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

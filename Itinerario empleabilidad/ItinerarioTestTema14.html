@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Modificación, Suspensión y Extinción del Contrato</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Test - Modificación, Suspensión y Extinción del Contrato</h1>
+
+    <form id="testForm">
+        <!-- Modificación -->
+        <div class="pregunta">
+            <p><strong>Pregunta 1:</strong> ¿Cuál de los siguientes motivos justifica una modificación sustancial de las condiciones de trabajo?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p1" value="a"> a) Preferencia del empresario</label>
+                <label><input type="radio" name="p1" value="b"> b) Petición del trabajador</label>
+                <label><input type="radio" name="p1" value="c"> c) Causas económicas, técnicas, organizativas o de producción</label>
+                <label><input type="radio" name="p1" value="d"> d) Ninguna</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 2:</strong> ¿Qué derecho tiene un trabajador ante una modificación sustancial que le perjudique?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p2" value="a"> a) Puede extinguir el contrato con indemnización</label>
+                <label><input type="radio" name="p2" value="b"> b) Solo puede protestar</label>
+                <label><input type="radio" name="p2" value="c"> c) No tiene derecho a nada</label>
+                <label><input type="radio" name="p2" value="d"> d) Está obligado a aceptarla siempre</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+        </div>
+
+        <!-- Suspensión -->
+        <div class="pregunta">
+            <p><strong>Pregunta 3:</strong> ¿Cuál de estas situaciones NO suspende un contrato de trabajo?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p3" value="a"> a) Incapacidad temporal</label>
+                <label><input type="radio" name="p3" value="b"> b) Maternidad o paternidad</label>
+                <label><input type="radio" name="p3" value="c"> c) Reducción de jornada</label>
+                <label><input type="radio" name="p3" value="d"> d) Excedencia voluntaria</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 4:</strong> ¿Qué sucede durante la suspensión del contrato?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p4" value="a"> a) Finaliza la relación laboral</label>
+                <label><input type="radio" name="p4" value="b"> b) Se mantiene el vínculo pero se interrumpen las obligaciones</label>
+                <label><input type="radio" name="p4" value="c"> c) El trabajador cobra más</label>
+                <label><input type="radio" name="p4" value="d"> d) Se incrementan los derechos laborales</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+        </div>
+
+        <!-- Extinción -->
+        <div class="pregunta">
+            <p><strong>Pregunta 5:</strong> ¿Qué indemnización corresponde por despido objetivo?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p5" value="a"> a) 20 días por año con máximo de 12 mensualidades</label>
+                <label><input type="radio" name="p5" value="b"> b) 33 días por año</label>
+                <label><input type="radio" name="p5" value="c"> c) 45 días por año</label>
+                <label><input type="radio" name="p5" value="d"> d) No hay indemnización</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 6:</strong> ¿Cuál es el plazo de preaviso para un despido objetivo?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p6" value="a"> a) 15 días</label>
+                <label><input type="radio" name="p6" value="b"> b) 30 días</label>
+                <label><input type="radio" name="p6" value="c"> c) 1 semana</label>
+                <label><input type="radio" name="p6" value="d"> d) No se requiere preaviso</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 7:</strong> ¿Qué tipo de despido no requiere justificación por parte del empresario?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p7" value="a"> a) Disciplinario</label>
+                <label><input type="radio" name="p7" value="b"> b) Objetivo</label>
+                <label><input type="radio" name="p7" value="c"> c) Colectivo</label>
+                <label><input type="radio" name="p7" value="d"> d) Ninguno, todos deben justificar</label>
+            </div>
+            <div class="feedback" id="feedback7"></div>
+        </div>
+
+        <!-- Otras -->
+        <div class="pregunta">
+            <p><strong>Pregunta 8:</strong> ¿Qué ocurre si el despido es declarado improcedente?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p8" value="a"> a) El trabajador debe indemnizar al empresario</label>
+                <label><input type="radio" name="p8" value="b"> b) Se considera como una baja voluntaria</label>
+                <label><input type="radio" name="p8" value="c"> c) El empresario puede optar entre readmitir o indemnizar</label>
+                <label><input type="radio" name="p8" value="d"> d) Se transforma en despido colectivo</label>
+            </div>
+            <div class="feedback" id="feedback8"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 9:</strong> ¿Cuál es una causa válida de despido disciplinario?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p9" value="a"> a) Incumplimientos graves</label>
+                <label><input type="radio" name="p9" value="b"> b) Pérdida de confianza injustificada</label>
+                <label><input type="radio" name="p9" value="c"> c) Enfermedad del trabajador</label>
+                <label><input type="radio" name="p9" value="d"> d) Todas las anteriores</label>
+            </div>
+            <div class="feedback" id="feedback9"></div>
+        </div>
+
+        <div class="pregunta">
+            <p><strong>Pregunta 10:</strong> ¿Qué plazo tiene el trabajador para impugnar un despido?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p10" value="a"> a) 7 días</label>
+                <label><input type="radio" name="p10" value="b"> b) 15 días hábiles</label>
+                <label><input type="radio" name="p10" value="c"> c) 20 días hábiles</label>
+                <label><input type="radio" name="p10" value="d"> d) 1 mes natural</label>
+            </div>
+            <div class="feedback" id="feedback10"></div>
+        </div>
+
+        <button type="button" onclick="calcularNota()">Calcular nota</button>
+    </form>
+
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+        const respuestasCorrectas = {
+            p1: "c",
+            p2: "a",
+            p3: "c",
+            p4: "b",
+            p5: "a",
+            p6: "a",
+            p7: "d",
+            p8: "c",
+            p9: "a",
+            p10: "c"
+        };
+
+        function calcularNota() {
+            let puntuacion = 0;
+            const totalPreguntas = Object.keys(respuestasCorrectas).length;
+
+            for (const pregunta in respuestasCorrectas) {
+                const respuestaSeleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
+                const feedbackDiv = document.getElementById(`feedback${pregunta.substring(1)}`);
+
+                if (respuestaSeleccionada) {
+                    if (respuestaSeleccionada.value === respuestasCorrectas[pregunta]) {
+                        puntuacion++;
+                        feedbackDiv.innerHTML = `<span class="correcta">Correcto: ${respuestaSeleccionada.value}</span>`;
+                    } else {
+                        feedbackDiv.innerHTML = `<span class="incorrecta">Incorrecto. La respuesta correcta es: ${respuestasCorrectas[pregunta]}</span>`;
+                    }
+                } else {
+                    feedbackDiv.innerHTML = `<span class="incorrecta">No has respondido. La respuesta correcta es: ${respuestasCorrectas[pregunta]}</span>`;
+                }
+            }
+
+            const nota = (puntuacion / totalPreguntas) * 10;
+            const resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = `Tu nota es: <span class="${nota >= 5 ? 'correcta' : 'incorrecta'}">${nota.toFixed(2)}/10</span>`;
+        }
+    </script>
+</body>
+</html>

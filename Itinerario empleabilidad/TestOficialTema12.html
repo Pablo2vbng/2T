@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Relación Laboral</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Test - Relación Laboral</h1>
+
+    <form id="testForm">
+        <!-- Pregunta 1 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 1:</strong> ¿Podrán solicitar adaptaciones de jornada por trabajo a distancia las personas trabajadoras...</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p1" value="a"> a) Que tengan hijos o hijas menores de ocho años.</label>
+                <label><input type="radio" name="p1" value="b"> b) Que tengan hijos o hijas menores de doce años, o mayores de doce años con necesidades especiales.</label>
+                <label><input type="radio" name="p1" value="c"> c) Ninguna de las opciones anteriores es verdadera.</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 2:</strong> ¿Se considera nocturno el trabajo realizado...</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p2" value="a"> a) Desde el anochecer hasta el amanecer.</label>
+                <label><input type="radio" name="p2" value="b"> b) Desde las 22:00 hasta las 06:00 del día siguiente.</label>
+                <label><input type="radio" name="p2" value="c"> c) Desde las 20:00 hasta las 8:00 del día siguiente.</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 3:</strong> La persona trabaja más horas durante algunos días para conseguir a cambio un día o medio día libre. ¿Qué tipo de jornada es la citada?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p3" value="a"> a) Jornada comprimida</label>
+                <label><input type="radio" name="p3" value="b"> b) Jornada partida</label>
+                <label><input type="radio" name="p3" value="c"> c) Jornada intensiva</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 4:</strong> Con respecto a la obligación de registrar la jornada laboral por parte de la empresa, indica cuál es la opción verdadera:</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p4" value="a"> a) El registro debe incluir el horario concreto de inicio y finalización.</label>
+                <label><input type="radio" name="p4" value="b"> b) Todas las opciones anteriores son correctas.</label>
+                <label><input type="radio" name="p4" value="c"> c) Los registros se deben conservar durante cuatro años.</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 5:</strong> Alguno de los mecanismos de flexibilidad interna en el trabajo son:</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p5" value="a"> a) La subcontratación.</label>
+                <label><input type="radio" name="p5" value="b"> b) Las empresas de trabajo temporal.</label>
+                <label><input type="radio" name="p5" value="c"> c) La jornada diaria flexible.</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+        </div>
+
+        <!-- Pregunta 6 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 6:</strong> Por accidente o enfermedad grave de un familiar hasta segundo grado, la persona trabajadora tiene un permiso retribuido de...</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p6" value="a"> a) Cinco días.</label>
+                <label><input type="radio" name="p6" value="b"> b) Tres días.</label>
+                <label><input type="radio" name="p6" value="c"> c) Cuatro días.</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+        </div>
+
+        <!-- Pregunta 7 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 7:</strong> Los límites máximos de la jornada de trabajo y los descansos los establece:</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p7" value="a"> a) El Estatuto de los Trabajadores.</label>
+                <label><input type="radio" name="p7" value="b"> b) Los convenios colectivos.</label>
+                <label><input type="radio" name="p7" value="c"> c) La empresa.</label>
+            </div>
+            <div class="feedback" id="feedback7"></div>
+        </div>
+
+        <!-- Pregunta 8 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 8:</strong> El trabajo a distancia...</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p8" value="a"> a) Todas las opciones anteriores son correctas.</label>
+                <label><input type="radio" name="p8" value="b"> b) Elimina las barreras geográficas.</label>
+                <label><input type="radio" name="p8" value="c"> c) Reduce el estrés.</label>
+            </div>
+            <div class="feedback" id="feedback8"></div>
+        </div>
+
+        <!-- Pregunta 9 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 9:</strong> El horario de las personas trabajadoras es:</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p9" value="a"> a) Todas las opciones anteriores son correctas.</label>
+                <label><input type="radio" name="p9" value="b"> b) El número de horas que se trabaja al año.</label>
+                <label><input type="radio" name="p9" value="c"> c) La distribución diaria del tiempo de trabajo.</label>
+            </div>
+            <div class="feedback" id="feedback9"></div>
+        </div>
+
+        <!-- Pregunta 10 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 10:</strong> ¿Cuál es el descanso semanal que le corresponde a un mayor de dieciocho años?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p10" value="a"> a) Dos días.</label>
+                <label><input type="radio" name="p10" value="b"> b) Un día y medio consecutivos.</label>
+                <label><input type="radio" name="p10" value="c"> c) Dos días consecutivos.</label>
+            </div>
+            <div class="feedback" id="feedback10"></div>
+        </div>
+
+        <!-- Pregunta 11 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 11:</strong> Las fiestas laborales retribuidas y no recuperables no pueden exceder de…</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p11" value="a"> a) 15 días</label>
+                <label><input type="radio" name="p11" value="b"> b) 14 días</label>
+                <label><input type="radio" name="p11" value="c"> c) 16 días</label>
+            </div>
+            <div class="feedback" id="feedback11"></div>
+        </div>
+
+        <!-- Pregunta 12 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 12:</strong> ¿Cuántos días de vacaciones corresponden a las personas trabajadoras por año trabajado?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p12" value="a"> a) Treinta días naturales.</label>
+                <label><input type="radio" name="p12" value="b"> b) Veinticuatro días naturales.</label>
+                <label><input type="radio" name="p12" value="c"> c) Veinte días hábiles.</label>
+            </div>
+            <div class="feedback" id="feedback12"></div>
+        </div>
+
+        <!-- Pregunta 13 -->
+        <div class="pregunta">
+            <p><strong>Pregunta 13:</strong> El límite anual autorizado de horas extraordinarias que puede hacer la persona trabajadora es de...</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p13" value="a"> a) Cien horas.</label>
+                <label><input type="radio" name="p13" value="b"> b) Ochenta horas anuales.</label>
+                <label><input type="radio" name="p13" value="c"> c) No existe límite.</label>
+            </div>
+            <div class="feedback" id="feedback13"></div>
+        </div>
+
+        <button type="submit">Enviar Respuestas</button>
+    </form>
+
+    <script>
+        const form = document.getElementById("testForm");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            let score = 0;
+
+            // Verifica las respuestas correctas y muestra el feedback
+            const answers = {
+                p1: "b",
+                p2: "b",
+                p3: "a",
+                p4: "b",
+                p5: "c",
+                p6: "a",
+                p7: "b",
+                p8: "a",
+                p9: "c",
+                p10: "b",
+                p11: "b",
+                p12: "a",
+                p13: "b",
+            };
+
+            for (let i = 1; i <= 13; i++) {
+                const question = `p${i}`;
+                const selectedOption = form.querySelector(`input[name="${question}"]:checked`);
+                const feedback = document.getElementById(`feedback${i}`);
+                
+                if (selectedOption && selectedOption.value === answers[question]) {
+                    feedback.textContent = "Respuesta correcta.";
+                    feedback.style.color = "green";
+                    score++;
+                } else {
+                    feedback.textContent = "Respuesta incorrecta.";
+                    feedback.style.color = "red";
+                }
+            }
+
+            alert(`Tu puntaje es ${score}/13.`);
+        });
+    </script>
+</body>
+</html>

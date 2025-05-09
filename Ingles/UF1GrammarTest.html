@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - English Verb Tenses</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .correcta {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrecta {
+            color: red;
+            font-weight: bold;
+        }
+        .pregunta {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+        }
+        .respuesta {
+            margin-left: 20px;
+        }
+        .respuesta label {
+            display: block;
+            margin: 5px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .resultado {
+            margin-top: 20px;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test - English Verb Tenses</h1>
+
+    <form id="testForm">
+        <!-- Question 1 -->
+        <div class="pregunta">
+            <p><strong>Question 1:</strong> Every Sunday we _____ to see my grandparents.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p1" value="a"> a. goes</label>
+                <label><input type="radio" name="p1" value="b"> b. go</label>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="pregunta">
+            <p><strong>Question 2:</strong> Where____ they usually ______ (go) on holidays?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p2" value="a"> a. do go</label>
+                <label><input type="radio" name="p2" value="b"> b. do / go</label>
+                <label><input type="radio" name="p2" value="c"> c. do they usually go</label>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="pregunta">
+            <p><strong>Question 3:</strong> Right now they ______ (not surf) on the internet.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p3" value="a"> a. are not surfing</label>
+                <label><input type="radio" name="p3" value="b"> b. aren't surfing</label>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="pregunta">
+            <p><strong>Question 4:</strong> Use Present Simple or continuous. We often ____ (read) books.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p4" value="a"> a. read</label>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="pregunta">
+            <p><strong>Question 5:</strong> He ____ _____ (Cook) right now</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p5" value="a"> a. is cooking</label>
+                <label><input type="radio" name="p5" value="b"> b. He is cooking right now</label>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="pregunta">
+            <p><strong>Question 6:</strong> What is she doing now?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p6" value="a"> a. She is drinking</label>
+                <label><input type="radio" name="p6" value="b"> b. She drinks</label>
+                <label><input type="radio" name="p6" value="c"> c. She is drink</label>
+                <label><input type="radio" name="p6" value="d"> d. She drinking</label>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="pregunta">
+            <p><strong>Question 7:</strong> Steven _________________ (study) Math since last week.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p7" value="a"> a. Steven have studied Math since last week</label>
+                <label><input type="radio" name="p7" value="b"> b. Steven have study Math since last week</label>
+                <label><input type="radio" name="p7" value="c"> c. Steven has studied Math since last week</label>
+                <label><input type="radio" name="p7" value="d"> d. Steven have studying Math since last week</label>
+            </div>
+            <div class="feedback" id="feedback7"></div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="pregunta">
+            <p><strong>Question 8:</strong> Peter ______________ (read) eleven books since last weekend.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p8" value="a"> a. Peter has read eleven books since last weekend</label>
+                <label><input type="radio" name="p8" value="b"> b. Peter have read eleven books since last weekend</label>
+                <label><input type="radio" name="p8" value="c"> c. Peter has reading eleven books since last weekend</label>
+                <label><input type="radio" name="p8" value="d"> d. Peter has readed eleven books since last weekend</label>
+            </div>
+            <div class="feedback" id="feedback8"></div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="pregunta">
+            <p><strong>Question 9:</strong> I _______ been married for two years</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p9" value="a"> a. has</label>
+                <label><input type="radio" name="p9" value="b"> b. have</label>
+                <label><input type="radio" name="p9" value="c"> c. hase</label>
+            </div>
+            <div class="feedback" id="feedback9"></div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="pregunta">
+            <p><strong>Question 10:</strong> I _____ a teacher since 1998</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p10" value="a"> a. has been</label>
+                <label><input type="radio" name="p10" value="b"> b. have been</label>
+                <label><input type="radio" name="p10" value="c"> c. hasn't been</label>
+            </div>
+            <div class="feedback" id="feedback10"></div>
+        </div>
+
+        <!-- Question 11 -->
+        <div class="pregunta">
+            <p><strong>Question 11:</strong> I _________ my homework yet</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p11" value="a"> a. have not done</label>
+                <label><input type="radio" name="p11" value="b"> b. hasn't done</label>
+                <label><input type="radio" name="p11" value="c"> c. has done</label>
+            </div>
+            <div class="feedback" id="feedback11"></div>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="pregunta">
+            <p><strong>Question 12:</strong> It _______ rained for the last month</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p12" value="a"> a. have not</label>
+                <label><input type="radio" name="p12" value="b"> b. haven't</label>
+                <label><input type="radio" name="p12" value="c"> c. has not</label>
+            </div>
+            <div class="feedback" id="feedback12"></div>
+        </div>
+
+        <!-- Question 13 -->
+        <div class="pregunta">
+            <p><strong>Question 13:</strong> Convierte la oración a pregunta: She walked a lot</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p13" value="a"> a. did she walk a lot?</label>
+                <label><input type="radio" name="p13" value="b"> b. does she walk a lot?</label>
+                <label><input type="radio" name="p13" value="c"> c. is she walk a lot?</label>
+            </div>
+            <div class="feedback" id="feedback13"></div>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="pregunta">
+            <p><strong>Question 14:</strong> traduce la pregunta: él fue a la piscina el viernes?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p14" value="a"> a. do he went to the swimming pool on friday?</label>
+                <label><input type="radio" name="p14" value="b"> b. does he go to the swimming pool on friday?</label>
+                <label><input type="radio" name="p14" value="c"> c. did he go to the swimming pool on friday?</label>
+            </div>
+            <div class="feedback" id="feedback14"></div>
+        </div>
+
+        <!-- Question 15 -->
+        <div class="pregunta">
+            <p><strong>Question 15:</strong> Selecciona la opción correcta: El pasado simple del verbo ESTUDIAR es:</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p15" value="a"> a. Stuyed</label>
+                <label><input type="radio" name="p15" value="b"> b. Studied</label>
+                <label><input type="radio" name="p15" value="c"> c. Stuid</label>
+                <label><input type="radio" name="p15" value="d"> d. Studyed</label>
+            </div>
+            <div class="feedback" id="feedback15"></div>
+        </div>
+
+        <!-- Question 16 -->
+        <div class="pregunta">
+            <p><strong>Question 16:</strong> Andrew ___________ TV yesterday.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p16" value="a"> a. wotch</label>
+                <label><input type="radio" name="p16" value="b"> b. watch</label>
+                <label><input type="radio" name="p16" value="c"> c. watched</label>
+            </div>
+            <div class="feedback" id="feedback16"></div>
+        </div>
+
+        <!-- Question 17 -->
+        <div class="pregunta">
+            <p><strong>Question 17:</strong> Choose the correct sentence.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p17" value="a"> a. I didn´t go to the mall yesterday.</label>
+                <label><input type="radio" name="p17" value="b"> b. I doesn´t go to the mall yesterday.</label>
+                <label><input type="radio" name="p17" value="c"> c. I don´t go to the mall yesterday.</label>
+                <label><input type="radio" name="p17" value="d"> d. I go to the mall yesterday.</label>
+            </div>
+            <div class="feedback" id="feedback17"></div>
+        </div>
+
+        <!-- Question 18 -->
+        <div class="pregunta">
+            <p><strong>Question 18:</strong> Simón ................ his guitar last sunday</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p18" value="a"> a. play</label>
+                <label><input type="radio" name="p18" value="b"> b. playing</label>
+                <label><input type="radio" name="p18" value="c"> c. played</label>
+                <label><input type="radio" name="p18" value="d"> d. plays</label>
+            </div>
+            <div class="feedback" id="feedback18"></div>
+        </div>
+
+        <!-- Question 19 -->
+        <div class="pregunta">
+            <p><strong>Question 19:</strong> You ....... visiting your friends</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p19" value="a"> a. was</label>
+                <label><input type="radio" name="p19" value="b"> b. were</label>
+                <label><input type="radio" name="p19" value="c"> c. are</label>
+                <label><input type="radio" name="p19" value="d"> d. is</label>
+            </div>
+            <div class="feedback" id="feedback19"></div>
+        </div>
+
+        <!-- Question 20 -->
+        <div class="pregunta">
+            <p><strong>Question 20:</strong> ........ she reading a magazine when Peter arrived?</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p20" value="a"> a. were</label>
+                <label><input type="radio" name="p20" value="b"> b. was</label>
+                <label><input type="radio" name="p20" value="c"> c. do</label>
+                <label><input type="radio" name="p20" value="d"> d. did</label>
+            </div>
+            <div class="feedback" id="feedback20"></div>
+        </div>
+
+        <!-- Question 21 -->
+        <div class="pregunta">
+            <p><strong>Question 21:</strong> We were ................ around the park</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p21" value="a"> a. climb</label>
+                <label><input type="radio" name="p21" value="b"> b. doesn`t run</label>
+                <label><input type="radio" name="p21" value="c"> c. running</label>
+                <label><input type="radio" name="p21" value="d"> d. is eating</label>
+            </div>
+            <div class="feedback" id="feedback21"></div>
+        </div>
+
+        <!-- Question 22 -->
+        <div class="pregunta">
+            <p><strong>Question 22:</strong> We ____ (play) video games yesterday at 3 o'clock.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p22" value="a"> a. were play</label>
+                <label><input type="radio" name="p22" value="b"> b. was playing</label>
+                <label><input type="radio" name="p22" value="c"> c. were playing</label>
+                <label><input type="radio" name="p22" value="d"> d. was play</label>
+            </div>
+            <div class="feedback" id="feedback22"></div>
+        </div>
+
+        <!-- Question 23 -->
+        <div class="pregunta">
+            <p><strong>Question 23:</strong> They ____ (not/do) their homework yesterday at 3 o'clock</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p23" value="a"> a. was not doing</label>
+                <label><input type="radio" name="p23" value="b"> b. were not doing</label>
+                <label><input type="radio" name="p23" value="c"> c. was not do</label>
+            </div>
+            <div class="feedback" id="feedback23"></div>
+        </div>
+
+        <!-- Question 24 -->
+        <div class="pregunta">
+            <p><strong>Question 24:</strong> It's so cold right now, I think I __________ close the window.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p24" value="a"> a. Will</label>
+                <label><input type="radio" name="p24" value="b"> b. going to</label>
+            </div>
+            <div class="feedback" id="feedback24"></div>
+        </div>
+
+        <!-- Question 25 -->
+        <div class="pregunta">
+            <p><strong>Question 25:</strong> - ____ your sister ____ arrive soon? - I am not sure</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p25" value="a"> a. Is / be going to</label>
+                <label><input type="radio" name="p25" value="b"> b. Are / going to</label>
+                <label><input type="radio" name="p25" value="c"> c. Is / going to</label>
+            </div>
+            <div class="feedback" id="feedback25"></div>
+        </div>
+
+        <!-- Question 26 -->
+        <div class="pregunta">
+            <p><strong>Question 26:</strong> My family and I ____ to travel next summer, we are going to stay home.</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p26" value="a"> a. are going</label>
+                <label><input type="radio" name="p26" value="b"> b. am not going</label>
+                <label><input type="radio" name="p26" value="c"> c. are not going</label>
+            </div>
+            <div class="feedback" id="feedback26"></div>
+        </div>
+
+        <!-- Question 27 -->
+        <div class="pregunta">
+            <p><strong>Question 27:</strong> We ________________ to Rome next month</p>
+            <div class="respuesta">
+                <label><input type="radio" name="p27" value="a"> a. Are going to traveling</label>
+                <label><input type="radio" name="p27" value="b"> b. Be going to travel</label>
+                <label><input type="radio" name="p27" value="c"> c. Are going to travel</label>
+                <label><input type="radio" name="p27" value="d"> d. Go to traveling</label>
+            </div>
+            <div class="feedback" id="feedback27"></div>
+        </div>
+
+        <!-- Botón para calcular la nota -->
+        <button type="button" onclick="calcularNota()">Calculate score</button>
+    </form>
+
+    <!-- Resultado -->
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+        // Respuestas correctas
+        const respuestasCorrectas = {
+            p1: "b", // go
+            p2: "b", // do / go
+            p3: "a", // are not surfing
+            p4: "a", // read
+            p5: "a", // is cooking
+            p6: "a", // She is drinking
+            p7: "c", // Steven has studied Math since last week
+            p8: "a", // Peter has read eleven books since last weekend
+            p9: "b", // have
+            p10: "b", // have been
+            p11: "a", // have not done
+            p12: "c", // has not
+            p13: "a", // did she walk a lot?
+            p14: "c", // did he go to the swimming pool on friday?
+            p15: "b", // Studied
+            p16: "c", // watched
+            p17: "a", // I didn´t go to the mall yesterday.
+            p18: "c", // played
+            p19: "b", // were
+            p20: "b", // was
+            p21: "c", // running
+            p22: "c", // were playing
+            p23: "b", // were not doing
+            p24: "a", // Will
+            p25: "c", // Is / going to
+            p26: "c", // are not going
+            p27: "c"  // Are going to travel
+        };
+
+        // Función para calcular la nota
+        function calcularNota() {
+            let puntuacion = 0;
+            const totalPreguntas = Object.keys(respuestasCorrectas).length;
+
+            // Recorrer las preguntas y comparar respuestas
+            for (const pregunta in respuestasCorrectas) {
+                const respuestaSeleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
+                const feedbackDiv = document.getElementById(`feedback${pregunta.substring(1)}`);
+
+                if (respuestaSeleccionada) {
+                    if (respuestaSeleccionada.value === respuestasCorrectas[pregunta]) {
+                        puntuacion++;
+                        feedbackDiv.innerHTML = `<span class="correcta">Correct: ${respuestaSeleccionada.nextSibling.nodeValue.trim()}</span>`;
+                    } else {
+                        feedbackDiv.innerHTML = `<span class="incorrecta">Incorrect. The right answer is: ${respuestasCorrectas[pregunta]}</span>`;
+                    }
+                } else {
+                    feedbackDiv.innerHTML = `<span class="incorrecta">You didn't select an answer. The right answer is: ${respuestasCorrectas[pregunta]}</span>`;
+                }
+            }
+
+            // Calcular la nota sobre 10
+            const nota = (puntuacion / totalPreguntas) * 10;
+
+            // Mostrar el resultado
+            const resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = `Your score is: <span class="${nota >= 5 ? 'correcta' : 'incorrecta'}">${nota.toFixed(2)}/10</span> (${puntuacion}/${totalPreguntas} correct answers)`;
+        }
+    </script>
+</body>
+</html>
