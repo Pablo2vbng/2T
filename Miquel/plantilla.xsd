@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Elemento raíz -->
+  <xs:element name="nombreRaiz">
+    <xs:complexType>
+      <xs:sequence>
+
+        <!-- Elemento repetido -->
+        <xs:element name="elementoRepetido" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+
+              <!-- Sub-elementos con tipos -->
+              <xs:element name="subElemento1" type="xs:string"/>
+              <xs:element name="subElemento2" type="xs:positiveInteger"/>
+              <xs:element name="subElemento3" type="xs:decimal"/>
+
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
