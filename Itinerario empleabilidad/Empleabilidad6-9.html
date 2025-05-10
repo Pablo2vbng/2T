@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Perfil Profesional y Empleabilidad</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #eef2f7;
+            color: #333;
+        }
+    
+        h1 {
+            color: #34495e;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2em;
+        }
+    
+        .question-container {
+            background-color: #ffffff;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+    
+        .question {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-size: 1.2em;
+        }
+    
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+    
+        .option {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 12px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+    
+        .option:hover {
+            background-color: #f1f1f1;
+            border-color: #bbb;
+        }
+    
+        .option input {
+            margin-right: 12px;
+        }
+    
+        .correct {
+            background-color: #d4edda;
+            border-left: 5px solid #28a745;
+        }
+    
+        .incorrect {
+            background-color: #f8d7da;
+            border-left: 5px solid #dc3545;
+        }
+    
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #f0f0f0;
+            border-left: 4px solid #6c757d;
+            border-radius: 6px;
+            font-size: 0.95em;
+        }
+    
+        button {
+            display: block;
+            margin: 40px auto 20px;
+            padding: 12px 24px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        button:hover {
+            background-color: #2980b9;
+        }
+    
+        .results {
+            text-align: center;
+            font-size: 1.3em;
+            margin-top: 30px;
+            padding: 18px;
+            border-radius: 10px;
+            display: none;
+        }
+    
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+    
+        .warning {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+    
+        .danger {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test de Perfil Profesional y Empleabilidad</h1>
+    
+    <div id="q1" class="question-container">
+        <div class="question">1. ¿Qué es el perfil profesional?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q1" value="a"> El currículum vitae de una persona</label>
+            <label class="option"><input type="radio" name="q1" value="b"> La foto que aparece en LinkedIn</label>
+            <label class="option"><input type="radio" name="q1" value="c"> El desarrollo de competencias técnicas, personales y sociales para realizar un puesto de trabajo</label>
+            <label class="option"><input type="radio" name="q1" value="d"> Los estudios universitarios de una persona</label>
+        </div>
+        <div class="explanation">
+            El perfil profesional es el desarrollo de las competencias técnicas, personales y sociales y la experiencia de una persona para realizar con solvencia las tareas y responsabilidades de un puesto de trabajo.
+        </div>
+    </div>
+    
+    <div id="q2" class="question-container">
+        <div class="question">2. ¿Qué son las competencias profesionales?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q2" value="a"> Solo los conocimientos técnicos</label>
+            <label class="option"><input type="radio" name="q2" value="b"> El conjunto integrado de conocimientos, destrezas, habilidades, aptitudes y actitudes para desempeñar un puesto</label>
+            <label class="option"><input type="radio" name="q2" value="c"> Los títulos académicos</label>
+            <label class="option"><input type="radio" name="q2" value="d"> La experiencia laboral previa</label>
+        </div>
+        <div class="explanation">
+            Las competencias son el conjunto integrado de conocimientos, destrezas, habilidades, aptitudes, actitudes, rasgos de personalidad y motivaciones que posee una persona para desempeñar con éxito las exigencias de un puesto.
+        </div>
+    </div>
+    
+    <div id="q3" class="question-container">
+        <div class="question">3. ¿Qué método se utiliza para establecer objetivos profesionales?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q3" value="a"> Método DAFO</label>
+            <label class="option"><input type="radio" name="q3" value="b"> Método CAME</label>
+            <label class="option"><input type="radio" name="q3" value="c"> Método SMART</label>
+            <label class="option"><input type="radio" name="q3" value="d"> Método IKIGAI</label>
+        </div>
+        <div class="explanation">
+            El método SMART para establecer objetivos profesionales requiere que sean: Específicos, Medibles, Alcanzables, Relevantes y Temporales.
+        </div>
+    </div>
+    
+    <div id="q4" class="question-container">
+        <div class="question">4. ¿Qué analiza el método DAFO?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q4" value="a"> Datos, Análisis, Formación y Objetivos</label>
+            <label class="option"><input type="radio" name="q4" value="b"> Debilidades, Aptitudes, Fortalezas y Oportunidades</label>
+            <label class="option"><input type="radio" name="q4" value="c"> Debilidades, Amenazas, Fortalezas y Oportunidades</label>
+            <label class="option"><input type="radio" name="q4" value="d"> Desarrollo, Análisis, Formación y Organización</label>
+        </div>
+        <div class="explanation">
+            El análisis DAFO examina: Debilidades, Amenazas, Fortalezas y Oportunidades en el ámbito profesional.
+        </div>
+    </div>
+    
+    <div id="q5" class="question-container">
+        <div class="question">5. ¿Qué relación tiene el análisis CAME con el DAFO?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q5" value="a"> Es lo mismo pero en inglés</label>
+            <label class="option"><input type="radio" name="q5" value="b"> Es una versión simplificada</label>
+            <label class="option"><input type="radio" name="q5" value="c"> Es la estrategia para actuar sobre el DAFO: Corregir, Afrontar, Mantener y Explotar</label>
+            <label class="option"><input type="radio" name="q5" value="d"> No tienen relación</label>
+        </div>
+        <div class="explanation">
+            El análisis CAME se relaciona con el DAFO proponiendo acciones: Corregir Debilidades, Afrontar Amenazas, Mantener Fortalezas y Explotar Oportunidades.
+        </div>
+    </div>
+    
+    <div id="q6" class="question-container">
+        <div class="question">6. ¿Qué es el IKIGAI?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q6" value="a"> Un método japonés de productividad</label>
+            <label class="option"><input type="radio" name="q6" value="b"> Una filosofía japonesa para encontrar el propósito laboral que dé sentido a la vida</label>
+            <label class="option"><input type="radio" name="q6" value="c"> Un tipo de contrato laboral</label>
+            <label class="option"><input type="radio" name="q6" value="d"> Un sistema de evaluación de competencias</label>
+        </div>
+        <div class="explanation">
+            IKIGAI es una filosofía japonesa que nos ayuda a encontrar nuestro objetivo laboral transformando pasión en profesión y vocación, para conseguir una misión que dé sentido a nuestra vida.
+        </div>
+    </div>
+    
+    <div id="q7" class="question-container">
+        <div class="question">7. ¿Qué es la empleabilidad?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q7" value="a"> Tener un empleo fijo</label>
+            <label class="option"><input type="radio" name="q7" value="b"> La aptitud para encontrar, conservar y progresar en la vida profesional</label>
+            <label class="option"><input type="radio" name="q7" value="c"> El número de empleos que has tenido</label>
+            <label class="option"><input type="radio" name="q7" value="d"> La capacidad de trabajar muchas horas</label>
+        </div>
+        <div class="explanation">
+            La empleabilidad es la aptitud de una persona para encontrar, conservar, progresar y adaptarse al cambio en la vida profesional.
+        </div>
+    </div>
+    
+    <div id="q8" class="question-container">
+        <div class="question">8. ¿Qué son las competencias digitales?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q8" value="a"> Saber usar redes sociales</label>
+            <label class="option"><input type="radio" name="q8" value="b"> Habilidades digitales y técnicas necesarias para el entorno laboral</label>
+            <label class="option"><input type="radio" name="q8" value="c"> Tener muchos dispositivos electrónicos</label>
+            <label class="option"><input type="radio" name="q8" value="d"> Conocer lenguajes de programación</label>
+        </div>
+        <div class="explanation">
+            Las competencias digitales son las habilidades digitales y técnicas necesarias para desenvolverse en el entorno laboral actual.
+        </div>
+    </div>
+    
+    <div id="q9" class="question-container">
+        <div class="question">9. ¿Qué es Europass?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q9" value="a"> Un billete de tren europeo</label>
+            <label class="option"><input type="radio" name="q9" value="b"> Un programa de becas</label>
+            <label class="option"><input type="radio" name="q9" value="c"> Un conjunto de herramientas online para planificar la carrera profesional en Europa</label>
+            <label class="option"><input type="radio" name="q9" value="d"> Un seguro de viaje</label>
+        </div>
+        <div class="explanation">
+            Europass es un conjunto gratuito de herramientas online que permite establecer las competencias y planificar el aprendizaje de una carrera profesional en Europa.
+        </div>
+    </div>
+    
+    <div id="q10" class="question-container">
+        <div class="question">10. ¿Qué es EURES?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q10" value="a"> Una moneda digital</label>
+            <label class="option"><input type="radio" name="q10" value="b"> Un programa de intercambio cultural</label>
+            <label class="option"><input type="radio" name="q10" value="c"> Servicio de búsqueda de empleo de la Unión Europea</label>
+            <label class="option"><input type="radio" name="q10" value="d"> Un sistema de reconocimiento de estudios</label>
+        </div>
+        <div class="explanation">
+            EURES es el servicio de búsqueda de empleo de la Unión Europea que facilita la movilidad laboral entre países miembros.
+        </div>
+    </div>
+    
+    <div id="q11" class="question-container">
+        <div class="question">11. ¿Qué es la huella digital?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q11" value="a"> El número de dispositivos que posees</label>
+            <label class="option"><input type="radio" name="q11" value="b"> El rastro que deja una persona en Internet</label>
+            <label class="option"><input type="radio" name="q11" value="c"> Tu dirección IP</label>
+            <label class="option"><input type="radio" name="q11" value="d"> Tu historial de compras online</label>
+        </div>
+        <div class="explanation">
+            La huella digital es el rastro que deja una persona en Internet, que puede ser activa (cuando compartimos conscientemente) o pasiva (cuando se recoge información sin nuestro consentimiento).
+        </div>
+    </div>
+    
+    <div id="q12" class="question-container">
+        <div class="question">12. ¿Qué es el networking profesional?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q12" value="a"> Trabajar desde casa</label>
+            <label class="option"><input type="radio" name="q12" value="b"> Crear y mantener relaciones profesionales para avanzar en la carrera</label>
+            <label class="option"><input type="radio" name="q12" value="c"> Usar redes sociales personales</label>
+            <label class="option"><input type="radio" name="q12" value="d"> Asistir a conferencias</label>
+        </div>
+        <div class="explanation">
+            Networking es la forma de crear y mantener relaciones profesionales que retroalimentan y permiten avanzar en nuestra carrera profesional.
+        </div>
+    </div>
+    
+    <button id="calculate-btn">Calcular resultados</button>
+    
+    <div id="results" class="results"></div>
+    
+    <script>
+        // Definir las respuestas correctas
+        const correctAnswers = {
+            q1: "c",
+            q2: "b",
+            q3: "c",
+            q4: "c",
+            q5: "c",
+            q6: "b",
+            q7: "b",
+            q8: "b",
+            q9: "c",
+            q10: "c",
+            q11: "b",
+            q12: "b"
+        };
+    
+        document.getElementById('calculate-btn').addEventListener('click', function() {
+            const totalQuestions = 12;
+            let correctCount = 0;
+            let incorrectAnswers = [];
+            
+            // Verificar cada pregunta
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionId = `q${i}`;
+                const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+                const questionContainer = document.getElementById(questionId);
+                const explanation = questionContainer.querySelector('.explanation');
+                const options = questionContainer.querySelectorAll('.option');
+                
+                // Mostrar siempre la explicación
+                explanation.style.display = 'block';
+                
+                // Resetear estilos de opciones
+                options.forEach(option => {
+                    option.classList.remove('correct', 'incorrect');
+                });
+                
+                if (selectedOption) {
+                    const selectedValue = selectedOption.value;
+                    const isCorrect = (selectedValue === correctAnswers[questionId]);
+                    
+                    // Marcar la opción seleccionada como correcta o incorrecta
+                    selectedOption.parentElement.classList.add(isCorrect ? 'correct' : 'incorrect');
+                    
+                    // Marcar la respuesta correcta
+                    const correctOption = questionContainer.querySelector(`input[name="${questionId}"][value="${correctAnswers[questionId]}"]`);
+                    correctOption.parentElement.classList.add('correct');
+                    
+                    if (isCorrect) {
+                        correctCount++;
+                        questionContainer.classList.add('correct');
+                        questionContainer.classList.remove('incorrect');
+                    } else {
+                        incorrectAnswers.push(i);
+                        questionContainer.classList.add('incorrect');
+                        questionContainer.classList.remove('correct');
+                    }
+                } else {
+                    // Si no se seleccionó ninguna opción, marcar la correcta
+                    const correctOption = questionContainer.querySelector(`input[name="${questionId}"][value="${correctAnswers[questionId]}"]`);
+                    correctOption.parentElement.classList.add('correct');
+                    
+                    incorrectAnswers.push(i);
+                    questionContainer.classList.add('incorrect');
+                    questionContainer.classList.remove('correct');
+                }
+            }
+            
+            // Calcular nota
+            const score = (correctCount / totalQuestions * 10).toFixed(2);
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.style.display = 'block';
+            
+            // Mostrar resultados
+            if (score >= 7) {
+                resultsDiv.className = 'results success';
+            } else if (score >= 5) {
+                resultsDiv.className = 'results warning';
+            } else {
+                resultsDiv.className = 'results danger';
+            }
+            
+            resultsDiv.innerHTML = `
+                <h3>Resultados</h3>
+                <p>Has acertado ${correctCount} de ${totalQuestions} preguntas.</p>
+                <p>Nota: ${score}</p>
+                ${incorrectAnswers.length > 0 ? `<p>Preguntas incorrectas o sin responder: ${incorrectAnswers.join(', ')}</p>` : ''}
+                <p>Las respuestas correctas están marcadas en verde. Revisa las explicaciones en cada pregunta.</p>
+            `;
+            
+            // Desplazarse a los resultados
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

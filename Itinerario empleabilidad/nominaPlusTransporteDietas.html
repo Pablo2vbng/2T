@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nómina Supuesto 1 - Zaptería Sánchez S.L.</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      text-align: center;
+      color: #0c6ef8;
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .logo img {
+      width: 80px;
+    }
+    .logo-text {
+      font-size: 1.4rem;
+      color: #0c6ef8;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+    .section-title {
+      margin-top: 2rem;
+      border-bottom: 2px solid #0c6ef8;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    th, td {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #e7f1ff;
+    }
+    .totals {
+      font-weight: bold;
+      background-color: #f0f8ff;
+    }
+    .summary {
+      background-color: #eef9f1;
+      padding: 1rem;
+      border: 1px solid #c8e6c9;
+      border-radius: 8px;
+      font-size: 1.1rem;
+    }
+    .explanation {
+      background: #f8f9fc;
+      border-left: 4px solid #0c6ef8;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  
+
+    <h1>Nómina - Supuesto con Plus transporte y dietas</h1>
+
+    <div class="section-title">Datos del Trabajador</div>
+    <table>
+      <tr><th>Nombre</th><td>Antonio González Sánchez</td></tr>
+      <tr><th>NIF</th><td>98765432A</td></tr>
+      <tr><th>Domicilio</th><td>Calle Colibrí 9, 28000 Madrid</td></tr>
+      <tr><th>Categoría</th><td>Técnico</td></tr>
+      <tr><th>Grupo Cotización</th><td>6</td></tr>
+      <tr><th>Período de Liquidación</th><td>30 días</td></tr>
+    </table>
+
+    <div class="section-title">Percepciones</div>
+    <div class="explanation">
+      <strong>Explicación:</strong> Se incluyen todas las percepciones del trabajador. El salario base es de 1.500€, con un plus por antigüedad de 150€ y un plus de transporte de 100€. Además, se han abonado dietas por 10 días a razón de 20€/día, lo que da 200€. Las pagas extras no están prorrateadas, por lo que no se incluyen en esta nómina.
+    </div>
+    <table>
+      <tr>
+        <th>Concepto</th>
+        <th>Días / Horas</th>
+        <th>Precio</th>
+        <th>Devengos (€)</th>
+      </tr>
+      <tr><td>Salario Base</td><td>30</td><td>-</td><td>1500</td></tr>
+      <tr><td>Plus Antigüedad</td><td>-</td><td>-</td><td>150</td></tr>
+      <tr><td>Plus de Transporte</td><td>-</td><td>-</td><td>100</td></tr>
+      <tr><td>Dietas</td><td>10</td><td>20</td><td>200</td></tr>
+      <tr class="totals"><td colspan="3">Total Devengado</td><td>1950 €</td></tr>
+    </table>
+
+    <div class="section-title">Base de Cotización</div>
+    <div class="explanation">
+      <strong>Explicación:</strong>  
+      <ul>
+        <li><strong>Contingencias Comunes:</strong> Se consideran sólo percepciones salariales (Salario base + Plus antigüedad) = <strong>1.500 + 150 = 1.650€</strong>.</li>
+        <li><strong>Contingencias Profesionales:</strong> Se incluyen también percepciones como el plus de transporte = <strong>1.500 + 150 + 100 = 1.750€</strong>.</li>
+      </ul>
+    </div>
+    <table>
+      <tr><td>Contingencias Comunes</td><td>1650 €</td></tr>
+      <tr><td>Contingencias Profesionales</td><td>1750 €</td></tr>
+    </table>
+
+    <div class="section-title">Deducciones</div>
+    <div class="explanation">
+      <strong>Explicación:</strong> Se calculan sobre las bases de cotización:
+      <ul>
+        <li><strong>Seguridad Social:</strong>
+          <ul>
+            <li>Contingencias comunes: 1650 * 4,70% = 77,55 €</li>
+            <li>Desempleo: (1650 + 100) * 1,55% = 27,12 €</li>
+            <li>Formación Profesional: (1650 + 100) * 0,10% = 1,75 €</li>
+            <li>Mecanismo de Equidad Intergeneracional: (1650 + 100) * 0,13% ≈ 2,275 €</li>
+          </ul>
+        </li>
+        <li><strong>IRPF:</strong> 10% aplicado sobre percepciones salariales (1500 + 150) = 1650 * 10% = 165 €</li>
+      </ul>
+    </div>
+    <table>
+      <tr>
+        <th>Concepto</th>
+        <th>Porcentaje</th>
+        <th>Importe (€)</th>
+      </tr>
+      <tr><td>Contingencias Comunes</td><td>4,70%</td><td>77,55</td></tr>
+      <tr><td>Desempleo</td><td>1,55%</td><td>27,12</td></tr>
+      <tr><td>Formación Profesional</td><td>0,10%</td><td>1,75</td></tr>
+      <tr><td>Mecanismo de Equidad</td><td>0,13%</td><td>2,275</td></tr>
+      <tr><td>IRPF</td><td>10%</td><td>165,00</td></tr>
+      <tr class="totals"><td colspan="2">Total Deducciones</td><td>273,70 €</td></tr>
+    </table>
+
+    <div class="section-title">Resumen Final</div>
+    <div class="summary">
+      <p><strong>Total Devengado:</strong> 1950 €</p>
+      <p><strong>Total Deducciones:</strong> 273,70 €</p>
+      <p><strong>Total a Percibir:</strong> <span style="font-size: 1.3rem; font-weight: bold;">1676,30 €</span></p>
+    </div>
+  </div>
+</body>
+</html>

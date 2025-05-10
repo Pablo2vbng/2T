@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Prevención de Riesgos Laborales</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #eef2f7;
+            color: #333;
+        }
+    
+        h1 {
+            color: #34495e;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2em;
+        }
+    
+        .question-container {
+            background-color: #ffffff;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+    
+        .question {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-size: 1.2em;
+        }
+    
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+    
+        .option {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 12px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+    
+        .option:hover {
+            background-color: #f1f1f1;
+            border-color: #bbb;
+        }
+    
+        .option input {
+            margin-right: 12px;
+        }
+    
+        .correct {
+            background-color: #d4edda;
+            border-left: 5px solid #28a745;
+        }
+    
+        .incorrect {
+            background-color: #f8d7da;
+            border-left: 5px solid #dc3545;
+        }
+    
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #f0f0f0;
+            border-left: 4px solid #6c757d;
+            border-radius: 6px;
+            font-size: 0.95em;
+        }
+    
+        button {
+            display: block;
+            margin: 40px auto 20px;
+            padding: 12px 24px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        button:hover {
+            background-color: #2980b9;
+        }
+    
+        .results {
+            text-align: center;
+            font-size: 1.3em;
+            margin-top: 30px;
+            padding: 18px;
+            border-radius: 10px;
+            display: none;
+        }
+    
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+    
+        .warning {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+    
+        .danger {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test de Prevención de Riesgos Laborales</h1>
+    
+    <div id="q1" class="question-container">
+        <div class="question">1. ¿Qué dice la OMS sobre la salud?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q1" value="a"> La ausencia de enfermedades</label>
+            <label class="option"><input type="radio" name="q1" value="b"> El bienestar físico únicamente</label>
+            <label class="option"><input type="radio" name="q1" value="c"> Un estado de completo bienestar físico, mental y social y no solo la ausencia de afecciones o enfermedades</label>
+            <label class="option"><input type="radio" name="q1" value="d"> La capacidad de trabajar sin problemas</label>
+        </div>
+        <div class="explanation">
+            La OMS define la salud como un estado de completo bienestar físico, mental y social, no solamente la ausencia de afecciones o enfermedades.
+        </div>
+    </div>
+    
+    <div id="q2" class="question-container">
+        <div class="question">2. ¿Qué es la prevención de riesgos laborales?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q2" value="a"> Las medidas adoptadas por el trabajador para protegerse</label>
+            <label class="option"><input type="radio" name="q2" value="b"> Las medidas adoptadas por la empresa para evitar o disminuir los riesgos derivados del trabajo</label>
+            <label class="option"><input type="radio" name="q2" value="c"> Las normas establecidas por el gobierno</label>
+            <label class="option"><input type="radio" name="q2" value="d"> Los seguros que contratan las empresas</label>
+        </div>
+        <div class="explanation">
+            La prevención de riesgos laborales son las medidas adoptadas por la empresa para intentar evitar o disminuir los riesgos derivados del trabajo.
+        </div>
+    </div>
+    
+    <div id="q3" class="question-container">
+        <div class="question">3. ¿Qué es un factor de riesgo laboral?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q3" value="a"> El seguro que cubre los accidentes</label>
+            <label class="option"><input type="radio" name="q3" value="b"> La posibilidad de que un trabajador sufra un daño derivado del trabajo</label>
+            <label class="option"><input type="radio" name="q3" value="c"> Las normas de seguridad</label>
+            <label class="option"><input type="radio" name="q3" value="d"> El equipo de protección individual</label>
+        </div>
+        <div class="explanation">
+            Un factor de riesgo laboral es la posibilidad de que un trabajador o trabajadora pueda sufrir un daño derivado del trabajo en su salud.
+        </div>
+    </div>
+    
+    <div id="q4" class="question-container">
+        <div class="question">4. ¿Qué se entiende por daño en el contexto laboral?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q4" value="a"> La pérdida económica de la empresa</label>
+            <label class="option"><input type="radio" name="q4" value="b"> El incumplimiento de las normas</label>
+            <label class="option"><input type="radio" name="q4" value="c"> La disminución de productividad</label>
+            <label class="option"><input type="radio" name="q4" value="d"> La lesión o enfermedad profesional que se sufre como consecuencia del riesgo laboral</label>
+        </div>
+        <div class="explanation">
+            El daño es la lesión o enfermedad profesional que puedo sufrir como consecuencia del riesgo laboral del trabajo ejercido.
+        </div>
+    </div>
+    
+    <div id="q5" class="question-container">
+        <div class="question">5. ¿Qué son las condiciones de trabajo?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q5" value="a"> El salario y los beneficios</label>
+            <label class="option"><input type="radio" name="q5" value="b"> Las relaciones con los compañeros</label>
+            <label class="option"><input type="radio" name="q5" value="c"> Cualquier elemento que influye significativamente en el factor de riesgo laboral</label>
+            <label class="option"><input type="radio" name="q5" value="d"> El horario laboral</label>
+        </div>
+        <div class="explanation">
+            La condición de trabajo es cualquier elemento que influye significativamente en el factor de riesgo laboral del trabajo.
+        </div>
+    </div>
+    
+    <div id="q6" class="question-container">
+        <div class="question">6. ¿Cuántos tipos de factores de riesgo existen?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q6" value="a"> 2 tipos</label>
+            <label class="option"><input type="radio" name="q6" value="b"> 4 tipos</label>
+            <label class="option"><input type="radio" name="q6" value="c"> 3 tipos</label>
+            <label class="option"><input type="radio" name="q6" value="d"> 5 tipos</label>
+        </div>
+        <div class="explanation">
+            Los factores de riesgo pueden ser de 4 tipos: 1) Derivados de las condiciones de seguridad, 2) Derivados de las condiciones ambientales, 3) Carga de trabajo, 4) Organización del trabajo.
+        </div>
+    </div>
+    
+    <div id="q7" class="question-container">
+        <div class="question">7. ¿Qué ley desarrolla todas las medidas de prevención de riesgos laborales?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q7" value="a"> Ley 22/2003</label>
+            <label class="option"><input type="radio" name="q7" value="b"> Ley 14/1986</label>
+            <label class="option"><input type="radio" name="q7" value="c"> Ley 31/1995 de prevención de riesgos laborales (LPRL)</label>
+            <label class="option"><input type="radio" name="q7" value="d"> Ley 3/2012</label>
+        </div>
+        <div class="explanation">
+            La ley que desarrolla todas las medidas es la ley 31/1995 de prevención de riesgos laborales (LPRL).
+        </div>
+    </div>
+    
+    <div id="q8" class="question-container">
+        <div class="question">8. ¿Qué tipos de responsabilidad puede tener la empresa en materia de PRL?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q8" value="a"> Administrativa, civil y penal</label>
+            <label class="option"><input type="radio" name="q8" value="b"> Solo administrativa</label>
+            <label class="option"><input type="radio" name="q8" value="c"> Civil y penal</label>
+            <label class="option"><input type="radio" name="q8" value="d"> Solo penal</label>
+        </div>
+        <div class="explanation">
+            Los tipos de responsabilidad de la empresa pueden ser: 1) Administrativa (por incumplimiento de la burocracia), 2) Civil (daño a trabajadores con indemnización), 3) Penal (multa o privación de libertad).
+        </div>
+    </div>
+    
+    <div id="q9" class="question-container">
+        <div class="question">9. ¿Cómo se tipifican los daños derivados del trabajo?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q9" value="a"> Accidente de trabajo, enfermedad profesional y otras patologías</label>
+            <label class="option"><input type="radio" name="q9" value="b"> Solo accidente de trabajo</label>
+            <label class="option"><input type="radio" name="q9" value="c"> Enfermedad profesional y accidente no laboral</label>
+            <label class="option"><input type="radio" name="q9" value="d"> Daños físicos y psicológicos</label>
+        </div>
+        <div class="explanation">
+            Los daños derivados del trabajo se tipifican como: 1) Accidente de trabajo (incluye in itinere), 2) Enfermedad profesional, 3) Otras patologías (fatiga, insatisfacción, envejecimiento...).
+        </div>
+    </div>
+    
+    <div id="q10" class="question-container">
+        <div class="question">10. ¿Qué es la incapacidad temporal por contingencias comunes?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q10" value="a"> La causada por accidente de trabajo</label>
+            <label class="option"><input type="radio" name="q10" value="b"> La derivada de enfermedad profesional</label>
+            <label class="option"><input type="radio" name="q10" value="c"> La menstruación incapacitante</label>
+            <label class="option"><input type="radio" name="q10" value="d"> La causada por enfermedad común</label>
+        </div>
+        <div class="explanation">
+            La incapacidad temporal por contingencias comunes es la causada por enfermedad común. Tiene diferentes periodos de subsidio según los días de baja.
+        </div>
+    </div>
+    
+    <div id="q11" class="question-container">
+        <div class="question">11. ¿Qué tipo de incapacidad permanente permite compatibilizar prestación con otro trabajo?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q11" value="a"> Incapacidad permanente total</label>
+            <label class="option"><input type="radio" name="q11" value="b"> Incapacidad permanente parcial</label>
+            <label class="option"><input type="radio" name="q11" value="c"> Incapacidad permanente absoluta</label>
+            <label class="option"><input type="radio" name="q11" value="d"> Gran invalidez</label>
+        </div>
+        <div class="explanation">
+            La incapacidad permanente total inhabilita para el trabajo actual pero permite compatibilizar la prestación con otro puesto de trabajo.
+        </div>
+    </div>
+    
+    <div id="q12" class="question-container">
+        <div class="question">12. ¿Cuáles son los requisitos para la jubilación contributiva en 2027?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q12" value="a"> 65 años y 35 años cotizados</label>
+            <label class="option"><input type="radio" name="q12" value="b"> 66 años y 37 años cotizados</label>
+            <label class="option"><input type="radio" name="q12" value="c"> 67 años y 38 años y 6 meses cotizados</label>
+            <label class="option"><input type="radio" name="q12" value="d"> 68 años y 40 años cotizados</label>
+        </div>
+        <div class="explanation">
+            En 2027, los requisitos para jubilación contributiva serán: edad legal de 67 años y tener cotizados 38 años y 6 meses.
+        </div>
+    </div>
+    
+    <div id="q13" class="question-container">
+        <div class="question">13. ¿Cuántos días hay que cotizar para tener derecho a prestación por desempleo?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q13" value="a"> 180 días</label>
+            <label class="option"><input type="radio" name="q13" value="b"> 360 días</label>
+            <label class="option"><input type="radio" name="q13" value="c"> 540 días</label>
+            <label class="option"><input type="radio" name="q13" value="d"> 720 días</label>
+        </div>
+        <div class="explanation">
+            Para tener derecho a prestación por desempleo se requiere haber cotizado al menos 360 días.
+        </div>
+    </div>
+    
+    <div id="q14" class="question-container">
+        <div class="question">14. ¿Qué tipo de medidas de prevención son obligatorias para la empresa?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q14" value="a"> Solo colectivas</label>
+            <label class="option"><input type="radio" name="q14" value="b"> Solo individuales</label>
+            <label class="option"><input type="radio" name="q14" value="c"> Colectivas e individuales</label>
+            <label class="option"><input type="radio" name="q14" value="d"> Solo las más económicas</label>
+        </div>
+        <div class="explanation">
+            Las medidas de prevención obligatorias para la empresa pueden ser colectivas (sobre instalaciones) e individuales (EPIs).
+        </div>
+    </div>
+    
+    <div id="q15" class="question-container">
+        <div class="question">15. ¿Cuáles son las fases de la gestión de la prevención?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q15" value="a"> Evaluación, planificación, implementación</label>
+            <label class="option"><input type="radio" name="q15" value="b"> Identificación, corrección, control</label>
+            <label class="option"><input type="radio" name="q15" value="c"> Identificar y evaluar riesgos, planificar, implementar medidas, control y corrección</label>
+            <label class="option"><input type="radio" name="q15" value="d"> Contratar seguros, formar empleados, comprar EPIs</label>
+        </div>
+        <div class="explanation">
+            Las fases son: 1) Identificar y evaluar el riesgo, 2) Planificar la acción preventiva, 3) Implementación de medidas, 4) Control y corrección.
+        </div>
+    </div>
+    
+    <div id="q16" class="question-container">
+        <div class="question">16. ¿Qué significa la conducta PAS en primeros auxilios?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q16" value="a"> Proteger, avisar y socorrer</label>
+            <label class="option"><input type="radio" name="q16" value="b"> Prevenir, actuar y salvar</label>
+            <label class="option"><input type="radio" name="q16" value="c"> Preservar, alertar y sanitizar</label>
+            <label class="option"><input type="radio" name="q16" value="d"> Preparar, asistir y supervisar</label>
+        </div>
+        <div class="explanation">
+            La conducta PAS en primeros auxilios significa: Proteger (el lugar), Avisar (a los servicios de emergencia), Socorrer (a la víctima).
+        </div>
+    </div>
+    
+    <div id="q17" class="question-container">
+        <div class="question">17. ¿Qué hacer si una persona está inconsciente?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q17" value="a"> Comprobar pulso y respiración (soporte vital básico)</label>
+            <label class="option"><input type="radio" name="q17" value="b"> Darle agua</label>
+            <label class="option"><input type="radio" name="q17" value="c"> Moverla para que reaccione</label>
+            <label class="option"><input type="radio" name="q17" value="d"> Dejarla sola hasta que despierte</label>
+        </div>
+        <div class="explanation">
+            Si la persona está inconsciente hay que hacer el SPV (soporte vital básico): comprobar pulso y respiración.
+        </div>
+    </div>
+    
+    <div id="q18" class="question-container">
+        <div class="question">18. ¿Qué hacer si una persona no respira?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q18" value="a"> Darle golpes en la espalda</label>
+            <label class="option"><input type="radio" name="q18" value="b"> Ponerla en posición lateral</label>
+            <label class="option"><input type="radio" name="q18" value="c"> Practicar RCP (reanimación cardiopulmonar básica)</label>
+            <label class="option"><input type="radio" name="q18" value="d"> Esperar a la ambulancia</label>
+        </div>
+        <div class="explanation">
+            Si no hay respiración se debe practicar la RCP (reanimación cardiopulmonar básica) hasta que lleguen los servicios de emergencia.
+        </div>
+    </div>
+    
+    <div id="q19" class="question-container">
+        <div class="question">19. ¿Qué hacer ante un atragantamiento con obstrucción completa?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q19" value="a"> Dar palmadas en la espalda</label>
+            <label class="option"><input type="radio" name="q19" value="b"> Hacer respiración boca a boca</label>
+            <label class="option"><input type="radio" name="q19" value="c"> Practicar la maniobra de Heimlich</label>
+            <label class="option"><input type="radio" name="q19" value="d"> Dar agua para que trague</label>
+        </div>
+        <div class="explanation">
+            Ante un atragantamiento con obstrucción completa se debe practicar la maniobra de Heimlich.
+        </div>
+    </div>
+    
+    <div id="q20" class="question-container">
+        <div class="question">20. ¿Qué entiendes por factor de riesgo de un daño?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q20" value="a"> El seguro que cubre los accidentes</label>
+            <label class="option"><input type="radio" name="q20" value="b"> La posibilidad de que un trabajador sufra un daño derivado del trabajo</label>
+            <label class="option"><input type="radio" name="q20" value="c"> Las normas de seguridad</label>
+            <label class="option"><input type="radio" name="q20" value="d"> El equipo de protección individual</label>
+        </div>
+        <div class="explanation">
+            Un factor de riesgo laboral es la posibilidad de que un trabajador o trabajadora pueda sufrir un daño derivado del trabajo en su salud. Ejemplo: Inhalación de gases en minería.
+        </div>
+    </div>
+    
+    <div id="q21" class="question-container">
+        <div class="question">21. ¿Qué condiciones de trabajo pueden generar riesgos en la empresa?</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q21" value="a"> Solo las condiciones físicas</label>
+            <label class="option"><input type="radio" name="q21" value="b"> Condiciones de seguridad, ambientales, carga de trabajo y organización del trabajo</label>
+            <label class="option"><input type="radio" name="q21" value="c"> Solo las relacionadas con el salario</label>
+            <label class="option"><input type="radio" name="q21" value="d"> Las condiciones del edificio</label>
+        </div>
+        <div class="explanation">
+            Las condiciones de trabajo que generan riesgos pueden ser de seguridad (lugares de trabajo, equipos, instalaciones), ambientales (agentes físicos, químicos), carga de trabajo (física o mental) o por organización del trabajo.
+        </div>
+    </div>
+    
+    <div id="q22" class="question-container">
+        <div class="question">22. Diferencia entre técnicas de prevención y técnicas de protección</div>
+        <div class="options">
+            <label class="option"><input type="radio" name="q22" value="a"> Son lo mismo</label>
+            <label class="option"><input type="radio" name="q22" value="b"> Las de prevención son más caras</label>
+            <label class="option"><input type="radio" name="q22" value="c"> Prevención elimina o reduce posibilidades de daño, protección minimiza consecuencias cuando no se puede eliminar el riesgo</label>
+            <label class="option"><input type="radio" name="q22" value="d"> Las de protección son obligatorias</label>
+        </div>
+        <div class="explanation">
+            Las técnicas de prevención buscan eliminar o reducir las posibilidades de daños, mientras que las de protección se aplican cuando no se puede eliminar el riesgo y buscan minimizar sus consecuencias.
+        </div>
+    </div>
+    
+    <button id="calculate-btn">Calcular resultados</button>
+    
+    <div id="results" class="results"></div>
+    
+    <script>
+        // Definir las respuestas correctas
+        const correctAnswers = {
+            q1: "c",
+            q2: "b",
+            q3: "b",
+            q4: "d",
+            q5: "c",
+            q6: "b",
+            q7: "c",
+            q8: "a",
+            q9: "a",
+            q10: "d",
+            q11: "a",
+            q12: "c",
+            q13: "b",
+            q14: "c",
+            q15: "c",
+            q16: "a",
+            q17: "a",
+            q18: "c",
+            q19: "c",
+            q20: "b",
+            q21: "b",
+            q22: "c"
+        };
+    
+        document.getElementById('calculate-btn').addEventListener('click', function() {
+            const totalQuestions = 22;
+            let correctCount = 0;
+            let incorrectAnswers = [];
+            
+            // Verificar cada pregunta
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionId = `q${i}`;
+                const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+                const questionContainer = document.getElementById(questionId);
+                const explanation = questionContainer.querySelector('.explanation');
+                const options = questionContainer.querySelectorAll('.option');
+                
+                // Mostrar siempre la explicación
+                explanation.style.display = 'block';
+                
+                // Resetear estilos de opciones
+                options.forEach(option => {
+                    option.classList.remove('correct', 'incorrect');
+                });
+                
+                if (selectedOption) {
+                    const selectedValue = selectedOption.value;
+                    const isCorrect = (selectedValue === correctAnswers[questionId]);
+                    
+                    // Marcar la opción seleccionada como correcta o incorrecta
+                    selectedOption.parentElement.classList.add(isCorrect ? 'correct' : 'incorrect');
+                    
+                    // Marcar la respuesta correcta
+                    const correctOption = questionContainer.querySelector(`input[name="${questionId}"][value="${correctAnswers[questionId]}"]`);
+                    correctOption.parentElement.classList.add('correct');
+                    
+                    if (isCorrect) {
+                        correctCount++;
+                        questionContainer.classList.add('correct');
+                        questionContainer.classList.remove('incorrect');
+                    } else {
+                        incorrectAnswers.push(i);
+                        questionContainer.classList.add('incorrect');
+                        questionContainer.classList.remove('correct');
+                    }
+                } else {
+                    // Si no se seleccionó ninguna opción, marcar la correcta
+                    const correctOption = questionContainer.querySelector(`input[name="${questionId}"][value="${correctAnswers[questionId]}"]`);
+                    correctOption.parentElement.classList.add('correct');
+                    
+                    incorrectAnswers.push(i);
+                    questionContainer.classList.add('incorrect');
+                    questionContainer.classList.remove('correct');
+                }
+            }
+            
+            // Calcular nota
+            const score = (correctCount / totalQuestions * 10).toFixed(2);
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.style.display = 'block';
+            
+            // Mostrar resultados
+            if (score >= 7) {
+                resultsDiv.className = 'results success';
+            } else if (score >= 5) {
+                resultsDiv.className = 'results warning';
+            } else {
+                resultsDiv.className = 'results danger';
+            }
+            
+            resultsDiv.innerHTML = `
+                <h3>Resultados</h3>
+                <p>Has acertado ${correctCount} de ${totalQuestions} preguntas.</p>
+                <p>Nota: ${score}</p>
+                ${incorrectAnswers.length > 0 ? `<p>Preguntas incorrectas o sin responder: ${incorrectAnswers.join(', ')}</p>` : ''}
+                <p>Las respuestas correctas están marcadas en verde. Revisa las explicaciones en cada pregunta.</p>
+            `;
+            
+            // Desplazarse a los resultados
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

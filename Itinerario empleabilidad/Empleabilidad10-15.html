@@ -1,0 +1,733 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Empleabilidad</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #eef2f7;
+            color: #333;
+        }
+    
+        h1 {
+            color: #34495e;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2em;
+        }
+    
+        .question-container {
+            background-color: #ffffff;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+    
+        .question {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-size: 1.2em;
+        }
+    
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+    
+        .option {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 12px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+    
+        .option:hover {
+            background-color: #f1f1f1;
+            border-color: #bbb;
+        }
+    
+        .option input {
+            margin-right: 12px;
+        }
+    
+        .correct {
+            background-color: #d4edda;
+            border-left: 5px solid #28a745;
+        }
+    
+        .incorrect {
+            background-color: #f8d7da;
+            border-left: 5px solid #dc3545;
+        }
+    
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #f0f0f0;
+            border-left: 4px solid #6c757d;
+            border-radius: 6px;
+            font-size: 0.95em;
+        }
+    
+        button {
+            display: block;
+            margin: 40px auto 20px;
+            padding: 12px 24px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        button:hover {
+            background-color: #2980b9;
+        }
+    
+        .results {
+            text-align: center;
+            font-size: 1.3em;
+            margin-top: 30px;
+            padding: 18px;
+            border-radius: 10px;
+            display: none;
+        }
+    
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+    
+        .warning {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+    
+        .danger {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Empleabilidad Temas 10-15</h1>
+    
+    <div id="quiz-container">
+        <!-- Pregunta 1 -->
+        <div class="question-container" id="q1">
+            <div class="question">1. Las condiciones para que exista una relación laboral son:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="a"> Personal, involuntaria, por cuenta ajena, retribuida y de dependencia con la empresa</label>
+                <label class="option"><input type="radio" name="q1" value="b"> Personal, voluntaria, por cuenta propia, retribuida y de dependencia con la empresa</label>
+                <label class="option"><input type="radio" name="q1" value="c"> Personal, voluntaria, por cuenta ajena, retribuida y de dependencia con la empresa</label>
+                <label class="option"><input type="radio" name="q1" value="d"> Impersonal, voluntaria, por cuenta ajena, retribuida y de independencia con la empresa</label>
+            </div>
+            <div class="explanation">
+                La relación laboral requiere que sea personal (prestada directamente por el trabajador), voluntaria (libre elección), por cuenta ajena (para un empleador), retribuida (con salario) y con dependencia (subordinación a la empresa).
+            </div>
+        </div>
+        
+        <!-- Pregunta 2 -->
+        <div class="question-container" id="q2">
+            <div class="question">2. ¿Cuál es el orden correcto de la pirámide de jerarquía normativa?</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="a"> 1. Constitución, 2. Reglamentos, 3. Leyes orgánicas y ordinarias, 4. Convenios colectivos, 5. Contrato de trabajo, 6. Costumbre laboral</label>
+                <label class="option"><input type="radio" name="q2" value="b"> 1. Constitución, 2. Leyes orgánicas y ordinarias, 3. Reglamentos, 4. Convenios colectivos, 5. Costumbre laboral, 6. Contrato de trabajo</label>
+                <label class="option"><input type="radio" name="q2" value="c"> 1. Constitución, 2. Leyes orgánicas y ordinarias, 3. Convenios colectivos, 4. Reglamentos, 5. Contrato de trabajo, 6. Costumbre laboral</label>
+                <label class="option"><input type="radio" name="q2" value="d"> 1. Constitución, 2. Reglamentos, 3. Convenios colectivos, 4. Leyes orgánicas y ordinarias, 5. Costumbre laboral, 6. Contrato de trabajo</label>
+            </div>
+            <div class="explanation">
+                La jerarquía normativa correcta es: 1. Constitución (norma suprema), 2. Leyes orgánicas y ordinarias, 3. Reglamentos (desarrollan las leyes), 4. Convenios colectivos (negociados entre empresarios y trabajadores), 5. Costumbre laboral (prácticas habituales), 6. Contrato de trabajo (acuerdo individual).
+            </div>
+        </div>
+        
+        <!-- Pregunta 3 -->
+        <div class="question-container" id="q3">
+            <div class="question">3. ¿Cómo se aprueban las leyes orgánicas y las leyes ordinarias?</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="a"> Las leyes orgánicas se aprueban por mayoría simple y las ordinarias por mayoría absoluta</label>
+                <label class="option"><input type="radio" name="q3" value="b"> Las leyes orgánicas se aprueban por mayoría absoluta y las ordinarias por mayoría simple</label>
+                <label class="option"><input type="radio" name="q3" value="c"> Ambas se aprueban por mayoría absoluta</label>
+                <label class="option"><input type="radio" name="q3" value="d"> Ambas se aprueban por mayoría simple</label>
+            </div>
+            <div class="explanation">
+                Las leyes orgánicas (que regulan derechos fundamentales y libertades públicas) requieren mayoría absoluta del Congreso (la mitad más uno de sus miembros), mientras que las leyes ordinarias solo necesitan mayoría simple (más votos a favor que en contra).
+            </div>
+        </div>
+        
+        <!-- Pregunta 4 -->
+        <div class="question-container" id="q4">
+            <div class="question">4. ¿Cuál de estos NO es un principio de aplicación de las normas laborales?</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="a"> Principio de la norma más favorable</label>
+                <label class="option"><input type="radio" name="q4" value="b"> Irenunciabilidad de derechos</label>
+                <label class="option"><input type="radio" name="q4" value="c"> Condición más beneficiosa</label>
+                <label class="option"><input type="radio" name="q4" value="d"> Principio de autonomía de la voluntad</label>
+            </div>
+            <div class="explanation">
+                Los principios de aplicación de las normas laborales son: 1) Principio de la norma mínima, 2) Principio de la norma más favorable, 3) Irenunciabilidad de derechos, 4) Condición más beneficiosa, y 5) Principio "in dubio pro operario". El principio de autonomía de la voluntad es propio del derecho civil, no laboral.
+            </div>
+        </div>
+        
+        <!-- Pregunta 5 -->
+        <div class="question-container" id="q5">
+            <div class="question">5. ¿Cuál es la representación unitaria correcta según el número de trabajadores?</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="a"> De 6 a 10 trabajadores: 1 delegado obligatorio; de 11 a 30: 3 delegados; de 31 a 49: 5 delegados</label>
+                <label class="option"><input type="radio" name="q5" value="b"> De 6 a 10 trabajadores: 1 delegado opcional; de 11 a 30: 2 delegados; de 31 a 49: 4 delegados</label>
+                <label class="option"><input type="radio" name="q5" value="c"> De 6 a 10 trabajadores: 1 delegado opcional; de 11 a 30: 1 delegado; de 31 a 49: 3 delegados</label>
+                <label class="option"><input type="radio" name="q5" value="d"> De 6 a 10 trabajadores: 0 delegados; de 11 a 30: 2 delegados; de 31 a 49: 3 delegados</label>
+            </div>
+            <div class="explanation">
+                La representación unitaria es: de 6 a 10 trabajadores (1 delegado opcional), de 11 a 30 (1 delegado obligatorio), de 31 a 49 (3 delegados). A partir de 50 trabajadores se forma comité de empresa. La representación sindical (secciones sindicales con delegados sindicales) aparece en empresas de más de 250 trabajadores.
+            </div>
+        </div>
+        
+        <!-- Pregunta 6 -->
+        <div class="question-container" id="q6">
+            <div class="question">6. En un conflicto colectivo, ¿cuál es el preaviso mínimo para solicitar una asamblea fuera del horario laboral?</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q6" value="a"> 24 horas</label>
+                <label class="option"><input type="radio" name="q6" value="b"> 48 horas</label>
+                <label class="option"><input type="radio" name="q6" value="c"> 72 horas</label>
+                <label class="option"><input type="radio" name="q6" value="d"> 5 días</label>
+            </div>
+            <div class="explanation">
+                Para convocar una asamblea fuera del horario laboral en caso de conflicto colectivo, se debe dar un preaviso mínimo de 48 horas. Esto forma parte del derecho de reunión de los trabajadores para la negociación colectiva.
+            </div>
+        </div>
+        
+        <!-- Pregunta 7 -->
+        <div class="question-container" id="q7">
+            <div class="question">7. Respecto al derecho de huelga:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q7" value="a"> Se debe avisar con 3 días de antelación y los servicios mínimos se establecen en 5 días</label>
+                <label class="option"><input type="radio" name="q7" value="b"> Se debe avisar con 7 días de antelación y los servicios mínimos se establecen en 15 días</label>
+                <label class="option"><input type="radio" name="q7" value="c"> Se debe avisar con 5 días de antelación y los servicios mínimos se establecen en 10 días</label>
+                <label class="option"><input type="radio" name="q7" value="d"> No es necesario preaviso y los servicios mínimos se establecen en 3 días</label>
+            </div>
+            <div class="explanation">
+                El ejercicio del derecho de huelga requiere un preaviso mínimo de 5 días naturales. Para establecer los servicios mínimos (en servicios públicos esenciales), el plazo es de 10 días naturales antes del inicio de la huelga.
+            </div>
+        </div>
+        
+        <!-- Pregunta 8 -->
+        <div class="question-container" id="q8">
+            <div class="question">8. El cierre patronal:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q8" value="a"> Es una medida defensiva de la empresa como respuesta a una huelga</label>
+                <label class="option"><input type="radio" name="q8" value="b"> Es una medida ofensiva que la empresa puede tomar en cualquier momento</label>
+                <label class="option"><input type="radio" name="q8" value="c"> No está permitido por la legislación laboral española</label>
+                <label class="option"><input type="radio" name="q8" value="d"> Solo puede durar un máximo de 24 horas</label>
+            </div>
+            <div class="explanation">
+                El cierre patronal es una medida excepcional que puede adoptar el empresario como respuesta a una huelga o a situaciones de violencia, intimidación u otros desórdenes graves en el centro de trabajo. Es una medida defensiva, no ofensiva, y está regulada en el Estatuto de los Trabajadores.
+            </div>
+        </div>
+        
+        <!-- Pregunta 9 -->
+        <div class="question-container" id="q9">
+            <div class="question">9. ¿Cuál es el orden correcto de los órganos judiciales laborales de menor a mayor rango?</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q9" value="a"> Juzgado de lo Social → Tribunal Superior de Justicia de la Comunidad → Audiencia Nacional → Tribunal Supremo</label>
+                <label class="option"><input type="radio" name="q9" value="b"> Juzgado de lo Social → Audiencia Nacional → Tribunal Superior de Justicia de la Comunidad → Tribunal Supremo</label>
+                <label class="option"><input type="radio" name="q9" value="c"> Tribunal Superior de Justicia de la Comunidad → Juzgado de lo Social → Audiencia Nacional → Tribunal Supremo</label>
+                <label class="option"><input type="radio" name="q9" value="d"> Audiencia Nacional → Juzgado de lo Social → Tribunal Superior de Justicia de la Comunidad → Tribunal Supremo</label>
+            </div>
+            <div class="explanation">
+                La jerarquía judicial en materia laboral es: 1) Juzgado de lo Social (primera instancia), 2) Tribunal Superior de Justicia de la Comunidad Autónoma (recurso de suplicación), 3) Audiencia Nacional (para conflictos que excedan el ámbito de una comunidad), y 4) Tribunal Supremo (recurso de casación).
+            </div>
+        </div>
+        
+        <!-- Pregunta 10 -->
+        <div class="question-container" id="q10">
+            <div class="question">10. ¿Quién NO puede celebrar un contrato de trabajo?</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q10" value="a"> Mayor de 18 años con capacidad de obrar</label>
+                <label class="option"><input type="radio" name="q10" value="b"> Menor de 18 años legalmente emancipado</label>
+                <label class="option"><input type="radio" name="q10" value="c"> Mayor de 16 años con permiso de los padres</label>
+                <label class="option"><input type="radio" name="q10" value="d"> Menor de 16 años sin autorización legal</label>
+            </div>
+            <div class="explanation">
+                No pueden celebrar contrato de trabajo los menores de 16 años sin autorización de la autoridad laboral. Los menores de 16 años con autorización pueden trabajar con restricciones (no nocturnidad, no trabajos peligrosos, no horas extra). Los demás casos mencionados sí pueden contratar.
+            </div>
+        </div>
+        
+        <!-- Pregunta 11 -->
+        <div class="question-container" id="q11">
+            <div class="question">11. Los elementos esenciales del contrato de trabajo son:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q11" value="a"> Consentimiento, objeto y causa</label>
+                <label class="option"><input type="radio" name="q11" value="b"> Forma escrita, salario y jornada</label>
+                <label class="option"><input type="radio" name="q11" value="c"> Capacidad, retribución y duración</label>
+                <label class="option"><input type="radio" name="q11" value="d"> Empresa, trabajador y convenio colectivo</label>
+            </div>
+            <div class="explanation">
+                Los elementos esenciales del contrato (como en cualquier contrato) son: consentimiento (acuerdo de voluntades), objeto (prestación laboral) y causa (finalidad laboral). La forma escrita, salario, jornada, etc. son elementos importantes pero no esenciales para la existencia del contrato.
+            </div>
+        </div>
+        
+        <!-- Pregunta 12 -->
+        <div class="question-container" id="q12">
+            <div class="question">12. ¿En qué caso se puede hacer un contrato de palabra?</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q12" value="a"> Contrato temporal a tiempo completo</label>
+                <label class="option"><input type="radio" name="q12" value="b"> Contrato de prácticas</label>
+                <label class="option"><input type="radio" name="q12" value="c"> Contrato indefinido ordinario a tiempo completo</label>
+                <label class="option"><input type="radio" name="q12" value="d"> Contrato de formación</label>
+            </div>
+            <div class="explanation">
+                Solo el contrato indefinido ordinario a tiempo completo puede celebrarse de palabra (aunque es recomendable hacerlo por escrito). Todos los demás tipos de contrato (temporales, formativos, a tiempo parcial, etc.) deben formalizarse por escrito.
+            </div>
+        </div>
+        
+        <!-- Pregunta 13 -->
+        <div class="question-container" id="q13">
+            <div class="question">13. Respecto al periodo de prueba:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q13" value="a"> No necesita estar por escrito y requiere preaviso para finalizarlo</label>
+                <label class="option"><input type="radio" name="q13" value="b"> Debe estar por escrito y no requiere preaviso para finalizarlo</label>
+                <label class="option"><input type="radio" name="q13" value="c"> No puede superar los 15 días en ningún caso</label>
+                <label class="option"><input type="radio" name="q13" value="d"> Finalizado el periodo, el trabajador tiene derecho a indemnización</label>
+            </div>
+            <div class="explanation">
+                El periodo de prueba debe constar por escrito en el contrato. Durante este periodo, cualquier parte puede extinguir la relación sin preaviso y sin indemnización. La duración depende del convenio colectivo (máximo 6 meses para técnicos titulados, 2 meses para otros).
+            </div>
+        </div>
+        
+        <!-- Pregunta 14 -->
+        <div class="question-container" id="q14">
+            <div class="question">14. Sobre los contratos formativos:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q14" value="a"> No requieren acreditar título académico</label>
+                <label class="option"><input type="radio" name="q14" value="b"> Tienen una retribución inferior al salario mínimo</label>
+                <label class="option"><input type="radio" name="q14" value="c"> Se pueden celebrar hasta 3 años desde la formación (5 para discapacitados)</label>
+                <label class="option"><input type="radio" name="q14" value="d"> No tienen límite de duración temporal</label>
+            </div>
+            <div class="explanation">
+                Los contratos formativos (prácticas y formación) requieren acreditar el título académico correspondiente. Su duración máxima es 3 años desde la finalización de los estudios (5 para discapacitados). La retribución no puede ser inferior al Salario Mínimo Interprofesional según porcentajes establecidos.
+            </div>
+        </div>
+        
+        <!-- Pregunta 15 -->
+        <div class="question-container" id="q15">
+            <div class="question">15. Los contratos de formación en alternancia:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q15" value="a"> Solo son para menores de 25 años</label>
+                <label class="option"><input type="radio" name="q15" value="b"> No incluyen formación reglada</label>
+                <label class="option"><input type="radio" name="q15" value="c"> En el primer año: 60% dinero, 40% formación; en el segundo: 75% dinero, 25% formación</label>
+                <label class="option"><input type="radio" name="q15" value="d"> Tienen una duración fija de 1 año</label>
+            </div>
+            <div class="explanation">
+                Los contratos de formación en alternancia combinan trabajo y formación reglada. Para menores de 30 años (sin límite para discapacitados). La retribución es: 1er año 60% salario/40% formación, 2o año 75%/25%. Duración entre 1 y 2 años según el ciclo formativo.
+            </div>
+        </div>
+        
+        <!-- Pregunta 16 -->
+        <div class="question-container" id="q16">
+            <div class="question">16. La jornada laboral:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q16" value="a"> Es de 40 horas semanales en cómputo anual, con máximo de 8 horas diarias</label>
+                <label class="option"><input type="radio" name="q16" value="b"> Es exactamente de 40 horas semanales cada semana sin posibilidad de distribución irregular</label>
+                <label class="option"><input type="radio" name="q16" value="c"> No tiene límite legal siempre que se paguen las horas extra</label>
+                <label class="option"><input type="radio" name="q16" value="d"> Es de 35 horas semanales en cómputo anual para todos los sectores</label>
+            </div>
+            <div class="explanation">
+                La jornada legal máxima es 40 horas semanales de promedio anual (puede haber semanas con más y otras con menos), con máximo 8 horas diarias (9 con convenio colectivo). Se puede reducir por cuidado de familiares (menores de 12 años o dependientes). Muchos convenios establecen jornadas menores.
+            </div>
+        </div>
+        
+        <!-- Pregunta 17 -->
+        <div class="question-container" id="q17">
+            <div class="question">17. Los periodos de descanso:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q17" value="a"> Para jornada de 8 horas: descanso de 30 minutos cada 6 horas seguidas</label>
+                <label class="option"><input type="radio" name="q17" value="b"> Para jornada de 8 horas: descanso de 15 minutos cada 6 horas seguidas</label>
+                <label class="option"><input type="radio" name="q17" value="c"> No son obligatorios si el trabajador no los solicita</label>
+                <label class="option"><input type="radio" name="q17" value="d"> Son iguales para todos los trabajadores independientemente de su edad</label>
+            </div>
+            <div class="explanation">
+                En jornada continuada de más de 6 horas, mínimo 15 minutos de descanso. Para menores de 18 años, si la jornada supera 4,5 horas continuadas, deben tener 30 minutos de descanso. Estos descansos se consideran tiempo de trabajo efectivo si no se puede abandonar el centro de trabajo.
+            </div>
+        </div>
+        
+        <!-- Pregunta 18 -->
+        <div class="question-container" id="q18">
+            <div class="question">18. ¿Cuál de estos permisos retribuidos NO es correcto?</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q18" value="a"> Matrimonio: 15 días naturales</label>
+                <label class="option"><input type="radio" name="q18" value="b"> Ingreso hospitalario familiar hasta 2º grado: 5 días hábiles</label>
+                <label class="option"><input type="radio" name="q18" value="c"> Vacaciones: 30 días laborales según Estatuto de los Trabajadores</label>
+                <label class="option"><input type="radio" name="q18" value="d"> Deber inexcusable (ej. mesa electoral): tiempo necesario</label>
+            </div>
+            <div class="explanation">
+                Las vacaciones son 30 días naturales (no laborales) según el Estatuto de los Trabajadores, aunque se pueden pactar por convenio colectivo. Los otros permisos son correctos: matrimonio (15 días naturales), ingreso familiar (5 días hábiles), deberes públicos (tiempo necesario).
+            </div>
+        </div>
+        
+        <!-- Pregunta 19 -->
+        <div class="question-container" id="q19">
+            <div class="question">19. El salario en especie:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q19" value="a"> No tiene límite porcentual sobre el salario total</label>
+                <label class="option"><input type="radio" name="q19" value="b"> Puede superar el 50% del salario si el trabajador está de acuerdo</label>
+                <label class="option"><input type="radio" name="q19" value="c"> No puede superar el 30% del salario total</label>
+                <label class="option"><input type="radio" name="q19" value="d"> Está totalmente exento de cotización a la Seguridad Social</label>
+            </div>
+            <div class="explanation">
+                El salario en especie (vivienda, manutención, vehículo, etc.) no puede superar el 30% del salario total del trabajador. Está sujeto a cotización a la Seguridad Social e IRPF como el salario monetario, salvo excepciones puntuales.
+            </div>
+        </div>
+        
+        <!-- Pregunta 20 -->
+        <div class="question-container" id="q20">
+            <div class="question">20. El FOGASA paga:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q20" value="a"> 90 días de salario con indemnización máxima de 6 meses</label>
+                <label class="option"><input type="radio" name="q20" value="b"> 120 días de salario con indemnización máxima de un año</label>
+                <label class="option"><input type="radio" name="q20" value="c"> 60 días de salario con indemnización máxima de 8 meses</label>
+                <label class="option"><input type="radio" name="q20" value="d"> 150 días de salario con indemnización máxima de 18 meses</label>
+            </div>
+            <div class="explanation">
+                El Fondo de Garantía Salarial (FOGASA) cubre hasta 120 días de salarios pendientes en caso de insolvencia del empresario, con un límite máximo equivalente a un año de salario. Para indemnizaciones por despido, cubre hasta 1 año de salario.
+            </div>
+        </div>
+        
+        <!-- Pregunta 21 -->
+        <div class="question-container" id="q21">
+            <div class="question">21. Los grupos de cotización:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q21" value="a"> Del 1 al 5 cobran mensual, del 6 al 11 diario</label>
+                <label class="option"><input type="radio" name="q21" value="b"> Del 1 al 7 cobran mensual, del 8 al 11 diario</label>
+                <label class="option"><input type="radio" name="q21" value="c"> Todos cobran mensualmente independientemente del grupo</label>
+                <label class="option"><input type="radio" name="q21" value="d"> Del 1 al 3 cobran mensual, del 4 al 11 diario</label>
+            </div>
+            <div class="explanation">
+                Los grupos de cotización 1-7 (ingenieros, licenciados, técnicos, ayudantes titulados, etc.) tienen salario mensual. Los grupos 8-11 (oficiales, peones, trabajadores menores de 18 años) tienen salario diario. Esto afecta al cálculo de bases de cotización.
+            </div>
+        </div>
+        
+        <!-- Pregunta 22 -->
+        <div class="question-container" id="q22">
+            <div class="question">22. La modificación sustancial del contrato de trabajo:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q22" value="a"> No requiere notificación previa al trabajador</label>
+                <label class="option"><input type="radio" name="q22" value="b"> Si se rechaza, da derecho a indemnización de 45 días por año</label>
+                <label class="option"><input type="radio" name="q22" value="c"> Si se rechaza, da derecho a indemnización de 20 días por año (máximo 9 mensualidades)</label>
+                <label class="option"><input type="radio" name="q22" value="d"> Siempre permite al trabajador rescindir el contrato sin indemnización</label>
+            </div>
+            <div class="explanation">
+                Ante modificaciones sustanciales (jornada, horario, turnos, sistema de trabajo) que perjudiquen al trabajador, si este las rechaza puede extinguir el contrato con indemnización de 20 días por año trabajado (máximo 9 mensualidades). Requiere notificación con 30 días de antelación.
+            </div>
+        </div>
+        
+        <!-- Pregunta 23 -->
+        <div class="question-container" id="q23">
+            <div class="question">23. Sobre la suspensión del contrato:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q23" value="a"> La excedencia voluntaria reserva el puesto de trabajo durante 2 años</label>
+                <label class="option"><input type="radio" name="q23" value="b"> La excedencia por cuidado de hijos es hasta 3 años y reserva puesto 1 año</label>
+                <label class="option"><input type="radio" name="q23" value="c"> La excedencia forzosa no computa como antigüedad</label>
+                <label class="option"><input type="radio" name="q23" value="d"> La suspensión extingue la relación laboral temporalmente</label>
+            </div>
+            <div class="explanation">
+                La excedencia por cuidado de hijos (hasta 3 años) o familiares (hasta 2 años) reserva el puesto durante 1 año y computa antigüedad. La voluntaria (4 meses a 5 años) no reserva puesto. La forzosa (ej. cargo público) reserva puesto y computa antigüedad. La suspensión no extingue la relación laboral.
+            </div>
+        </div>
+        
+        <!-- Pregunta 24 -->
+        <div class="question-container" id="q24">
+            <div class="question">24. En un despido improcedente:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q24" value="a"> La indemnización es de 20 días por año con máximo de 12 mensualidades</label>
+                <label class="option"><input type="radio" name="q24" value="b"> La indemnización es de 33 días por año con máximo de 24 mensualidades</label>
+                <label class="option"><input type="radio" name="q24" value="c"> No hay indemnización pero sí derecho a paro</label>
+                <label class="option"><input type="radio" name="q24" value="d"> La indemnización es de 45 días por año con máximo de 42 mensualidades</label>
+            </div>
+            <div class="explanation">
+                El despido improcedente (declarado así por sentencia judicial) da derecho a indemnización de 33 días por año trabajado (desde 12/2/2012), con máximo de 24 mensualidades. Para contratos anteriores a esa fecha, los años anteriores se calculan a 45 días.
+            </div>
+        </div>
+        
+        <!-- Pregunta 25 -->
+        <div class="question-container" id="q25">
+            <div class="question">25. Para impugnar un despido disciplinario:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q25" value="a"> Hay 10 días hábiles desde la notificación</label>
+                <label class="option"><input type="radio" name="q25" value="b"> Hay 20 días hábiles desde la notificación</label>
+                <label class="option"><input type="radio" name="q25" value="c"> Hay 30 días naturales desde la notificación</label>
+                <label class="option"><input type="radio" name="q25" value="d"> No hay plazo límite si se demuestra mala fe</label>
+            </div>
+            <div class="explanation">
+                Para impugnar un despido disciplinario ante el Juzgado de lo Social, el trabajador tiene un plazo de 20 días hábiles (excluyendo sábados, domingos y festivos) desde la notificación del despido. Fuera de este plazo, se pierde el derecho a reclamar.
+            </div>
+        </div>
+        
+        <!-- Pregunta 26 -->
+        <div class="question-container" id="q26">
+            <div class="question">26. La indemnización máxima que no cotiza en IRPF por despido es:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q26" value="a"> 90.000€</label>
+                <label class="option"><input type="radio" name="q26" value="b"> 120.000€</label>
+                <label class="option"><input type="radio" name="q26" value="c"> 180.000€</label>
+                <label class="option"><input type="radio" name="q26" value="d"> 250.000€</label>
+            </div>
+            <div class="explanation">
+                Las indemnizaciones por despido están exentas de IRPF hasta 180.000€ (cantidad acumulada a lo largo de la vida laboral). A partir de ese importe, las cantidades adicionales tributan como rendimientos del trabajo.
+            </div>
+        </div>
+        
+        <!-- Pregunta 27 -->
+        <div class="question-container" id="q27">
+            <div class="question">27. El INS (Instituto Nacional de la Seguridad) se encarga de:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q27" value="a"> Recaudar las cotizaciones sociales</label>
+                <label class="option"><input type="radio" name="q27" value="b"> Pagar prestaciones sanitarias, farmacológicas y subsidios</label>
+                <label class="option"><input type="radio" name="q27" value="c"> Gestionar la jubilación e invalidez no contributivas</label>
+                <label class="option"><input type="radio" name="q27" value="d"> Pagar las prestaciones por desempleo</label>
+            </div>
+            <div class="explanation">
+                El INS (Instituto Nacional de la Seguridad) gestiona y paga las prestaciones sanitarias, farmacéuticas, subsidios por incapacidad temporal, maternidad/paternidad, riesgo durante el embarazo/lactancia, etc. No confundir con TGSS (recaudación), IMSERSO (jubilación no contributiva) o SEPE (desempleo).
+            </div>
+        </div>
+        
+        <!-- Pregunta 28 -->
+        <div class="question-container" id="q28">
+            <div class="question">28. La TGSS (Tesorería General de la Seguridad Social) se encarga de:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q28" value="a"> Recaudar las cotizaciones sociales</label>
+                <label class="option"><input type="radio" name="q28" value="b"> Pagar las prestaciones por desempleo</label>
+                <label class="option"><input type="radio" name="q28" value="c"> Gestionar las pensiones contributivas</label>
+                <label class="option"><input type="radio" name="q28" value="d"> Realizar inspecciones laborales</label>
+            </div>
+            <div class="explanation">
+                La TGSS es el órgano encargado de la recaudación de las cotizaciones sociales (cuotas a la Seguridad Social) y la gestión del registro de empresas y trabajadores. Las prestaciones las pagan otros organismos (INS, SEPE, IMSERSO).
+            </div>
+        </div>
+        
+        <!-- Pregunta 29 -->
+        <div class="question-container" id="q29">
+            <div class="question">29. El IMSERSO gestiona:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q29" value="a"> Las prestaciones por desempleo de larga duración</label>
+                <label class="option"><input type="radio" name="q29" value="b"> Las pensiones contributivas de jubilación</label>
+                <label class="option"><input type="radio" name="q29" value="c"> La invalidez y jubilación en sus modalidades no contributivas</label>
+                <label class="option"><input type="radio" name="q29" value="d"> Las prestaciones por incapacidad temporal</label>
+            </div>
+            <div class="explanation">
+                El IMSERSO (Instituto de Mayores y Servicios Sociales) gestiona las pensiones no contributivas (jubilación e invalidez) para quienes no tienen cotizaciones suficientes. Las pensiones contributivas las gestiona el INS, y el desempleo el SEPE.
+            </div>
+        </div>
+        
+        <!-- Pregunta 30 -->
+        <div class="question-container" id="q30">
+            <div class="question">30. El SEPE (Servicio Público de Empleo Estatal):</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q30" value="a"> Gestiona las cotizaciones sociales de los desempleados</label>
+                <label class="option"><input type="radio" name="q30" value="b"> Paga las prestaciones por desempleo</label>
+                <label class="option"><input type="radio" name="q30" value="c"> Se encarga de las pensiones de viudedad y orfandad</label>
+                <label class="option"><input type="radio" name="q30" value="d"> Realiza inspecciones a empresas con alto índice de despidos</label>
+            </div>
+            <div class="explanation">
+                El SEPE es el organismo encargado de gestionar y pagar las prestaciones por desempleo (paro), tanto las contributivas como los subsidios. También gestiona los programas de formación para desempleados. No confundir con TGSS (cotizaciones) o INS (prestaciones sanitarias).
+            </div>
+        </div>
+        
+        <!-- Pregunta 31 -->
+        <div class="question-container" id="q31">
+            <div class="question">31. El acrónimo ARCO en protección de datos se refiere a:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q31" value="a"> Acceso, Reclamación, Cancelación y Oposición</label>
+                <label class="option"><input type="radio" name="q31" value="b"> Acceso, Rectificación, Cancelación y Oposición</label>
+                <label class="option"><input type="radio" name="q31" value="c"> Análisis, Registro, Control y Organización</label>
+                <label class="option"><input type="radio" name="q31" value="d"> Auditoría, Revisión, Consulta y Objeción</label>
+            </div>
+            <div class="explanation">
+                Los derechos ARCO son: Acceso (saber qué datos tienen de ti), Rectificación (corregir datos erróneos), Cancelación/Supresión (eliminar datos) y Oposición (negarse a ciertos tratamientos). Son derechos fundamentales en protección de datos personales.
+            </div>
+        </div>
+        
+        <!-- Pregunta 32 -->
+        <div class="question-container" id="q32">
+            <div class="question">32. El plus transporte es:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q32" value="a"> Una percepción salarial que cotiza en todas las contingencias</label>
+                <label class="option"><input type="radio" name="q32" value="b"> Una percepción no salarial que no cotiza en ninguna contingencia</label>
+                <label class="option"><input type="radio" name="q32" value="c"> Una percepción no salarial que no cotiza en contingencias comunes pero sí en profesionales</label>
+                <label class="option"><input type="radio" name="q32" value="d"> Una percepción salarial que solo cotiza en contingencias profesionales</label>
+            </div>
+            <div class="explanation">
+                El plus transporte es una percepción no salarial (no forma parte del salario base). No cotiza para contingencias comunes (baja, jubilación), pero sí para contingencias profesionales (accidente laboral, enfermedad profesional) y por desempleo.
+            </div>
+        </div>
+        
+        <!-- Pregunta 33 -->
+        <div class="question-container" id="q33">
+            <div class="question">33. Las dietas exentas de IRPF y Seguridad Social:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q33" value="a"> No tienen límite de importe para estar exentas</label>
+                <label class="option"><input type="radio" name="q33" value="b"> Están exentas mientras no superen los límites establecidos</label>
+                <label class="option"><input type="radio" name="q33" value="c"> Siempre tributan como rendimientos del trabajo</label>
+                <label class="option"><input type="radio" name="q33" value="d"> Solo están exentas para directivos y altos cargos</label>
+            </div>
+            <div class="explanation">
+                Las dietas por desplazamiento (gastos de manutención y alojamiento) están exentas de IRPF y Seguridad Social siempre que no superen los límites establecidos (para 2023: 53,34€/día en España, 91,35€/día en el extranjero) y se justifique el desplazamiento.
+            </div>
+        </div>
+        
+        <!-- Pregunta 34 -->
+        <div class="question-container" id="q34">
+            <div class="question">34. El cálculo del prorrateo de pagas extras:</div>
+            <div class="options">
+                <label class="option"><input type="radio" name="q34" value="a"> Se divide cada paga extra entre 6 y se suma al salario mensual</label>
+                <label class="option"><input type="radio" name="q34" value="b"> Se suman las dos pagas extras y se dividen entre 12</label>
+                <label class="option"><input type="radio" name="q34" value="c"> Se calcula como el 8,33% del salario base cada mes</label>
+                <label class="option"><input type="radio" name="q34" value="d"> No es obligatorio si el convenio colectivo no lo establece</label>
+            </div>
+            <div class="explanation">
+                El prorrateo de pagas extras consiste en sumar el importe anual de las dos pagas extras (normalmente de verano y Navidad) y dividirlo entre 12, añadiendo esa cantidad a cada mensualidad. Equivale a 1/12 de cada paga extra por mes (8,33%).
+            </div>
+        </div>
+    </div>
+    
+    <button id="calculate-btn">Calcular Nota</button>
+    
+    <div id="results" class="results"></div>
+    
+    <script>
+        // Definir las respuestas correctas
+        const correctAnswers = {
+            q1: "c",
+            q2: "b",
+            q3: "b",
+            q4: "d",
+            q5: "c",
+            q6: "b",
+            q7: "c",
+            q8: "a",
+            q9: "a",
+            q10: "d",
+            q11: "a",
+            q12: "c",
+            q13: "b",
+            q14: "c",
+            q15: "c",
+            q16: "a",
+            q17: "a",
+            q18: "c",
+            q19: "c",
+            q20: "b",
+            q21: "b",
+            q22: "c",
+            q23: "b",
+            q24: "b",
+            q25: "b",
+            q26: "c",
+            q27: "b",
+            q28: "a",
+            q29: "c",
+            q30: "b",
+            q31: "b",
+            q32: "c",
+            q33: "b",
+            q34: "b"
+        };
+    
+        document.getElementById('calculate-btn').addEventListener('click', function() {
+            const totalQuestions = 34;
+            let correctCount = 0;
+            let incorrectAnswers = [];
+            
+            // Verificar cada pregunta
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionId = `q${i}`;
+                const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+                const questionContainer = document.getElementById(questionId);
+                const explanation = questionContainer.querySelector('.explanation');
+                const options = questionContainer.querySelectorAll('.option');
+                
+                // Mostrar siempre la explicación
+                explanation.style.display = 'block';
+                
+                // Resetear estilos de opciones
+                options.forEach(option => {
+                    option.classList.remove('correct', 'incorrect');
+                });
+                
+                if (selectedOption) {
+                    const selectedValue = selectedOption.value;
+                    const isCorrect = (selectedValue === correctAnswers[questionId]);
+                    
+                    // Marcar la opción seleccionada como correcta o incorrecta
+                    selectedOption.parentElement.classList.add(isCorrect ? 'correct' : 'incorrect');
+                    
+                    // Marcar la respuesta correcta
+                    const correctOption = questionContainer.querySelector(`input[name="${questionId}"][value="${correctAnswers[questionId]}"]`);
+                    correctOption.parentElement.classList.add('correct');
+                    
+                    if (isCorrect) {
+                        correctCount++;
+                        questionContainer.classList.add('correct');
+                        questionContainer.classList.remove('incorrect');
+                    } else {
+                        incorrectAnswers.push(i);
+                        questionContainer.classList.add('incorrect');
+                        questionContainer.classList.remove('correct');
+                    }
+                } else {
+                    // Si no se seleccionó ninguna opción, marcar la correcta
+                    const correctOption = questionContainer.querySelector(`input[name="${questionId}"][value="${correctAnswers[questionId]}"]`);
+                    correctOption.parentElement.classList.add('correct');
+                    
+                    incorrectAnswers.push(i);
+                    questionContainer.classList.add('incorrect');
+                    questionContainer.classList.remove('correct');
+                }
+            }
+            
+            // Calcular nota
+            const score = (correctCount / totalQuestions * 10).toFixed(2);
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.style.display = 'block';
+            
+            // Mostrar resultados
+            if (score >= 7) {
+                resultsDiv.className = 'results success';
+            } else if (score >= 5) {
+                resultsDiv.className = 'results warning';
+            } else {
+                resultsDiv.className = 'results danger';
+            }
+            
+            resultsDiv.innerHTML = `
+                <h3>Resultados</h3>
+                <p>Has acertado ${correctCount} de ${totalQuestions} preguntas.</p>
+                <p>Nota: ${score}</p>
+                ${incorrectAnswers.length > 0 ? `<p>Preguntas incorrectas o sin responder: ${incorrectAnswers.join(', ')}</p>` : ''}
+                <p>Las respuestas correctas están marcadas en verde. Revisa las explicaciones en cada pregunta.</p>
+            `;
+            
+            // Desplazarse a los resultados
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

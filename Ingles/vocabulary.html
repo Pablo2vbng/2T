@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulario Inglés</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        h2 {
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        .unit-selector {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .unit-selector button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin: 0 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .unit-selector button:hover {
+            background-color: #2980b9;
+        }
+        .quiz-container {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .question {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .option {
+            margin-bottom: 8px;
+        }
+        .submit-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 25px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #27ae60;
+        }
+        .results {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #e8f4fc;
+            border-radius: 5px;
+            display: none;
+        }
+        .results h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .correct {
+            color: #27ae60;
+        }
+        .incorrect {
+            color: #e74c3c;
+        }
+        .solution {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #fdedec;
+            border-left: 4px solid #e74c3c;
+            display: none;
+        }
+        .definition-link {
+            color: #3498db;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .definition-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: none;
+            max-width: 500px;
+            width: 90%;
+        }
+        .definition-popup h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #7f8c8d;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+            display: none;
+        }
+        .consumer-types {
+            margin-top: 20px;
+        }
+        .consumer-type {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f0f7fd;
+            border-left: 4px solid #3498db;
+        }
+        input[type="text"] {
+            padding: 5px;
+            margin: 0 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .unit-selector {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .unit-selector button {
+                margin: 5px;
+                flex: 1 0 calc(50% - 10px);
+                max-width: calc(50% - 10px);
+            }
+            .options {
+                margin-left: 10px;
+            }
+            .option {
+                display: flex;
+                align-items: center;
+            }
+            .option input[type="radio"] {
+                margin-right: 8px;
+            }
+            .container {
+                padding: 15px;
+            }
+            .question {
+                padding: 10px;
+            }
+            .definition-popup {
+                width: 95%;
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            .unit-selector button {
+                flex: 1 0 100%;
+                max-width: 100%;
+            }
+            .submit-btn {
+                width: 100%;
+                padding: 12px;
+            }
+            .results {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>VOCABULARIO INGLÉS</h1>
+        
+        <div class="unit-selector">
+            <button onclick="showUnit(1)">UNIDAD FORMATIVA 1</button>
+            <button onclick="showUnit(2)">UNIDAD FORMATIVA 2</button>
+            <button onclick="showUnit(3)">UNIDAD FORMATIVA 3</button>
+            <button onclick="showUnit(4)">UNIDAD FORMATIVA 4</button>
+            <button onclick="showUnit(5)">UNIDAD FORMATIVA 5</button>
+        </div>
+        
+        <!-- Unit 1 -->
+        <div id="unit1" class="quiz-container">
+            <h2>UNIDAD FORMATIVA 1</h2>
+            <p>Match the vocabulary words with their correct definitions:</p>
+            
+            <div id="quiz-unit1">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+            
+            <button class="submit-btn" onclick="checkAnswers(1)">Comprobar respuestas</button>
+            
+            <div id="results-unit1" class="results">
+                <h3>Resultados</h3>
+                <div class="score">Tu nota: <span id="score-unit1"></span></div>
+                <div id="feedback-unit1"></div>
+            </div>
+        </div>
+        
+        <!-- Unit 2 -->
+        <div id="unit2" class="quiz-container">
+            <h2>UNIDAD FORMATIVA 2</h2>
+            <p>Match the business concepts with their correct definitions:</p>
+            
+            <div id="quiz-unit2">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+            
+            <button class="submit-btn" onclick="checkAnswers(2)">Comprobar respuestas</button>
+            
+            <div id="results-unit2" class="results">
+                <h3>Resultados</h3>
+                <div class="score">Tu nota: <span id="score-unit2"></span></div>
+                <div id="feedback-unit2"></div>
+            </div>
+        </div>
+        
+        <!-- Unit 3 -->
+        <div id="unit3" class="quiz-container">
+            <h2>UNIDAD FORMATIVA 3</h2>
+            <p>Match the procurement positions with their correct job descriptions:</p>
+            
+            <div id="quiz-unit3">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+            
+            <button class="submit-btn" onclick="checkAnswers(3)">Comprobar respuestas</button>
+            
+            <div id="results-unit3" class="results">
+                <h3>Resultados</h3>
+                <div class="score">Tu nota: <span id="score-unit3"></span></div>
+                <div id="feedback-unit3"></div>
+            </div>
+        </div>
+        
+        <!-- Unit 4 -->
+        <div id="unit4" class="quiz-container">
+            <h2>UNIDAD FORMATIVA 4</h2>
+            
+            <div class="section">
+                <h3>Part 1: Sales Positions</h3>
+                <p>Match the sales positions with their correct job descriptions:</p>
+                
+                <div id="quiz-unit4-part1">
+                    <!-- Questions will be inserted here by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="section consumer-types">
+                <h3>Part 2: Consumer Types</h3>
+                <p>Give a title to the 4 different types of consumers based on their descriptions:</p>
+                
+                <div id="quiz-unit4-part2">
+                    <!-- Questions will be inserted here by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3>Part 3: Second-hand Market Vocabulary</h3>
+                <p>Relate each term (1-10) with the correct definition (a-j):</p>
+                
+                <div id="quiz-unit4-part3">
+                    <!-- Questions will be inserted here by JavaScript -->
+                </div>
+            </div>
+            
+            <button class="submit-btn" onclick="checkAnswers(4)">Comprobar respuestas</button>
+            
+            <div id="results-unit4" class="results">
+                <h3>Resultados</h3>
+                <div class="score">Tu nota: <span id="score-unit4"></span></div>
+                <div id="feedback-unit4"></div>
+            </div>
+        </div>
+        
+        <!-- Unit 5 -->
+        <div id="unit5" class="quiz-container">
+            <h2>UNIDAD FORMATIVA 5</h2>
+            <p>Complete the following vocabulary exercises:</p>
+            
+            <div id="quiz-unit5">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+            
+            <button class="submit-btn" onclick="checkAnswers(5)">Comprobar respuestas</button>
+            
+            <div id="results-unit5" class="results">
+                <h3>Resultados</h3>
+                <div class="score">Tu nota: <span id="score-unit5"></span></div>
+                <div id="feedback-unit5"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Definition Popup -->
+    <div class="overlay" id="overlay"></div>
+    <div class="definition-popup" id="definitionPopup">
+        <button class="close-popup" onclick="closePopup()">×</button>
+        <h3 id="popupTerm"></h3>
+        <div id="popupDefinition"></div>
+    </div>
+    
+    <script>
+        // Vocabulary data
+        const vocabularyData = {
+            unit1: {
+                title: "Technology and Workplace Vocabulary",
+                type: "matching",
+                items: [
+                    { term: "1. Technology", definition: "c) The use of science and machines to make tasks easier or more efficient." },
+                    { term: "2. Accessible", definition: "i) Easy to reach or obtain, available for use." },
+                    { term: "3. Lifelong learning", definition: "h) The process of gaining knowledge and skills throughout your entire life, not just during your formal education." },
+                    { term: "4. Skills", definition: "b) Abilities and knowledge that you have developed through practice and experience." },
+                    { term: "5. Tools", definition: "j) Instruments or devices used to perform specific tasks or achieve goals." },
+                    { term: "6. Workforce", definition: "e) The group of people who are employed by a company or engaged in work." },
+                    { term: "7. To be aware of", definition: "g) Having the knowledge or understanding of a situation, issue, or fact." },
+                    { term: "8. Sustainability", definition: "d) Using resources and making choices in a way that doesn't harm the environment and can be maintained for the future." },
+                    { term: "9. Environmental protection", definition: "f) Actions taken to prevent harm to the environment and preserve natural resources." },
+                    { term: "10. Diversity and inclusivity", definition: "a) Embracing and valuing differences among people, such as differences in race, culture, gender, and background, and ensuring that everyone is treated fairly and has equal opportunities." }
+                ]
+            },
+            unit2: {
+                title: "Business and Work Concepts",
+                type: "matching",
+                items: [
+                    { term: "1. Adapting to changes", definition: "f) Means being able to adjust your plans and actions when new situations or problems happen." },
+                    { term: "2. Continuous improvement", definition: "i) Is always trying to make things better, never stopping to look for ways to improve work or products." },
+                    { term: "3. Networking", definition: "h) Is the process of meeting and talking to other people to share information and help each other in business." },
+                    { term: "4. Customer feedback", definition: "j) Is the opinions and comments from people who buy your products or use your services, which can help a company improve." },
+                    { term: "5. Determination", definition: "d) Is the strong will and commitment to keep trying and not give up, even when things are hard." },
+                    { term: "6. Mission", definition: "a) Is the main purpose of a company, explaining why it exists and what it aims to do." },
+                    { term: "7. Passion", definition: "g) Is a very strong feeling of enthusiasm or excitement for something you do." },
+                    { term: "8. Smart marketing", definition: "c) Means using clever and effective ways to tell people about a company's products or services to increase sales." },
+                    { term: "9. Staying focused", definition: "e) Means keeping your attention on what you need to do without getting distracted by other things." },
+                    { term: "10. Vision", definition: "b) Is a company's big dream for the future, showing what it wants to achieve in the long run." }
+                ]
+            },
+            unit3: {
+                title: "Procurement Positions",
+                type: "matching",
+                items: [
+                    { term: "1. Chief Procurement Officer (CPO)", definition: "d) Head the procurement team, decide on purchases, and negotiate with major suppliers." },
+                    { term: "2. Procurement Managers", definition: "b) Select top suppliers, negotiate prices and orders, and procure necessary items for the company." },
+                    { term: "3. Category Specialists / Buyers", definition: "f) Look after varied purchases like computers or office supplies, plan area-specific buying, and coordinate with other departments for their needs." },
+                    { term: "4. Procurement Analysts", definition: "h) Analyze procurement data and market trends, assist with reports for informed purchasing, and monitor buying effectiveness." },
+                    { term: "5. Supplier Relationship Managers", definition: "g) Maintain relationships with key suppliers, monitor their performance, and review and update contracts." },
+                    { term: "6. Contract Administrators", definition: "c) Manage buying contracts, check which rules are followed, and update or renew them." },
+                    { term: "7. Procurement Clerks / Administrative Support", definition: "a) Record purchase orders, maintain buying records, and assist in discussions with sellers." },
+                    { term: "8. Risk and Compliance Officers", definition: "e) Look at buying risks, ensure proper purchasing, and check rule compliance." }
+                ]
+            },
+            unit4: {
+                part1: {
+                    title: "Sales Positions",
+                    type: "matching",
+                    items: [
+                        { term: "1. Sales Associate", definition: "f) Helps customers buy products or services, usually in shops or showrooms." },
+                        { term: "2. Sales Representative", definition: "d) Works to sell a company's products or services, often by talking to new customers." },
+                        { term: "3. Account Manager", definition: "i) Takes care of certain customers, making sure they are happy and keep buying." },
+                        { term: "4. Sales Consultant", definition: "a) Gives advice and information about what is being sold to help both the sales team and customers." },
+                        { term: "5. Sales Manager", definition: "e) Leads a sales team, decides sales goals, looks at sales data, and teaches the sales team how to sell better." },
+                        { term: "6. Business Development Manager", definition: "b) Works on making new business relationships to help the company grow and sell more." },
+                        { term: "7. Territory Manager", definition: "c) Looks after sales and customer relationships in a certain area." },
+                        { term: "8. Inside Sales Representative", definition: "g) Sells products over the phone or email, not in person." },
+                        { term: "9. Outside Sales Representative", definition: "h) Goes out to meet customers to make sales." },
+                        { term: "10. Sales Director", definition: "j) An important leader who plans how the company will sell things and manages all the sales teams." }
+                    ]
+                },
+                part2: {
+                    title: "Consumer Types",
+                    type: "fill-in",
+                    items: [
+                        { term: "1. They like seeing and touching products before buying them. They enjoy talking with sales staff and getting the product immediately.", definition: "Traditional shoppers" },
+                        { term: "2. They want convenience, choice and the ability to compare prices quickly and enjoy the flexibility to shop from anywhere at any time.", definition: "Online shoppers" },
+                        { term: "3. They buy things without planning. They often get excited by attractive offers or eye-catching ads without thinking about whether they need the product.", definition: "Impulsive shoppers" },
+                        { term: "4. Buyers who value more the experience and service they receive than the product. They look for special and memorable shopping moments.", definition: "Experience-seeking shoppers" }
+                    ]
+                },
+                part3: {
+                    title: "Second-hand Market Vocabulary",
+                    type: "matching",
+                    items: [
+                        { term: "1. Resale", definition: "c) Sale of previously purchased products, usually used." },
+                        { term: "2. Secondary market", definition: "i) Space or platform where used products are marketed." },
+                        { term: "3. Refurbished product", definition: "f) Items repaired or refurbished for resale, in good condition." },
+                        { term: "4. Limited warranty", definition: "h) Protection offered for a limited time for second-hand products." },
+                        { term: "5. Seller/buyer rating", definition: "g) Rating or reputation based on the experience of previous users, which influences the trust and price of the products offered on the second-hand market." },
+                        { term: "6. Return policy", definition: "a) Rules or conditions under which the buyer can return the product to the seller, if it does not meet expectations, is defective, or does not match the description." },
+                        { term: "7. Wear and tear", definition: "d) The condition in which a second-hand product is found due to its previous use." },
+                        { term: "8. Negotiation", definition: "b) The process of adjusting the price between the buyer and the seller." },
+                        { term: "9. Authenticity", definition: "j) Verification of the legitimacy of a product, especially in the case of luxury goods." },
+                        { term: "10. Product condition", definition: "e) Physical condition in which a used item is found (new, like new, used, etc.)." }
+                    ]
+                }
+            },
+            unit5: {
+                title: "Advanced Business Vocabulary",
+                type: "matching",
+                items: [
+                    { term: "1. Market segmentation", definition: "d) Dividing a broad consumer or business market into sub-groups based on shared characteristics." },
+                    { term: "2. Value proposition", definition: "h) A business or marketing statement that summarizes why a consumer should buy a product or use a service." },
+                    { term: "3. Supply chain", definition: "a) The entire process of making and selling commercial goods, including every stage from the supply of materials to the distribution of products." },
+                    { term: "4. Key performance indicator (KPI)", definition: "j) A measurable value that demonstrates how effectively a company is achieving key business objectives." },
+                    { term: "5. Stakeholder", definition: "b) A party that has an interest in a company and can either affect or be affected by the business." },
+                    { term: "6. Break-even point", definition: "f) The point at which total cost and total revenue are equal, meaning there is no loss or gain." },
+                    { term: "7. Scalability", definition: "e) The capability of a system, network, or process to handle a growing amount of work." },
+                    { term: "8. Disruptive innovation", definition: "g) An innovation that creates a new market and value network, eventually disrupting an existing market." },
+                    { term: "9. Synergy", definition: "c) The concept that the combined output of a group is greater than the sum of the individual outputs." },
+                    { term: "10. Core competency", definition: "i) A defining capability or advantage that distinguishes an enterprise from its competitors." }
+                ]
+            }
+        };
+
+        // Initialize the quizzes when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            createQuiz(1);
+            createQuiz(2);
+            createQuiz(3);
+            createQuiz(4);
+            createQuiz(5);
+            showUnit(1); // Show first unit by default
+        });
+
+        // Show the selected unit and hide others
+        function showUnit(unitNumber) {
+            // Hide all units
+            document.querySelectorAll('.quiz-container').forEach(unit => {
+                unit.classList.remove('active');
+            });
+            
+            // Show selected unit
+            document.getElementById(`unit${unitNumber}`).classList.add('active');
+        }
+
+        // Create quiz questions for a unit
+        function createQuiz(unitNumber) {
+            if (unitNumber === 4) {
+                // Special handling for unit 4 which has three parts
+                createMatchingQuiz('unit4-part1', vocabularyData.unit4.part1.items);
+                createFillInQuiz('unit4-part2', vocabularyData.unit4.part2.items);
+                createMatchingQuiz('unit4-part3', vocabularyData.unit4.part3.items);
+            } else {
+                const unitData = vocabularyData[`unit${unitNumber}`];
+                if (unitData.type === 'matching') {
+                    createMatchingQuiz(`unit${unitNumber}`, unitData.items);
+                } else {
+                    createFillInQuiz(`unit${unitNumber}`, unitData.items);
+                }
+            }
+        }
+
+        // Create a matching quiz
+        function createMatchingQuiz(quizId, items) {
+            const quizContainer = document.getElementById(`quiz-${quizId}`);
+            quizContainer.innerHTML = '';
+            
+            // Shuffle the definitions
+            const shuffledDefinitions = [...items].sort(() => Math.random() - 0.5);
+            
+            items.forEach((item, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                
+                const termSpan = document.createElement('span');
+                termSpan.innerHTML = `<strong>${item.term}</strong>`;
+                termSpan.onclick = function() { showDefinition(item.term, item.definition); };
+                termSpan.className = 'definition-link';
+                
+                questionDiv.appendChild(termSpan);
+                
+                const optionsDiv = document.createElement('div');
+                optionsDiv.className = 'options';
+                
+                shuffledDefinitions.forEach((defItem, defIndex) => {
+                    const optionDiv = document.createElement('div');
+                    optionDiv.className = 'option';
+                    
+                    const radio = document.createElement('input');
+                    radio.type = 'radio';
+                    radio.name = `q-${quizId}-${index}`;
+                    radio.value = defItem.definition;
+                    radio.id = `q-${quizId}-${index}-${defIndex}`;
+                    
+                    const label = document.createElement('label');
+                    label.htmlFor = `q-${quizId}-${index}-${defIndex}`;
+                    label.textContent = defItem.definition;
+                    label.onclick = function() { showDefinition(defItem.term, defItem.definition); };
+                    label.className = 'definition-link';
+                    
+                    optionDiv.appendChild(radio);
+                    optionDiv.appendChild(label);
+                    optionsDiv.appendChild(optionDiv);
+                });
+                
+                questionDiv.appendChild(optionsDiv);
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        // Create a fill-in-the-blank quiz
+        function createFillInQuiz(quizId, items) {
+            const quizContainer = document.getElementById(`quiz-${quizId}`);
+            quizContainer.innerHTML = '';
+            
+            items.forEach((item, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                
+                const termP = document.createElement('p');
+                termP.innerHTML = `<strong>${item.term}</strong><br><input type="text" id="ans-${quizId}-${index}" placeholder="Escribe tu respuesta aquí" style="width: 300px; margin-top: 5px;">`;
+                questionDiv.appendChild(termP);
+                
+                // Add clickable definition
+                const defLink = document.createElement('div');
+                defLink.innerHTML = `<small>(<span class="definition-link" onclick="showDefinition('Answer', '${item.definition}')">ver definición</span>)</small>`;
+                questionDiv.appendChild(defLink);
+                
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        // Check answers for a unit
+        function checkAnswers(unitNumber) {
+            if (unitNumber === 4) {
+                // Special handling for unit 4 which has three parts
+                const part1Results = checkMatchingQuiz('unit4-part1', vocabularyData.unit4.part1.items);
+                const part2Results = checkFillInQuiz('unit4-part2', vocabularyData.unit4.part2.items);
+                const part3Results = checkMatchingQuiz('unit4-part3', vocabularyData.unit4.part3.items);
+                
+                const totalCorrect = part1Results.correct + part2Results.correct + part3Results.correct;
+                const totalQuestions = part1Results.total + part2Results.total + part3Results.total;
+                const score = Math.round((totalCorrect / totalQuestions) * 100);
+                
+                const resultsDiv = document.getElementById(`results-unit${unitNumber}`);
+                const scoreSpan = document.getElementById(`score-unit${unitNumber}`);
+                const feedbackDiv = document.getElementById(`feedback-unit${unitNumber}`);
+                
+                scoreSpan.textContent = `${score}%`;
+                scoreSpan.className = score >= 70 ? 'correct' : 'incorrect';
+                
+                feedbackDiv.innerHTML = `
+                    <p><strong>Part 1: Sales Positions</strong> - ${part1Results.correct} de ${part1Results.total} correctas (${Math.round((part1Results.correct / part1Results.total) * 100)}%)</p>
+                    ${part1Results.feedback}
+                    <p><strong>Part 2: Consumer Types</strong> - ${part2Results.correct} de ${part2Results.total} correctas (${Math.round((part2Results.correct / part2Results.total) * 100)}%)</p>
+                    ${part2Results.feedback}
+                    <p><strong>Part 3: Second-hand Market Vocabulary</strong> - ${part3Results.correct} de ${part3Results.total} correctas (${Math.round((part3Results.correct / part3Results.total) * 100)}%)</p>
+                    ${part3Results.feedback}
+                    <p><strong>Nota final:</strong> ${score}%</p>
+                `;
+                
+                resultsDiv.style.display = 'block';
+            } else {
+                const unitData = vocabularyData[`unit${unitNumber}`];
+                let results;
+                
+                if (unitData.type === 'matching') {
+                    results = checkMatchingQuiz(`unit${unitNumber}`, unitData.items);
+                } else {
+                    results = checkFillInQuiz(`unit${unitNumber}`, unitData.items);
+                }
+                
+                const score = Math.round((results.correct / results.total) * 100);
+                
+                const resultsDiv = document.getElementById(`results-unit${unitNumber}`);
+                const scoreSpan = document.getElementById(`score-unit${unitNumber}`);
+                const feedbackDiv = document.getElementById(`feedback-unit${unitNumber}`);
+                
+                scoreSpan.textContent = `${score}%`;
+                scoreSpan.className = score >= 70 ? 'correct' : 'incorrect';
+                feedbackDiv.innerHTML = results.feedback + `<p><strong>Nota final:</strong> ${score}%</p>`;
+                resultsDiv.style.display = 'block';
+            }
+        }
+
+        // Check answers for a matching quiz
+        function checkMatchingQuiz(quizId, items) {
+            let correct = 0;
+            let feedback = '';
+            
+            items.forEach((item, index) => {
+                const selectedOption = document.querySelector(`input[name="q-${quizId}-${index}"]:checked`);
+                const questionDiv = document.querySelector(`#quiz-${quizId} .question:nth-child(${index+1})`);
+                
+                if (selectedOption && selectedOption.value === item.definition) {
+                    correct++;
+                    questionDiv.style.backgroundColor = '#e8f5e9'; // Light green for correct
+                    feedback += `<p>Pregunta ${index+1}: <span class="correct">Correcta</span></p>`;
+                } else {
+                    // Show correct answer
+                    const solutionDiv = document.createElement('div');
+                    solutionDiv.className = 'solution';
+                    solutionDiv.innerHTML = `<strong>Solución correcta:</strong> ${item.definition}`;
+                    solutionDiv.style.display = 'block';
+                    questionDiv.appendChild(solutionDiv);
+                    questionDiv.style.backgroundColor = '#ffebee'; // Light red for incorrect
+                    feedback += `<p>Pregunta ${index+1}: <span class="incorrect">Incorrecta</span> - La respuesta correcta era: "${item.definition}"</p>`;
+                }
+            });
+            
+            return {
+                correct: correct,
+                total: items.length,
+                feedback: feedback
+            };
+        }
+
+        // Check answers for a fill-in quiz
+        function checkFillInQuiz(quizId, items) {
+            let correct = 0;
+            let feedback = '';
+            
+            items.forEach((item, index) => {
+                const userAnswer = document.getElementById(`ans-${quizId}-${index}`).value.trim().toLowerCase();
+                const correctAnswer = item.definition.toLowerCase();
+                const questionDiv = document.querySelector(`#quiz-${quizId} .question:nth-child(${index+1})`);
+                
+                if (userAnswer === correctAnswer) {
+                    correct++;
+                    questionDiv.style.backgroundColor = '#e8f5e9'; // Light green for correct
+                    feedback += `<p>Pregunta ${index+1}: <span class="correct">Correcta</span></p>`;
+                } else {
+                    // Show correct answer
+                    const solutionDiv = document.createElement('div');
+                    solutionDiv.className = 'solution';
+                    solutionDiv.innerHTML = `<strong>Solución correcta:</strong> ${item.definition}`;
+                    solutionDiv.style.display = 'block';
+                    questionDiv.appendChild(solutionDiv);
+                    questionDiv.style.backgroundColor = '#ffebee'; // Light red for incorrect
+                    feedback += `<p>Pregunta ${index+1}: <span class="incorrect">Incorrecta</span> - Tu respuesta: "${userAnswer}", la correcta era: "${item.definition}"</p>`;
+                }
+            });
+            
+            return {
+                correct: correct,
+                total: items.length,
+                feedback: feedback
+            };
+        }
+
+        // Show definition popup
+        function showDefinition(term, definition) {
+            document.getElementById('popupTerm').textContent = term;
+            document.getElementById('popupDefinition').textContent = definition;
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('definitionPopup').style.display = 'block';
+        }
+
+        // Close definition popup
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('definitionPopup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
